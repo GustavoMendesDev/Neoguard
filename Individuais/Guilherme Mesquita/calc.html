@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro NeoGuard Limpo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>Simulador Financeiro e de Risco Neonatal</h1>
+        <p>Insira os dados para calcular custos e benefícios.</p>
+
+        <hr>
+
+        <h2 class="title">Entrada de Dados</h2>
+        <!--DÚVIDA-> Posso utilizar o atributo "required"? -->
+        Numero médio de bebes internados por mes:<input type="number" id="iptBebes" placeholder="Ex: 20"><br><br>
+        Custo medio de internação <input type="number" id="iptMediaDiaria" placeholder="Ex: 700"><br><br>
+        Custo diario com energia das incubadoras<input type="number" id="iptDiariaEnergia" placeholder="Ex: 3000"><br><br>
+        Media de internacão neonatal registrados<input type="number" id="iptInternacao" placeholder="Ex:15"><br><br>
+
+
+        <button onclick="simular()">Gerar Relatório de Simulação</button>
+        <div class="resultado" id="resultado">
+            Relatório aparecerá aqui.
+        </div>
+        
+    </div>
+    
+
+    </body>
+    <script>
+        function simular (){
+            var bebe = Number(iptBebes.value);
+            var mDiaria = Number (iptMediaDiaria.value);
+            var dEnergia = Number (iptDiariaEnergia.value);
+            var mIternacao = Number (iptInternacao.value);
+
+            var vEnergiaTotal = (dEnergia * mIternacao) * bebe;
+            
+
+
+            /* pmc7519202  */
+            var casosHipotermia = (70 / 100) * bebe;
+            var reducaoHipo = (60/100) * casosHipotermia;
+
+            var cDiarioTotal = (dEnergia * mDiaria)
+
+            var diasInternacao = mIternacao - ((1.5 / 100) * mIternacao);
+            var vCustoTotalNeo =vCustoTotal -  (((mDiaria + dEnergia)*diasInternacao) * bebe)
+
+            var vCustoTotal = ((mDiaria + dEnergia )* mIternacao ) * bebe
+
+            
+              let conteudoHTML = `
+            <h2>Relatório de Simulação Financeira e Clínica</h2>
+            <p><strong>Dados Inseridos:</strong> Quantidade de bebes ${bebe}g | Meidia diaria de energia ${dEnergia}s | Diária R$ ${mDiaria.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}</p>
+            
+            <hr>
+
+            <h3>1. Cenário Sem Monitoramento Otimizado</h3>
+                <ul>
+                    <li> <strong>Tempo Médio de Internação:</strong> <strong>${mIternacao} dias</strong>(Com grandes riscos de instabilidade térmica).</li>
+                </ul>
+
+                <ul>
+                    <li>  <strong> Energia total mensal UTI:R$ ${vEnergiaTotal.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}</strong>(${mIternacao} dias &times; R$ ${dEnergia.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}})</li>
+                </ul>
+                
+                 <ul>
+                    <li> <strong> Custo diario de UTI:R$ ${vEnergiaTotal.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}</strong>(${mIternacao} dias &times; R$ ${dEnergia.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}})</li>
+                </ul>
+
+                <ul>
+                   <li> <strong>Risco de hipotermia:</strong> <strong>${casosHipotermia.toFixed(0)}%</strong> (Risco aumentado conforme a tabela <strong> Scopes-ahmed.)</strong></li>
+                </ul>
+
+                <ul>
+                   <li> <strong>Valor mensal total: ${vCustoTotal.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}</strong></li>
+                </ul>
+
+            <h4>1.1 Principais Riscos (Instabilidade Térmica)</h4>
+            <ul>
+                <li><strong>Mortalidade:</strong> Risco significativamente maior.</li>
+                <li><strong>Dano Neurológico:</strong> Complicações de longo prazo.</li>
+                <li><strong>Maior Tempo em UTI:</strong> Necessidade de mais dias para estabilização metabólica.</li>
+            </ul>
+
+            <hr>
+
+            <h3>2. Uso do NeoGuard:</h3>
+            <h4>Risco Estimado de Complicações:</h4>
+
+                <ul>
+                    <li> <strong>Risco Sem NeoGuard:</strong> ${casosHipotermia.toFixed(0)}%<br></li> 
+                    <li> <strong>Risco com NeoGuard:</strong> ${reducaoHipo.toFixed(0)}% (Redução significativa do risco.)</li>
+                </ul>
+                
+                    <strong>Economia em Dias de Internação:</strong>
+                    ${diasInternacao} dias com a neoGuard<br>
+                
+                    <strong>Custo evitado ao reduzir internação:</strong>
+                    R$ ${vCustoTotalNeo.toLocaleString("pt-br",{style: "currency", currency: "BRL"})}<br>
+            
+            <hr>    
+
+            <p class="fraseEfeito">
+                "Com NeoGuard, você não apenas economiza custos, mas aumenta a chance de estabilidade e segurança do seu bebê."
+            </p>
+        `;
+                    document.getElementById('resultado').innerHTML = conteudoHTML;
+
+        }
+    </script>
+
+</html>
