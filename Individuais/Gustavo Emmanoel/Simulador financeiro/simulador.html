@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador NeoGuard</title>
+</head>
+
+<body>
+    <h1>Simulador NeoGuard</h1>
+
+    Informe o custo diário da internação em UTI neonatal (R$): <input id="ipt_diaria">
+    <br><br>
+
+    Informe a idade gestacional médio dos bebês (semanas): <input id="ipt_idadeGestao">
+    <br><br>
+
+    Informe a quantidade de bebês: <input id="ipt_qtBebes">
+    <br><br>
+
+    <button onclick="calcular()">Calcular Economia</button>
+    <br><br>
+
+    <div id="msg"></div>
+
+</body>
+<script>
+    function calcular() {
+        let custoDiario = Number(ipt_diaria.value);
+        let idadeGestao = Number(ipt_idadeGestao.value);
+        let qtBebes = Number(ipt_qtBebes.value);
+
+        let custoAtual;
+        let valorBruto;
+        let valorSolucao;
+        let valorLiquido;
+        let economia;
+
+          let tempoInternado;
+        let reducaoTempo;
+
+        // De acordo com a idade de gestação, é possivel colocar a média tempo de internação aproxmadamente.
+        if (idadeGestao < 28) {
+            tempoInternado = 50;
+        } else if (idadeGestao >= 28 && idadeGestao <= 33) {
+            tempoInternado = 20;
+        } else if (idadeGestao >= 34 && idadeGestao <= 36) {
+            tempoInternado = 10;
+        }
+    
+       // Custo atual é o preço da diária vezes o tempo de internação
+    custoAtual = qtBebes * custoDiario * tempoInternado;
+
+        // Com base em alguns estudos a média de redução é de 10% a 20% de redução no tempo de internação.
+    reducaoTempo = tempoInternado * 0.1;
+
+    if(qtBebes <= 10){
+        valorSolucao = 5000;
+    }else{
+        valorSolucao = 5000 + ((qtBebes - 10) * 300);
+    }
+
+    // 
+    valorBruto = (qtBebes * custoDiario * (tempoInternado - reducaoTempo)) + valorSolucao;
+
+    valorLiquido = valorBruto - valorSolucao;
+
+    economia = custoAtual - valorBruto;
+
+    msg.innerHTML = `Custo atual de internação: ${custoAtual.toLocaleString('pt-br',{style:"currency", currency: 'BRL'})}<br>
+                     Tempo de internação (sem NeoGuard): ${tempoInternado} dias.<br>
+                     <br>
+                     Custo de internação com a NeoGuard: ${valorLiquido.toLocaleString('pt-br',{style:"currency", currency: 'BRL'})}<br>
+                     Tempo de internação (com NeoGuard): ${tempoInternado - reducaoTempo} dias<br>
+                     Economia: ${economia.toLocaleString('pt-br',{style:"currency", currency: 'BRL'})}
+                     <br><br>
+                     Valor dos serviços NeoGuard: R$ ${valorSolucao}<br>
+                     Gasto total mensal: ${valorBruto.toLocaleString('pt-br',{style:"currency", currency: 'BRL'})}`
+    }
+</script>
+
+</html>
