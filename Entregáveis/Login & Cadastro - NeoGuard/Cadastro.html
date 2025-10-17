@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    
+    <title>Cadastre-se | NeoGuard</title>
+    <link rel="shortcut icon" href="imagens/favicon (1).ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <!-- LADO ESQUERDO -->
+        <div class="lado-esquerdo">
+            <div class="decoracao">
+                <div class="bola cor1"></div>
+                <div class="bola cor2"></div>
+                <div class="bola cor3"></div>
+                <div class="bola cor3-a"></div>
+                <div class="bola cor4"></div>
+            </div>
+
+            <div class="conteudo-esquerdo">
+                <div class="ilustracao">
+                    <img src="imagens/Cadastro.png" alt="Ilustração de cadastro hospital">
+                </div>
+            </div>
+        </div>
+
+        <!-- LADO DIREITO -->
+        <div class="lado-direito">
+            <div class="logo-cadastro">
+                <h1>Neo<span>Guard</span></h1>
+            </div>
+
+            <h2>Cadastre-se</h2>
+            <p class="mensagem-cadastro">Preencha os dados abaixo para se cadastrar.</p>
+
+            <form id="formCadastroHospital">
+                <div class="input-group">
+                    <label for="nome">Nome do Hospital</label>
+                    <input type="text" id="nome" placeholder="Digite o nome do hospital" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" id="cnpj" placeholder="00.000.000/0001-00" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <button type="submit" class="btn-cadastro">Cadastrar</button>
+
+                <p class="cadastro">Já tem login? <a href="login.html">Entre aqui</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
