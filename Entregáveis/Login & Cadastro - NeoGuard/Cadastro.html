@@ -56,20 +56,25 @@
 
                 <div class="input-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                    <input type="email" id="iptEmail" placeholder="Digite seu e-mail" required>
                 </div>
 
                 <div class="input-group">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                    <input type="password" id="iptSenha" oninput="Verificar()" placeholder="Digite sua senha" required>
+
+                    <div id="senhaForte">Chama ou nao</div>
                 </div>
 
-                <button type="submit" class="btn-cadastro">Cadastrar</button>
+                <button type="button" onclick="Verificar()" class="btn-cadastro">Cadastrar</button>
+                
 
                 <p class="cadastro">Já tem login? <a href="login.html">Entre aqui</a></p>
             </form>
         </div>
     </div>
 </body>
+<script src="js/script.js"></script>
+
 
 </html>
