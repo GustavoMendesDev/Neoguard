@@ -2,7 +2,6 @@
 
 
 function Verificar() {
-    console.log('chama caralho')
         var i = 0;
         var senha = iptSenha.value;
 
@@ -29,7 +28,10 @@ function Verificar() {
         console.log(email, senha)
 
 
+    if(senha.length < 8){
+    senhaForte.innerHTML = '<p style="color:#fc0500; font-weight: bold;">Senha deve conter ao menos 8 caracteres</p>'
 
+    }else{
         while (i < senha.length) {
             caracter = senha[i];
 
@@ -53,18 +55,19 @@ function Verificar() {
         var criterios = criterio1 + criterio2 + criterio3 + criterio4
 
             if (criterios == 4) {
-                 senhaForte.innerHTML = '<p style="color:#006400 font-weight:bold;">CHAMAA pra caralho</p>'
-                document.getElementById("senhaForte").style.color = "#006400"
+                 senhaForte.innerHTML = '<p style="color:#006400; font-weight: bold; ">Senha muito Forte</p>'
             } else if (criterios == 3) {
 
-                senhaForte.innerHTML = '<p style="color:#70F000">CHAMAA</p>'
+                senhaForte.innerHTML = '<p style="color:#70F000; font-weight: bold;">Senha forte</p>'
             } else if(criterios == 2){
-                senhaForte.innerHTML = '<p style="color:#cFF000">nao chama tanyo</p>'
+                senhaForte.innerHTML = '<p style="color:#cFF000; font-weight: bold;">Senha fraca</p>'
 
             }else{
-                document.getElementById("senhaForte").style.color = "#fc0500"
+                senhaForte.innerHTML = '<p style="color:#fc0500; font-weight: bold;">Senha fraca</p>'
+
 
             }
+        }
 
 
     }

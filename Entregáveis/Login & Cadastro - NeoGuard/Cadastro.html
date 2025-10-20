@@ -62,8 +62,10 @@
                 <div class="input-group">
                     <label for="senha">Senha</label>
                     <input type="password" id="iptSenha" oninput="Verificar()" placeholder="Digite sua senha" required>
-
-                    <div id="senhaForte">Chama ou nao</div>
+                <div id="senhaForte"></div>
+                    <p class="avisoSenha">As senhas devem ter pelo menos oito 
+                        caracteres e conter uma letra maiúscula, uma letra 
+                        minúscula e um número e um caracter especial </p>
                 </div>
 
                 <button type="button" onclick="Verificar()" class="btn-cadastro">Cadastrar</button>
