@@ -3,37 +3,41 @@ USE NeoGuard;
 DROP DATABASE NeoGuard;
 
 CREATE TABLE Usuario (
-IdRegistro INT PRIMARY KEY AUTO_INCREMENT,
+IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR (99) NOT NULL,
 Email VARCHAR (80) NOT NULL,
 Senha VARCHAR (50) NOT NULL,
-Cnpj VARCHAR (14) NOT NULL
+FkTipo INT,
+FkHospital INT
 );
 
 CREATE TABLE Tipo (
-IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
-TipoUsuario VARCHAR (40),
-DescUsuario VARCHAR (255),
-FkUsuario INT 
+IdTipoUsuario INT PRIMARY KEY AUTO_INCREMENT,
+TipoUsuario VARCHAR (40) NOT NULL,
+Nivel CHAR (1) NOT NULL 
 );
 
 CREATE TABLE Hospital (
 IdHospital INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR (99) NOT NULL,
-Cnpj VARCHAR (14) NOT NULL
+Cnpj CHAR (18) NOT NULL
 );
 
-ALTER TABLE Registro ADD
-CONSTRAINT FkUsuarioReserva
-FOREIGN KEY (FkUsuario)
-REFERENCES Usuario(IdUsuario);
+ALTER TABLE Usuario ADD
+CONSTRAINT FkTipoReserva1
+FOREIGN KEY (FkTipo)
+REFERENCES Tipo(IdTipoUsuario);
+
+ALTER TABLE Usuario ADD
+CONSTRAINT FkHospitalReserva2
+FOREIGN KEY (FkHospital)
+REFERENCES Hospital(IdHospital);
+
 
 CREATE TABLE Bebês (
 IdBebês INT PRIMARY KEY AUTO_INCREMENT,
-Nome VARCHAR(100) NOT NULL,
-DataNascimento DATE NOT NULL,
-Sexo CHAR(1) NOT NULL,
 PesoNascimento DECIMAL(4,1) NOT NULL,
+PeriodoGestacao CHAR(2),
 FkInternação INT,
 FkIncubadora INT UNIQUE
 );
@@ -54,7 +58,6 @@ REFERENCES Internação(IdInternação);
 
 CREATE TABLE Incubadora (
 IdIncubadora INT PRIMARY KEY AUTO_INCREMENT,
-TipoIncubadora VARCHAR (30),
 NumeroIncubadora INT NOT NULL,
 FkSalaNeoNatal INT
 );
@@ -89,16 +92,21 @@ REFERENCES Sensores(IdSensores);
 
 CREATE TABLE SalaNeoNatal (
 IdSalaNeoNatal INT PRIMARY KEY AUTO_INCREMENT,
-NumeroSala CHAR(1),
-QuantIncubadora CHAR (2),
-FkIncubadora INT
+NumeroSala CHAR(1) NOT NULL,
+QuantIncubadora CHAR(2)NOT NULL,
+FkIncubadora INT,
+FkHospital INT
 ); 
+
+ALTER TABLE SalaNeoNatal ADD 
+CONSTRAINT FkHospital
+FOREIGN KEY (FkHospital)
+REFERENCES Hospital(IdHospital);
 
 ALTER TABLE Incubadora ADD
 CONSTRAINT FkSalaNeoNatalReserva
 FOREIGN KEY (FkSalaNeoNatal)
 REFERENCES SalaNeoNatal(IdSalaNeoNatal);
-
 
 select * from Historicos;
 
