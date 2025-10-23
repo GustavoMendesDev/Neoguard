@@ -2,7 +2,7 @@ CREATE DATABASE NeoGuard;
 USE NeoGuard;
 DROP DATABASE NeoGuard;
 
-CREATE TABLE Registro (
+CREATE TABLE Usuario (
 IdRegistro INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR (99) NOT NULL,
 Email VARCHAR (80) NOT NULL,
@@ -10,17 +10,23 @@ Senha VARCHAR (50) NOT NULL,
 Cnpj VARCHAR (14) NOT NULL
 );
 
-CREATE TABLE Usuario (
+CREATE TABLE Tipo (
 IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
 TipoUsuario VARCHAR (40),
 DescUsuario VARCHAR (255),
-FkRegistro INT
+FkUsuario INT 
 );
 
-ALTER TABLE Usuario ADD
-CONSTRAINT FkRegistroReserva
-FOREIGN KEY (FkRegistro)
-REFERENCES Registro(IdRegistro);
+CREATE TABLE Hospital (
+IdHospital INT PRIMARY KEY AUTO_INCREMENT,
+Nome VARCHAR (99) NOT NULL,
+Cnpj VARCHAR (14) NOT NULL
+);
+
+ALTER TABLE Registro ADD
+CONSTRAINT FkUsuarioReserva
+FOREIGN KEY (FkUsuario)
+REFERENCES Usuario(IdUsuario);
 
 CREATE TABLE Bebês (
 IdBebês INT PRIMARY KEY AUTO_INCREMENT,
@@ -50,18 +56,18 @@ CREATE TABLE Incubadora (
 IdIncubadora INT PRIMARY KEY AUTO_INCREMENT,
 TipoIncubadora VARCHAR (30),
 NumeroIncubadora INT NOT NULL,
-FkSensores INT UNIQUE,
 FkSalaNeoNatal INT
 );
 
 CREATE TABLE Sensores (
-IdSensores INT PRIMARY KEY AUTO_INCREMENT
+IdSensores INT PRIMARY KEY AUTO_INCREMENT,
+FkIncubadora INT UNIQUE
 );
 
-ALTER TABLE Incubadora ADD
-CONSTRAINT FkSensoresReserva
-FOREIGN KEY (FkSensores)
-REFERENCES Sensores(IdSensores);
+ALTER TABLE Sensores ADD
+CONSTRAINT FkIncubadoraReserva
+FOREIGN KEY (FkIncubadora)
+REFERENCES Incubadora(IdIncubadora);
 
 ALTER TABLE Bebês ADD
 CONSTRAINT FkIncubadora
@@ -94,5 +100,7 @@ FOREIGN KEY (FkSalaNeoNatal)
 REFERENCES SalaNeoNatal(IdSalaNeoNatal);
 
 
+select * from Historicos;
 
+truncate Historicos;
 
