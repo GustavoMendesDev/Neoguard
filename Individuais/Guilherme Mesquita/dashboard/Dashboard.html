@@ -70,8 +70,12 @@
         <section >
 
           <div class="MonitoramentoAlerta">
-            <div class="filtro"></div>
-              <canvas id="chartLinha" width="340px" height="150px"></canvas>
+          <select name="Periodo" class="filtro">Sala Maternidade
+            <option value="1">24h</option>
+            <option value="2">Semanal</option>
+            <option value="3">Mensal</option>
+          </select>
+            <canvas id="chartLinha" style="height:90vh; width:35vw"></canvas>
               
           </div>
           <div class="encubadoras">
@@ -90,7 +94,7 @@
 
         </section>
                <div class="MonitoramentoEncubadora MonitoramentoAlerta">
-              <canvas id="chartLinhaEncubadora" width="340px" height="150px"></canvas>
+              <canvas id="chartLinhaEncubadora" style="height:40vh; width:60vw" ></canvas>
               
           </div>
         </div>
@@ -103,18 +107,16 @@
 <script>
   const ctx = document.getElementById('myChart');
   const ctx2 = document.getElementById('chartLinha')
-    const ctx3 = document.getElementById('chartLinhaEncubadora')
+  const ctx3 = document.getElementById('chartLinhaEncubadora')
 
   var labels = [];
   var hrs = ``
   var encubadoras = ''
   var labelsEncubadoras = []
   var j =0 ;
+  const sizeText = 15
 
-  const DISPLAY = true;
-const BORDER = true;
-const CHART_AREA = true;
-const TICKS = true;
+
 
 
   new Chart(ctx, {
@@ -137,13 +139,12 @@ const TICKS = true;
     }
   });
 
- for(var i = 0 ; i <= 33; i++){
-
+ for(var i = 0 ; i <= 32; i++){
+j++;
   if(i <= 23){
   hrs = `${labels}`
   hrs= (hrs).replaceAll(',', '');
   labels.push([`${i}h`]);
-  console.log(labels)
  }
 
    encubadoras = `${labelsEncubadoras}`
@@ -171,7 +172,7 @@ const TICKS = true;
       plugins: {
           title:{
             display: true,
-            text: 'Monitoramento dos alertas',
+            text: 'Monitoramentos dos alertas',
             position:'top',
             font:{
               weight:'bold',
@@ -183,14 +184,18 @@ const TICKS = true;
       },
       scales: {
         x: {
-        border: {
-          display: BORDER
-        },
-        grid: {
-          display: DISPLAY,
-          drawOnChartArea: CHART_AREA,
-          drawTicks: TICKS,
-        }
+        title:{
+          display:true,
+          text:'Período',
+          font:{
+            size:sizeText,
+            weight:'bold',
+          },
+        } , 
+          grid:{
+          display:true,
+          lineWidth:0,
+        },        
       },
         y: {
         suggestedMin: 0,
@@ -220,15 +225,20 @@ const TICKS = true;
 
 
   new Chart(ctx3, {
-    type: 'line',
+    type: 'bar',
     data: {
-      labels: labels,
+      labels: labelsEncubadoras,
       datasets: [{
         label: 'Monitoramento diario',
-        data: [1,1,1,1,1,1,2,2,2,3,2,2,3,2,3,3,2,2,2,0,1,1,1,1],
+        data: [36.2, 36.5, 36.1, 36.3, 36.7, 36.2,
+               36.8, 37.1, 36.4, 37.3, 36.9, 37.0,
+               36.6, 37.2, 36.8, 37.4, 36.5, 36.9,
+               37.1, 36.0, 36.3, 36.4, 36.2, 36.6,
+               37.5, 36.7, 36.8, 37.0, 36.1, 36.9,
+               37.4, 36.5, 37.2],
         borderWidth: 2,
-        borderColor:'#F67E27',
-        backgroundColor:'#F67E27',
+        borderColor:'#C5B3FF',
+        backgroundColor:'#C5B3FF',
         weight:'bold'
       }],
          
@@ -238,7 +248,7 @@ const TICKS = true;
       plugins: {
           title:{
             display: true,
-            text: 'Monitoramento dos alertas',
+            text: 'Monitoramento das incubadoras',
             position:'top',
             font:{
               weight:'bold',
@@ -250,31 +260,35 @@ const TICKS = true;
       },
       scales: {
         x: {
-        border: {
-          display: BORDER
+          title:{
+            display:true,
+            text:'Incubadoras',
+            font:{
+              size:sizeText,
+              weight:'bold'
+            },
+          },
+  
+        grid:{
+          display:true,
+          lineWidth:0,
         },
-        grid: {
-          display: DISPLAY,
-          drawOnChartArea: CHART_AREA,
-          drawTicks: TICKS,
-        }
       },
         y: {
-        suggestedMin: 0,
-        suggestedMax: 10,
-        border:{
-          display:false,
-          dash:[0,0],
-          dashOffset:1
-        },
+        min: 35,
+        max: 40,
+        
+        
         title:{
           display:true,
-          text:'Quantidade de alertas'
+          text:'Temperatura (Cº)',
+          font:{
+              weight:'bold',
+              size:sizeText
+          },
         },
         
-        grid:{
-          Dash:[0,0]
-        },
+  
         },
         
       
