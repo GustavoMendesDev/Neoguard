@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dash.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/aa58283320.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <title>Document</title>
@@ -64,10 +63,12 @@
             <option value="1">Sala Maternidade 1</option>
             <option value="2">Sala Maternidade 2</option>
             <option value="3">Sala Maternidade 3</option>
+
+       
           </select>
         </div>
 
-        <section >
+        <section>
 
           <div class="MonitoramentoAlerta">
           <select name="Periodo" class="filtro">Sala Maternidade
@@ -83,20 +84,48 @@
               <canvas id="myChart"></canvas>
             </div>
             <div class="contadores">
-              <div class="incDisponivel"></div>
-              <div class="incEmUso"></div>
+              <div class="posTermo incDisponivel ">
+                <p class="titulo">Pós-termo</p>
+                <p class="contador">2</p>
+              </div>
+              <div class="moderado incDisponivel">
+                   <p class="titulo">Moderado</p>
+                <p class="contador">20</p>
+              </div>
             </div>
             <div class="contadores">
-              <div class="incDisponivel"></div>
-              <div class="incEmUso"></div>
+              <div class="tardio incDisponivel">
+                <p class="titulo">Tardio</p>
+                <p class="contador">20</p>
+              </div>
+              <div class="extremo incDisponivel">
+                <p class="titulo">Extremo</p>
+                <p class="contador">10</p>
+              </div>
             </div>
           </div>
 
         </section>
+        <section>
                <div class="MonitoramentoEncubadora MonitoramentoAlerta">
               <canvas id="chartLinhaEncubadora" style="height:40vh; width:60vw" ></canvas>
               
           </div>
+          <div class="alertasCriticos">
+              <div class="titleCritico">
+                 <p>Alertas de <br> temperatura crítica</p>
+              </div>
+                <div class="contentContador hipotermia">
+                  <p class="titulo">Hipotermia</p>
+                  <p class="contador">2</p>
+                </div>
+                <div class="hipertemia contentContador  ">
+                  <p class="titulo">Febre</p>
+                  <p class="contador">0</p>
+                </div>
+
+            </div>
+
         </div>
         </section>
       </div>
@@ -135,10 +164,21 @@
       }]
     },
    options: {
-      responsive: true 
+      responsive: true,
+          plugins: {
+      legend: { /*Aqui onde fica o posicionamento do label */ 
+        display: true,
+        position: 'left',
+          labels:{ /*styles do label */ 
+            padding:20
+          },
+      }
+    }
     }
   });
 
+
+  /*Numerando labels dos 2 graficos i = ctx2 | j = ctx3 */
  for(var i = 0 ; i <= 32; i++){
 j++;
   if(i <= 23){
@@ -170,7 +210,7 @@ j++;
   
     options: {
       plugins: {
-          title:{
+          title:{ /*Titulo Principal */ 
             display: true,
             text: 'Monitoramentos dos alertas',
             position:'top',
@@ -184,7 +224,7 @@ j++;
       },
       scales: {
         x: {
-        title:{
+        title:{ /* Titulo horizontal */ 
           display:true,
           text:'Período',
           font:{
@@ -192,27 +232,21 @@ j++;
             weight:'bold',
           },
         } , 
-          grid:{
+          grid:{ /* Grade de fundo, aqui to falando para que não tenha linha horizontal */ 
           display:true,
           lineWidth:0,
         },        
       },
         y: {
-        suggestedMin: 0,
-        suggestedMax: 10,
-        border:{
-          display:false,
-          dash:[0,0],
-          dashOffset:1
-        },
-        title:{
+        min: 0,/*Definindo valor minimo e maximo para eixo vertical () */ 
+         max: 10,
+      
+        title:{/*Texto Vertical*/ 
           display:true,
           text:'Quantidade de alertas'
         },
         
-        grid:{
-          Dash:[0,0]
-        },
+      
         },
         
       

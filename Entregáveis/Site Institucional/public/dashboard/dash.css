@@ -21,10 +21,10 @@ section {
     border: none;
     text-decoration: none;
     /*  Por exemplo linhas embaixo do link */
-    text-transform: capitalize;
     transition: 0.2s linear;
     /* todas as transições do nosso projeto terá 0.2 segundos */
-    font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+
 }
 
 body {
@@ -224,11 +224,14 @@ margin-left: 3vw;
     flex-direction: column;
 }
 .incDisponivel{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 6%;
     height: 45%;
     width: 100%;
     border-radius: 1rem;
-    background-color: var(--roxo);
 }
 .incEmUso{
     border-radius: 1rem;
@@ -249,6 +252,18 @@ margin-left: 3vw;
     flex-direction: column;
     align-items: space-between;
 }
+.tardio{
+    background-color: #A5D8FF;
+}
+.moderado{
+    background-color: #1C3AB4;
+}
+.extremo{
+    background-color: var(--laranja);
+}
+.posTermo{
+    background-color: var(--roxo);
+}
 .MonitoramentoAlerta .filtro{
     width: 7%;
     height: 5%;
@@ -261,9 +276,68 @@ margin-left: 3vw;
     border-radius: 10px 10px 0px 0px;
     margin-top: 5px;
     border: var(--border);
+        color:var(--roxo);
+    border:0.2rem solid var(--roxo);
+    font-weight: bold;
 }
 .MonitoramentoEncubadora{
     display: flex;
     width: 65vw;
     height: 40vh;
+}
+.alertasCriticos{
+    display: flex;
+    width: 15vw;
+    height: 40vh;
+    border: var(--border);
+    margin-left: 3vw;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.212);
+    border-radius: 2rem;
+    align-items: center;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+.alertasCriticos .titleCritico{
+    width: 100%;
+    height: 20%;
+    display: flex;
+      justify-content: center;
+    align-items: center;
+    
+}
+.titleCritico p {
+    font-size:2.2rem;
+    font-weight: 300;
+    white-space: nowrap;
+    text-align: center;
+    
+}
+.hipertemia{
+
+    background-color: var(--laranja);
+}
+.hipotermia{
+    background-color: var(--roxo);
+}
+.contentContador{
+    border-radius: 1rem;
+    margin-bottom: 6%;
+    height: 30%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titulo{
+    color: #fff;
+    font-size: x-large;
+    
+    font-weight: bold;
+}
+.contador{
+       color: #fff;
+    font-size:4.5rem;
+    font-weight: bold; 
 }
