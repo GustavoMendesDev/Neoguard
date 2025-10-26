@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dash.css">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/aa58283320.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -19,10 +20,10 @@
       <section>
 
         <a href="#" class="logo">
-          <img class="logo" src="img/logo.svg" alt="">
+          <img class="logoImg" src="img/image.png" alt="">
         </a>
         <a href="#">
-          <img class="icon" src="img/sair.png" alt="">
+          <i class="fa-solid fa-arrow-right-from-bracket icon"></i>
         </a>
 
       </section>
@@ -64,72 +65,87 @@
             <option value="2">Sala Maternidade 2</option>
             <option value="3">Sala Maternidade 3</option>
 
-       
+
           </select>
         </div>
 
         <section>
 
           <div class="MonitoramentoAlerta">
-          <select name="Periodo" class="filtro">Sala Maternidade
-            <option value="1">24h</option>
-            <option value="2">Semanal</option>
-            <option value="3">Mensal</option>
-          </select>
+            <select name="Periodo" class="filtro">Sala Maternidade
+              <option value="1">24h</option>
+              <option value="2">Semanal</option>
+              <option value="3">Mensal</option>
+            </select>
             <canvas id="chartLinha" style="height:90vh; width:35vw"></canvas>
-              
+
           </div>
           <div class="encubadoras">
-            <div class="chart">
-              <canvas id="myChart"></canvas>
+            <div class="prematuros">
+              <div class="tituloEncubadora">
+                <p>Percentual de bebês</p>
+              </div>
+              <div class="infosGestacao">
+                <div class="chart">
+                  <canvas id="myChart" style="height:25vh; width:33vw"></canvas>
+                </div>
+                <div class="contadores">
+
+              <div class="contadores1E2">
+
+                <div class="contadorGestacao posTermo">
+              <p class="titulo">Pós-termo</p>
+              <p class="contador">2</p>
+                </div>
+
+
+            <div class="contadorGestacao tardio">
+              <p class="titulo">Tardio</p>
+              <p class="contador">2</p>
             </div>
-            <div class="contadores">
-              <div class="posTermo incDisponivel ">
-                <p class="titulo">Pós-termo</p>
-                <p class="contador">2</p>
-              </div>
-              <div class="moderado incDisponivel">
-                   <p class="titulo">Moderado</p>
-                <p class="contador">20</p>
-              </div>
+                </div>
+                  <div class="contadores1E2">
+            <div class="contadorGestacao moderado">
+              <p class="titulo">Moderado</p>
+              <p class="contador">3</p>
+                </div>
+
+
+            <div class="contadorGestacao extremo">
+              <p class="titulo">Extremo</p>
+              <p class="contador">10</p>
             </div>
-            <div class="contadores">
-              <div class="tardio incDisponivel">
-                <p class="titulo">Tardio</p>
-                <p class="contador">20</p>
               </div>
-              <div class="extremo incDisponivel">
-                <p class="titulo">Extremo</p>
-                <p class="contador">10</p>
               </div>
             </div>
           </div>
+            </div>
 
         </section>
         <section>
-               <div class="MonitoramentoEncubadora MonitoramentoAlerta">
-              <canvas id="chartLinhaEncubadora" style="height:40vh; width:60vw" ></canvas>
-              
+          <div class="MonitoramentoEncubadora MonitoramentoAlerta">
+            <canvas id="chartLinhaEncubadora" style="height:40vh; width:60vw"></canvas>
+
           </div>
           <div class="alertasCriticos">
-              <div class="titleCritico">
-                 <p>Alertas de <br> temperatura crítica</p>
-              </div>
-                <div class="contentContador hipotermia">
-                  <p class="titulo">Hipotermia</p>
-                  <p class="contador">2</p>
-                </div>
-                <div class="hipertemia contentContador  ">
-                  <p class="titulo">Febre</p>
-                  <p class="contador">0</p>
-                </div>
-
+            <div class="titleCritico">
+              <p>Alertas de <br> temperatura crítica</p>
+            </div>
+            <div class="contentContador hipotermia">
+              <p class="titulo">Hipotermia</p>
+              <p class="contador">2</p>
+            </div>
+            <div class="hipertemia contentContador  ">
+              <p class="titulo">Febre</p>
+              <p class="contador">0</p>
             </div>
 
-        </div>
-        </section>
+          </div>
+
       </div>
+      </section>
     </div>
+  </div>
   </div>
 </body>
 
@@ -142,7 +158,7 @@
   var hrs = ``
   var encubadoras = ''
   var labelsEncubadoras = []
-  var j =0 ;
+  var j = 0;
   const sizeText = 15
 
 
@@ -151,7 +167,7 @@
   new Chart(ctx, {
     type: 'pie',
     data: {
-      labels: ['Pós-termo', 'Tardio', 'Moderado', 'Extremo'], 
+      labels: ['Pós-termo', 'Tardio', 'Moderado', 'Extremo'],
       datasets: [{
         label: 'Meus Dados',
         data: [30, 40, 20, 10],
@@ -163,35 +179,45 @@
         ],
       }]
     },
-   options: {
+    options: {
       responsive: true,
-          plugins: {
-      legend: { /*Aqui onde fica o posicionamento do label */ 
-        display: true,
-        position: 'left',
-          labels:{ /*styles do label */ 
-            padding:20
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { /*Aqui onde fica o posicionamento do label */
+          display: true,
+          position: 'left',
+
+          labels: { /*styles do label */
+            padding: 25,
+            boxWidth: 23,
+            font: {
+              size: 14,
+            },
           },
+          tooltip: {
+            position: 'nearest',
+          },
+        },
+
       }
-    }
     }
   });
 
 
   /*Numerando labels dos 2 graficos i = ctx2 | j = ctx3 */
- for(var i = 0 ; i <= 32; i++){
-j++;
-  if(i <= 23){
-  hrs = `${labels}`
-  hrs= (hrs).replaceAll(',', '');
-  labels.push([`${i}h`]);
- }
+  for (var i = 0; i <= 32; i++) {
+    j++;
+    if (i <= 23) {
+      hrs = `${labels}`
+      hrs = (hrs).replaceAll(',', '');
+      labels.push([`${i}h`]);
+    }
 
-   encubadoras = `${labelsEncubadoras}`
-   encubadoras = (encubadoras).replaceAll(',', '')
-   labelsEncubadoras.push([`l ${j}`])
- 
- }
+    encubadoras = `${labelsEncubadoras}`
+    encubadoras = (encubadoras).replaceAll(',', '')
+    labelsEncubadoras.push([`l ${j}`])
+
+  }
 
   new Chart(ctx2, {
     type: 'line',
@@ -199,61 +225,61 @@ j++;
       labels: labels,
       datasets: [{
         label: 'Monitoramento diario',
-        data: [1,1,1,1,1,1,2,2,2,3,2,2,3,2,3,3,2,2,2,0,1,1,1,1],
+        data: [1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 2, 2, 3, 2, 3, 3, 2, 2, 2, 0, 1, 1, 1, 1],
         borderWidth: 2,
-        borderColor:'#F67E27',
-        backgroundColor:'#F67E27',
-        weight:'bold'
+        borderColor: '#F67E27',
+        backgroundColor: '#F67E27',
+        weight: 'bold'
       }],
-         
+
     },
-  
+
     options: {
       plugins: {
-          title:{ /*Titulo Principal */ 
-            display: true,
-            text: 'Monitoramentos dos alertas',
-            position:'top',
-            font:{
-              weight:'bold',
-              size:19,
+        title: { /*Titulo Principal */
+          display: true,
+          text: 'Monitoramentos dos alertas',
+          position: 'top',
+          font: {
+            weight: 'bold',
+            size: 19,
 
-            },
           },
+        },
 
       },
       scales: {
         x: {
-        title:{ /* Titulo horizontal */ 
-          display:true,
-          text:'Período',
-          font:{
-            size:sizeText,
-            weight:'bold',
+          title: { /* Titulo horizontal */
+            display: true,
+            text: 'Período',
+            font: {
+              size: sizeText,
+              weight: 'bold',
+            },
           },
-        } , 
-          grid:{ /* Grade de fundo, aqui to falando para que não tenha linha horizontal */ 
-          display:true,
-          lineWidth:0,
-        },        
-      },
+          grid: { /* Grade de fundo, aqui to falando para que não tenha linha horizontal */
+            display: true,
+            lineWidth: 0,
+          },
+        },
         y: {
-        min: 0,/*Definindo valor minimo e maximo para eixo vertical () */ 
-         max: 10,
-      
-        title:{/*Texto Vertical*/ 
-          display:true,
-          text:'Quantidade de alertas'
+          min: 0,/*Definindo valor minimo e maximo para eixo vertical () */
+          max: 10,
+
+          title: {/*Texto Vertical*/
+            display: true,
+            text: 'Quantidade de alertas'
+          },
+
+
         },
-        
-      
-        },
-        
-      
+
+
       }
     }
-      
-    
+
+
   });
 
 
@@ -265,71 +291,71 @@ j++;
       datasets: [{
         label: 'Monitoramento diario',
         data: [36.2, 36.5, 36.1, 36.3, 36.7, 36.2,
-               36.8, 37.1, 36.4, 37.3, 36.9, 37.0,
-               36.6, 37.2, 36.8, 37.4, 36.5, 36.9,
-               37.1, 36.0, 36.3, 36.4, 36.2, 36.6,
-               37.5, 36.7, 36.8, 37.0, 36.1, 36.9,
-               37.4, 36.5, 37.2],
+          36.8, 37.1, 36.4, 37.3, 36.9, 37.0,
+          36.6, 37.2, 36.8, 37.4, 36.5, 36.9,
+          37.1, 36.0, 36.3, 36.4, 36.2, 36.6,
+          37.5, 36.7, 36.8, 37.0, 36.1, 36.9,
+          37.4, 36.5, 37.2],
         borderWidth: 2,
-        borderColor:'#C5B3FF',
-        backgroundColor:'#C5B3FF',
-        weight:'bold'
+        borderColor: '#C5B3FF',
+        backgroundColor: '#C5B3FF',
+        weight: 'bold'
       }],
-         
+
     },
-  
+
     options: {
       plugins: {
-          title:{
-            display: true,
-            text: 'Monitoramento das incubadoras',
-            position:'top',
-            font:{
-              weight:'bold',
-              size:19,
+        title: {
+          display: true,
+          text: 'Monitoramento das incubadoras',
+          position: 'top',
+          font: {
+            weight: 'bold',
+            size: 19,
 
-            },
           },
+        },
 
       },
       scales: {
         x: {
-          title:{
-            display:true,
-            text:'Incubadoras',
-            font:{
-              size:sizeText,
-              weight:'bold'
+          title: {
+            display: true,
+            text: 'Incubadoras',
+            font: {
+              size: sizeText,
+              weight: 'bold'
             },
           },
-  
-        grid:{
-          display:true,
-          lineWidth:0,
-        },
-      },
-        y: {
-        min: 35,
-        max: 40,
-        
-        
-        title:{
-          display:true,
-          text:'Temperatura (Cº)',
-          font:{
-              weight:'bold',
-              size:sizeText
+
+          grid: {
+            display: true,
+            lineWidth: 0,
           },
         },
-        
-  
+        y: {
+          min: 35,
+          max: 40,
+
+
+          title: {
+            display: true,
+            text: 'Temperatura (Cº)',
+            font: {
+              weight: 'bold',
+              size: sizeText
+            },
+          },
+
+
         },
-        
-      
+
+
       }
     }
-      
-    
+
+
   });
 
 
