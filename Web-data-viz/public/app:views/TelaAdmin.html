@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoGuard - Gerenciamento de Incubadoras</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <div class="containerPrincipal">
+
+        <header class="barraSuperior">
+            <div class="logoAplicacao">
+                <img src="/imagens/NeoGuard.png" alt="Logo NeoGuard" class="imagemLogo">
+            </div>
+
+            <div class="menuSuperiorDireita">
+                <button class="botaoPerfil">👤</button>
+            </div>
+        </header>
+
+        <div class="containerConteudo">
+
+            <aside class="barraLateral">
+                <nav class="menuNavegacao">
+                    <a href="/Dash/Dashboard.html" class="itemMenu ativo">
+                        <span class="iconeMenu">
+                            <img src="/imagens/casa.png" alt="Icone Casa" class="iconesLaterais">
+                        </span> Dashboard
+                    </a>
+
+                    <a href="" class="itemMenu ativo">
+                        <span class="iconeMenu">
+                            <img src="/imagens/casa.png" alt="Icone Casa" class="iconesLaterais">
+                        </span> Monitoramento
+                    </a>
+
+                </nav>
+            </aside>
+
+            <main class="conteudoPrincipal">
+                <header class="cabecalhoPagina">
+                    <h1>Gerenciamento de incubadoras</h1>
+                    <div class="dropdownSelecao">
+                        <select class="seletorDropdown">
+                            <option value="todosLeitos">Todos os leitos</option>
+                        </select>
+                    </div>
+                </header>
+
+                <section class="secaoAcao">
+                    <button class="botaoCadastrar" id="botaoCadastrar">
+                        Cadastrar<br>Incubadoras
+                    </button>
+                </section>
+
+                <section class="secaoTabela">
+                    <table class="tabelaIncubadoras" id="tabelaIncubadoras">
+                        <thead>
+                            <tr>
+                                <th class="cabecalhoTabela colunaId">ID</th>
+                                <th class="cabecalhoTabela colunaNumeroIncubadora">Número incubadora</th>
+                                <th class="cabecalhoTabela colunaEditar">Editar</th>
+                                <th class="cabecalhoTabela colunaExcluir">Excluir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+    <div class="modalOverlay" id="modalOverlay">
+        <div class="modalConteudo">
+            <h2 class="tituloModal" id="tituloModal">Cadastrar incubadora</h2>
+
+            <input type="hidden" id="linhaEmEdicao">
+
+            <div class="campoFormulario">
+                <label for="numeroIncubadora" class="labelCampo">Número da incubadora</label>
+                <input type="text" id="numeroIncubadora" class="inputCampo" placeholder="XXXXXXXXXXXXXX/XX">
+            </div>
+
+            <div class="acoesModal">
+                <button class="botaoCadastrarModal" id="botaoCadastrarModal">Cadastrar</button>
+            </div>
+
+            <button class="botaoFecharModal" id="botaoFecharModal">X</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
