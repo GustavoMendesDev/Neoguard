@@ -15,26 +15,19 @@
 
 <body>
   <div class="container">
-
-    <header class="header">
+    <!-- NAVBAR - DO TOPO -->
+    <header class="header"> 
       <section>
-
         <a href="#" class="logo">
           <img class="logoImg" src="img/image.png" alt="">
         </a>
         <a href="#">
           <i class="fa-solid fa-arrow-right-from-bracket icon"></i>
         </a>
-
       </section>
-
     </header>
-
-
-
-
+    <!-- NAVBAR LATERAL -->
     <header class="headerLateral">
-
       <section>
         <div class="contentSection">
           <a href="#">
@@ -42,22 +35,21 @@
           </a>
           <p>Dashboard</p>
         </div>
-
         <div class="contentSection">
           <a href="#">
             <img class="iconLife" src="img/iconLineLife.png" alt="">
             <img class="iconLine" src="img/iconLine.png" alt="">
-
-
           </a>
           <p>Monitoramento</p>
         </div>
       </section>
-
     </header>
 
+    <!-- Painel - Espaço onde vai ficar todas infrmações da Dashboard-->
     <div class="painel">
+      <!-- Conteudo da Dashboard -->
       <div class="content">
+
         <div class="title">
           <p>Monitoramento - Salas Maternidade</p>
           <select name="Salas" class="optSalaMaternidade">Sala Maternidade
@@ -69,64 +61,13 @@
           </select>
         </div>
 
-        <section>
-
-          <div class="MonitoramentoAlerta">
-            <select name="Periodo" class="filtro">Sala Maternidade
-              <option value="1">24h</option>
-              <option value="2">Semanal</option>
-              <option value="3">Mensal</option>
-            </select>
-            <canvas id="chartLinha" style="height:90vh; width:35vw"></canvas>
-
-          </div>
-          <div class="encubadoras">
-            <div class="prematuros">
-              <div class="tituloEncubadora">
-                <p>Percentual de bebês</p>
-              </div>
-              <div class="infosGestacao">
-                <div class="chart">
-                  <canvas id="myChart" style="height:30vh; width:25vw"></canvas>
-                </div>
-                <div class="contadores">
-
-              <div class="contadores1E2">
-
-                <div class="contadorGestacao posTermo">
-              <p class="titulo">Pós-termo</p>
-              <p class="contador">2</p>
-                </div>
-
-
-            <div class="contadorGestacao tardio">
-              <p class="titulo">Tardio</p>
-              <p class="contador">2</p>
-            </div>
-                </div>
-                  <div class="contadores1E2">
-            <div class="contadorGestacao moderado">
-              <p class="titulo">Moderado</p>
-              <p class="contador">3</p>
-                </div>
-
-
-            <div class="contadorGestacao extremo">
-              <p class="titulo">Extremo</p>
-              <p class="contador">10</p>
-            </div>
-              </div>
-              </div>
-            </div>
-          </div>
-            </div>
-
-        </section>
-        <section>
+        <!-- Dividi em duas sessões sendo cima e baixo para fazer as outras divs -->
+        <section class="sectionCima">
+          <!-- Grafico de temperatura das encubadoras -->
           <div class="MonitoramentoEncubadora MonitoramentoAlerta">
             <canvas id="chartLinhaEncubadora" style="height:40vh; width:60vw"></canvas>
-
           </div>
+          <!-- Contadores de alertas de hipotermia e hipertemia -->
           <div class="alertasCriticos">
             <div class="titleCritico">
               <p>Alertas de <br> temperatura crítica</p>
@@ -139,12 +80,69 @@
               <p class="titulo">Febre</p>
               <p class="contador">0</p>
             </div>
+        </section>
+<!-- Segunda sessão  -->
+        <section class="sectionBaixo">
+          <div class="encubadoras">
+            <div class="prematuros">
+              <div class="tituloEncubadora">
+                <p>Percentual de bebês</p>
+              </div>
+              <div class="infosGestacao">
+                <div class="chart">
+                  <canvas id="myChart" style="height:30vh; width:25vw"></canvas>
+                </div>
+                <div class="contadores">
+
+                  <div class="contadores1E2">
+
+                    <div class="contadorGestacao posTermo">
+                      <p class="titulo">Pós-termo</p>
+                      <p class="contador">2</p>
+                    </div>
+
+
+                    <div class="contadorGestacao tardio">
+                      <p class="titulo">Tardio</p>
+                      <p class="contador">2</p>
+                    </div>
+                  </div>
+                  <div class="contadores1E2">
+                    <div class="contadorGestacao moderado">
+                      <p class="titulo">Moderado</p>
+                      <p class="contador">3</p>
+                    </div>
+
+
+                    <div class="contadorGestacao extremo">
+                      <p class="titulo">Extremo</p>
+                      <p class="contador">10</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
           </div>
 
+
+          <div class="MonitoramentoAlerta">
+            <select name="Periodo" class="filtro">Sala Maternidade
+              <option value="1">24h</option>
+              <option value="2">Semanal</option>
+              <option value="3">Mensal</option>
+            </select>
+            <canvas id="chartLinha" style="height:90vh; width:35vw"></canvas>
+
+          </div>
+
+
       </div>
-      </section>
     </div>
+
+    </section>
+  </div>
   </div>
   </div>
 </body>
@@ -161,6 +159,64 @@
   var j = 0;
   const sizeText = 15
 
+  /*Numerando labels dos 2 graficos i = ctx2 | j = ctx3 */
+  for (var i = 0; i <= 32; i++) {
+    j++;
+    if (i <= 23) {
+      hrs = `${labels}`
+      hrs = (hrs).replaceAll(',', '');
+      labels.push([`${i}h`]);
+
+
+      encubadoras = `${labelsEncubadoras}`
+      encubadoras = (encubadoras).replaceAll(',', '')
+      labelsEncubadoras.push([`l ${j}`])
+
+    }
+  }
+
+
+  // INFORMAÇÕES DO GRAFICO DE LINHA DOS ALERTAS SOBRE OS BEBES
+  const dataLinha = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Moderado',
+        data: [1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,1,1,1,0],
+        weight: 'bold',
+        borderWidth: 2,
+        borderColor: '#1c3ab4',
+        backgroundColor: '#1C3AB4',
+      },
+      {
+        label: 'Pós-termo',
+        data: [1,1,1,2,2,2,3,3,3,4,3,3,3,2,2,2,2,1,1,1,1,1,1,1,1],
+        backgroundColor: '#C5B3FF',
+        weight: 'bold',
+        borderWidth: 2,
+        borderColor: '#C5B3FF',
+
+      },
+            {
+        label: 'Tardio',
+        data: [4,5,6,4,4,4,5,6,7,7,7,7,6,6,6,6,5,5,5,5,5,4,4,4,4,3,3,3,3],
+        backgroundColor: '#A5D8FF',
+        weight: 'bold',
+        borderWidth: 2,
+        borderColor: '#A5D8FF',
+
+      },
+           {
+        label: 'Extremo',
+        data: [7, 8, 9, 8, 8, 9, 9, 9, 9, 7, 8, 8, 9,7, 6, 7,7, 8, 9, 8, 7, 8, 8],
+        backgroundColor: '#F67E27',
+        weight: 'bold',
+        borderWidth: 2,
+        borderColor: '#F67E27',
+
+      }
+    ]
+  }
 
 
 
@@ -203,35 +259,13 @@
   });
 
 
-  /*Numerando labels dos 2 graficos i = ctx2 | j = ctx3 */
-  for (var i = 0; i <= 32; i++) {
-    j++;
-    if (i <= 23) {
-      hrs = `${labels}`
-      hrs = (hrs).replaceAll(',', '');
-      labels.push([`${i}h`]);
-    }
 
-    encubadoras = `${labelsEncubadoras}`
-    encubadoras = (encubadoras).replaceAll(',', '')
-    labelsEncubadoras.push([`l ${j}`])
 
-  }
 
+  // Grafico de Monitoramento de alertas classificados em (Moderado, Pós-termo, Tardio, Extremo)
   new Chart(ctx2, {
     type: 'line',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Monitoramento diario',
-        data: [1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 2, 2, 3, 2, 3, 3, 2, 2, 2, 0, 1, 1, 1, 1],
-        borderWidth: 2,
-        borderColor: '#F67E27',
-        backgroundColor: '#F67E27',
-        weight: 'bold'
-      }],
-
-    },
+    data: dataLinha,
 
     options: {
       plugins: {
@@ -239,6 +273,7 @@
           display: true,
           text: 'Monitoramentos dos alertas',
           position: 'top',
+          align:'start',
           font: {
             weight: 'bold',
             size: 19,
@@ -309,6 +344,7 @@
           display: true,
           text: 'Monitoramento das incubadoras',
           position: 'top',
+          align:'start',
           font: {
             weight: 'bold',
             size: 19,
