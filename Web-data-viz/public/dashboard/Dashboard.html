@@ -19,7 +19,7 @@
     <header class="header"> 
       <section>
         <a href="#" class="logo">
-          <img class="logoImg" src="img/image.png" alt="">
+          <img class="logoImg" src="/Web-data-viz/public/img/logoWhite.png" alt="">
         </a>
         <a href="#">
           <i class="fa-solid fa-arrow-right-from-bracket icon"></i>
@@ -37,8 +37,7 @@
         </div>
         <div class="contentSection">
           <a href="#">
-            <img class="iconLife" src="img/iconLineLife.png" alt="">
-            <img class="iconLine" src="img/iconLine.png" alt="">
+            <img class="iconLine" src="/Web-data-viz/public/img/iconLine.png" alt="">
           </a>
           <p>Monitoramento</p>
         </div>
@@ -58,7 +57,8 @@
             <option value="3">Sala Maternidade 3</option>
 
 
-          </select>
+          </select>    
+
         </div>
 
         <!-- Dividi em duas sessões sendo cima e baixo para fazer as outras divs -->
@@ -72,11 +72,14 @@
             <div class="titleCritico">
               <p>Alertas de <br> temperatura crítica</p>
             </div>
-            <div class="contentContador hipotermia">
+            <div class="contentContador hipertemia ">
+              <div class="iconeAtencao"> 
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
               <p class="titulo">Hipotermia</p>
               <p class="contador">2</p>
             </div>
-            <div class="hipertemia contentContador  ">
+            <div class="hipotermia  contentContador  ">
               <p class="titulo">Febre</p>
               <p class="contador">0</p>
             </div>
@@ -85,17 +88,18 @@
         <section class="sectionBaixo">
           <div class="encubadoras">
             <div class="prematuros">
+              <!-- Titulo central da div, tanto do grafico quanto contadores  -->
               <div class="tituloEncubadora">
-                <p>Percentual de bebês</p>
+                <p>Quantidade de bebes por grau de prematuridade</p>
               </div>
+              <!-- lado esquedo-->
               <div class="infosGestacao">
                 <div class="chart">
                   <canvas id="myChart" style="height:30vh; width:25vw"></canvas>
                 </div>
+                <!-- Lado direto dos contadores -->
                 <div class="contadores">
-
                   <div class="contadores1E2">
-
                     <div class="contadorGestacao posTermo">
                       <p class="titulo">Pós-termo</p>
                       <p class="contador">2</p>
@@ -157,7 +161,8 @@
   var encubadoras = ''
   var labelsEncubadoras = []
   var j = 0;
-  const sizeText = 15
+  const titleText = 20
+  const descText = 16
 
   /*Numerando labels dos 2 graficos i = ctx2 | j = ctx3 */
   for (var i = 0; i <= 32; i++) {
@@ -266,6 +271,7 @@
   new Chart(ctx2, {
     type: 'line',
     data: dataLinha,
+    
 
     options: {
       plugins: {
@@ -274,9 +280,10 @@
           text: 'Monitoramentos dos alertas',
           position: 'top',
           align:'start',
+          color:'#000',
           font: {
             weight: 'bold',
-            size: 19,
+            size: titleText,
 
           },
         },
@@ -288,7 +295,7 @@
             display: true,
             text: 'Período',
             font: {
-              size: sizeText,
+              size: titleText,
               weight: 'bold',
             },
           },
@@ -303,7 +310,10 @@
 
           title: {/*Texto Vertical*/
             display: true,
-            text: 'Quantidade de alertas'
+            text: 'Quantidade de alertas',
+            font:{
+              size:descText,
+            },
           },
 
 
@@ -345,9 +355,10 @@
           text: 'Monitoramento das incubadoras',
           position: 'top',
           align:'start',
+          color:'#000',
           font: {
             weight: 'bold',
-            size: 19,
+            size: titleText,
 
           },
         },
@@ -359,7 +370,7 @@
             display: true,
             text: 'Incubadoras',
             font: {
-              size: sizeText,
+              size: titleText,
               weight: 'bold'
             },
           },
@@ -379,7 +390,7 @@
             text: 'Temperatura (Cº)',
             font: {
               weight: 'bold',
-              size: sizeText
+              size: descText
             },
           },
 
