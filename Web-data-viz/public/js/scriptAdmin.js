@@ -1,17 +1,20 @@
-var botaoCadastrar;
-var modalOverlay;
-var botaoFecharModal;
-var inputNumeroIncubadora;
-var botaoCadastrarModal;
-var corpoTabela;
-var tituloModal;
-var linhaEmEdicao;          // Campo oculto que guarda o índice da linha           
+let botaoCadastrar;
+let modalOverlay;
+let botaoFecharModal;
+let numeroPeso;
+let inputNumeroIg;
+let botaoCadastrarModal;
+let corpoTabela;
+let tituloModal;
+let linhaEmEdicao;
 
 
 function mostrarModal() {
     modalOverlay.style.display = 'flex';
-    inputNumeroIncubadora.value = '';
-    inputNumeroIncubadora.focus();
+    numeroPeso.value = '';
+    numeroPeso.focus();
+    inputNumeroIg.value = inputNumeroIg.value
+    inputNumeroIg.focus();
 }
 
 function fecharModal() {
@@ -19,21 +22,30 @@ function fecharModal() {
 }
 
 // parâmetro do tipo objeto
-function removerLinha(botaoExcluir) {
+function removerLinha(botaoLimpar) {
     if (confirm('Tem certeza que deseja excluir esta incubadora?')) {
         // Encontra o <tr> (linha) a partir do botão clicado:
         // 1º parentNode: sobe para o <td>
         // 2º parentNode: sobe para o <tr>
-        var linha = botaoExcluir.parentNode.parentNode;
-        linha.remove();
-        alert('Incubadora excluída.');
+        var linha = botaoLimpar.parentNode.parentNode;
+        
+        // Encontra todas as células <td> da linha
+        var celulas = linha.getElementsByTagName('td');
+        
+        // célula [1] peso
+        celulas[1].innerHTML = '0'; 
+        
+        // célula [2] idade gestacional
+        celulas[2].innerHTML = '0'; 
+        
+        alert('Dados da incubadora limpos com sucesso!');
     }
 }
 
 
 // parâmetro do tipo string
-function salvarIncubadora(nomeIncubadora) {
-    if (nomeIncubadora.trim() === '') {
+function salvarIncubadora(numeroPeso, inputNumeroIg) {
+    if (numeroPeso.trim() === '') {
         alert('Por favor, insira o número da incubadora.');
         return;
     }
@@ -47,58 +59,88 @@ function salvarIncubadora(nomeIncubadora) {
 
         var linhaASerEditada = linhas[indiceLinha - 1];
 
-        linhaASerEditada.getElementsByTagName('td')[1].innerHTML = nomeIncubadora;
+        linhaASerEditada.getElementsByTagName('td')[1].innerHTML = numeroPeso;
+        linhaASerEditada.getElementsByTagName('td')[2].innerHTML = inputNumeroIg;
 
         alert('Incubadora editada com sucesso!');
 
     } else {
-        var novoId = corpoTabela.getElementsByTagName('tr').length + 1; // adição no ID (como um AUTO_INCREMENT)
-        var novaLinha = document.createElement('tr'); // adição de uma nova linha (tr)
+        alert("Erro: A edição falhou. Nenhuma linha alterada!")
+    }
+}
+
+function gerarIncubadorasIniciais() {
+    var total = 10;
+    var pesoPadrao = 1000;
+    var igPadrao = 38;
+    
+    for (let i = 1; i <= total; i++) {
+
+        if (i % 2 == 0) { // só para ficar diversificado (os dados) na nossa tabela de incubadoras
+            pesoPadrao = 1500;
+            igPadrao = 35;
+        } else if (i % 3 == 0){
+            pesoPadrao = 1700;
+            igPadrao = 38;
+        } else {
+            pesoPadrao = 2000;
+            igPadrao = 40;
+        }
+
+
+        var novaLinha = document.createElement('tr');
         novaLinha.innerHTML = `
-        <td>${novoId}</td>
-        <td>${nomeIncubadora}</td>
-            <td>
-                <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
-                    <span class="iconeAcao"><img class="iconesEditarExcluir" src="/imagens/editar.png"></span>
-                </button>
-            </td>
+        <td>${i}</td>
+        <td>${pesoPadrao }</td>
+        <td>${igPadrao}</td>
         <td>
-            <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
-                <span class="iconeAcao"><img class="iconesEditarExcluir" src="/imagens/excluir.png"></span>
+            <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
+                <span class="iconeAcao">
+                    <img class="iconesEditarExcluir" src="/img/editar.png">
+                </span>
             </button>
         </td>
-    `;
-
+        <td>
+            <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
+                <span class="iconeAcao">
+                    <img class="iconesEditarExcluir" src="/img/excluir.png">
+                </span>
+            </button>
+        </td>
+        `;
         corpoTabela.appendChild(novaLinha);
     }
 }
 
 function inicializarEventos() {
     botaoCadastrar = document.getElementById('botaoCadastrar');
+    inputNumeroIg = document.getElementById('numeroIg');
     modalOverlay = document.getElementById('modalOverlay');
     botaoFecharModal = document.getElementById('botaoFecharModal');
-    inputNumeroIncubadora = document.getElementById('numeroIncubadora');
+    numeroPeso = document.getElementById('numeroPeso');
     botaoCadastrarModal = document.getElementById('botaoCadastrarModal');
-    // referência do corpo da tabela de forma simples:
+
     corpoTabela = document.getElementById('tabelaIncubadoras').getElementsByTagName('tbody')[0];
     tituloModal = document.getElementById('tituloModal');
     linhaEmEdicao = document.getElementById('linhaEmEdicao');
 
+
+    corpoTabela.innerHTML = ''; 
+    gerarIncubadorasIniciais(10)
+
     if (botaoCadastrar) {
-        botaoCadastrar.onclick = function () {
-            tituloModal.innerHTML = 'Cadastrar incubadora';
-            botaoCadastrarModal.innerHTML = 'Cadastrar';
-            linhaEmEdicao.value = '';
-            mostrarModal();
-        };
+        botaoCadastrar.style.display = 'none';
     }
 
-    // E a chamada no botão do modal deve usar salvarIncubadora
+
+
+    // chamada no botão do modal deve usar salvarIncubadora
     if (botaoCadastrarModal) {
         botaoCadastrarModal.onclick = function () {
-            var nomeDigitado = inputNumeroIncubadora.value;
+            var pesoDigitado = numeroPeso.value;
+            var idadeDigitada = inputNumeroIg.value;
 
-            salvarIncubadora(nomeDigitado);
+            salvarIncubadora(pesoDigitado, idadeDigitada);
             fecharModal();
         };
     }
@@ -106,35 +148,27 @@ function inicializarEventos() {
     if (botaoFecharModal) {
         botaoFecharModal.onclick = fecharModal;
     }
-
-    if (botaoCadastrarModal) {
-        botaoCadastrarModal.onclick = function () {
-            let nomeDigitado = inputNumeroIncubadora.value;
-
-            salvarIncubadora(nomeDigitado);
-            fecharModal();
-        };
-    }
 }
 
 function editarLinha(botao) {
-    // Sobe: Botão -> TD -> TR.
+    // Procura botão -> TD -> TR. (avô)
     var linha = botao.parentNode.parentNode;
 
-    // Encontra o valor da célula do nome (segunda célula, índice [1])
+    // encontra o valor da célula do nome (índice [1])
     var celulas = linha.getElementsByTagName('td');
-    var nomeAtual = celulas[1].innerHTML;
+    var pesoAtual = celulas[1].innerHTML; // célula do peso
+    var idadeGestacionalAtual = celulas[2].innerHTML // célula da idade gestacional
 
-    // Guarda a POSIÇÃO (índice) da linha na tabela no campo oculto
-    // 'rowIndex' é a propriedade que nos diz onde a linha está.
-    linhaEmEdicao.value = linha.rowIndex;
+    // guarda a a posição da linha na tabela no campo oculto (que iniciei no html com o tipo "hidden")
+    linhaEmEdicao.value = linha.rowIndex; // 'rowIndex' é a propriedade do html <tr> que nos diz onde a linha está.
 
-    // Prepara o Modal para Edição
+    // prepara o Modal para Edição
     tituloModal.innerHTML = 'Editar incubadora';
     botaoCadastrarModal.innerHTML = 'Salvar Edição';
 
-    // Preenche o campo de texto do modal com o valor atual
-    inputNumeroIncubadora.value = nomeAtual;
+    // preenche o campo de texto do modal com o valor atual
+    numeroPeso.value = pesoAtual;
+    inputNumeroIg.value = idadeGestacionalAtual;
 
     mostrarModal();
 }
