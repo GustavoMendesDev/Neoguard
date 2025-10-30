@@ -19,6 +19,53 @@ nav {
 main {
     width: 90%;
     height: 100%;
-    padding: 2%;
+    padding: 5%;
     box-sizing: border-box;
+}
+section{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    margin-top: 30px;
+    
+}
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.group{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    gap: 5%;
+}
+
+.card{
+    flex: 0 0 200px;
+        height:200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 5px;
+    border-radius: 30px;
+   border: 2px solid #DFE2CF;
+    background-color: #FAFAFA;
+    font-size: 20px; 
+    text-align: center; 
+}
+
+.card > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
 }
