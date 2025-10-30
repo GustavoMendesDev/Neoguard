@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Dashboard</title>
 </head>
 
@@ -28,8 +30,10 @@
 
             </div>
 
-            <!--Grafico informando a quantidade de cada alerta-->
-            <canvas>
+            <div>            <!--Grafico informando a quantidade de cada alerta-->
+            <canvas id="myChart" height="4vh" width="12vw">
+                </div>
+
 
             </canvas>
         </section>
@@ -115,5 +119,80 @@
     </main>
 
 </body>
+<script>
+
+      const ctx = document.getElementById('myChart');
+
+    const data = {
+  labels: [0, 10, 20 , 30 , 40],
+  datasets: [
+    {
+      label: 'Ideal',
+      data: [23],
+      backgroundColor: '#00FF00',
+    },
+    {
+      label: 'Atenção',
+      data: [10],
+      backgroundColor: '#FF2',
+    },
+    {
+      label: 'Crítico',
+      data: [7],
+      backgroundColor: '#ff0022'
+    },
+  ]
+};
+
+  new Chart(ctx, {
+    type: 'bar',
+    data:data,
+    options: {
+            indexAxis: 'y',
+        plugins: {
+          legend: { /*Aqui onde fica o posicionamento do label */
+          display: true,
+          position: 'top',
+
+          labels: { /*styles do label */
+            display:true,
+                usePointStyle: true,
+                pointStyle: 'rectRounded',
+            padding: 20,
+            font: {
+              size: 14,
+            },
+          },
+          tooltip: {
+            position: 'nearest',
+          },
+        },
+      title: {
+        display: true,
+        text: 'GRÁFICO ALERTA 24 HORAS',
+        align:'start',
+        font:{
+            size:30
+        },
+      },
+    },
+    responsive: true,
+      scales: {
+        y: {
+            title:{
+        display:'flex',
+        text:'Alertas',
+            },
+          stacked:true,
+        },
+        x:{
+          stacked:true,
+
+        },
+      }
+    }
+  });
+
+</script>
 
 </html>
