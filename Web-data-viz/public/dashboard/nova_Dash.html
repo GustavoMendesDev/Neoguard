@@ -2,162 +2,196 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title>Dashboard</title>
+  <title>Dashboard</title>
 </head>
 
 <body>
-    <!--Navebar-->
-    <nav>
+  <!--Navebar-->
+  <nav>
+    <div id="sidebar">
+      <div class="logo">NeoGuard</div>
+      <div class="foto-perfil">
+        <img src="/Web-data-viz/public/img/pessoa.png">
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href=""> <img src="/Web-data-viz/public/img/icon-home.svg">Dashboard</a></li>
+          <li><a href=""> <img src="/Web-data-viz/public/img/vscode-icons_file-type-config.svg">Gerenciamento
+              Incubadoras</a></li>
+          <li><a href=""> <img src="/Web-data-viz/public/img/vscode-icons_file-type-config.svg">Gerenciamento
+              Usuários</a></li>
+        </ul>
+      </div>
+      <button class="logout">Sair</button>
+    </div>
+  </nav>
 
-    </nav>
+  <!--Conteúdo principal da Dashboard-->
+  <main>
 
-    <!--Conteúdo principal da Dashboard-->
-    <main>
+    <!--Titulo principal da Dashboard-->
+    <h1>Bem Vindo, Maternidade <span>X</span>!</h1>
 
-        <!--Titulo principal da Dashboard-->
-        <h1></h1>
 
-        <!--Primeira parte-->
-        <section>
+    <!--Primeira parte-->
+    <section class="primeiraSessao">
 
-            <!--Carde (KPIs) informado a quantidade de alertas e o todo-->
+
+      <div class="container-contador">
+        <div class="contador">
+          <div class="titulo-card">Total de Incubadora</div>
+          <div class="numero-card">40</div>
+        </div>
+
+        <div class="contador">
+          <div class="titulo-card">Total de Incubadora</div>
+          <div class="numero-card">40</div>
+        </div>
+
+        <div class="contador">
+          <div class="titulo-card">Total de Incubadora</div>
+          <div class="numero-card">40</div>
+        </div>
+
+        <div class="contador">
+          <div class="titulo-card">Total de Incubadora</div>
+          <div class="numero-card">40</div>
+        </div>
+      </div>
+
+      <div class="graficoBarra">
+        <!--Grafico informando a quantidade de cada alerta-->
+        <canvas id="myChart" height="3vh" width="12vw">
+      </div>
+
+      </canvas>
+    </section>
+
+    <!--Carroceu com todos as incubadoras em alerta-->
+          <h2>Estado das incubadoras</h2>
+    <section>
+      <div class="carousel">
+        <div class="group">
+          <div class="card">
+            Incubadora #1
             <div>
-
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
             </div>
-
-            <div>            <!--Grafico informando a quantidade de cada alerta-->
-            <canvas id="myChart" height="4vh" width="12vw">
-                </div>
-
-
-            </canvas>
-        </section>
-
-        <!--Carroceu com todos as incubadoras em alerta-->
-        <section>
-            <h2>Estado das incubadoras</h2>
-            <div class="carousel">
-                <div class="group">
-                    <div class="card">
-                        Incubadora #1
-                        <div>
-                            <img src="../img/critico.svg" width="50px">
-                            <h3>37,6Cº</h3>
-                        </div>
-                        Critico<br>
-                        Há 30 minutos
-                    </div>
-                     <div class="card">
-                        Incubadora #1
-                        <div>
-                            <img src="../img/critico.svg" width="50px">
-                            <h3>37,6Cº</h3>
-                        </div>
-                        Critico<br>
-                        Há 30 minutos
-                    </div>
-                     <div class="card">
-                        Incubadora #1
-                        <div>
-                            <img src="../img/atencao.svg" width="50px">
-                            <h3>36,9Cº</h3>
-                        </div>
-                        Critico<br>
-                        Há 30 minutos
-                    </div>
-                     <div class="card">
-                        Incubadora #1
-                        <div>
-                            <img src="../img/critico.svg" width="50px">
-                            <h3>37,6Cº</h3>
-                        </div>
-                        Critico<br>
-                        Há 30 minutos
-                    </div>
-                     <div class="card">
-                        Incubadora #1
-                        <div>
-                            <img src="../img/atencao.svg" width="50px">
-                            <h3>37,1Cº</h3>
-                        </div>
-                        Critico<br>
-                        Há 30 minutos
-                    </div>
-                     <div class="card">
-                        Incubadora #1
-                        <div>
-                            <img src="../img/critico.svg" width="50px">
-                            <h3>37,6Cº</h3>
-                        </div>
-                        Critico<br>
-                        Há 30 minutos
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!--Historico de Alertas-->
-        <section>
-
-            <!--Grafico de linha informando a linha do tempo dos alertas-->
-            <canvas>
-
-            </canvas>
-
-            <!--Tabele de log-->
+            Critico<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora #1
             <div>
-
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
             </div>
+            Critico<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora #1
+            <div>
+              <img src="../img/atencao.svg" width="50px">
+              <h3>36,9Cº</h3>
+            </div>
+            Critico<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora #1
+            <div>
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
+            </div>
+            Critico<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora #1
+            <div>
+              <img src="../img/atencao.svg" width="50px">
+              <h3>37,1Cº</h3>
+            </div>
+            Critico<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora #1
+            <div>
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
+            </div>
+            Critico<br>
+            Há 30 minutos
+          </div>
 
-        </section>
-    </main>
+        </div>
+      </div>
+    </section>
+
+    <!--Historico de Alertas-->
+    <section>
+
+      <!--Grafico de linha informando a linha do tempo dos alertas-->
+      <canvas>
+
+      </canvas>
+
+      <!--Tabele de log-->
+      <div>
+
+      </div>
+
+    </section>
+  </main>
 
 </body>
 <script>
 
-      const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById('myChart');
 
-    const data = {
-  labels: [0, 10, 20 , 30 , 40],
-  datasets: [
-    {
-      label: 'Ideal',
-      data: [23],
-      backgroundColor: '#00FF00',
-    },
-    {
-      label: 'Atenção',
-      data: [10],
-      backgroundColor: '#FF2',
-    },
-    {
-      label: 'Crítico',
-      data: [7],
-      backgroundColor: '#ff0022'
-    },
-  ]
-};
+  const data = {
+    labels: [0, 10, 20, 30, 40],
+    datasets: [
+      {
+        label: 'Ideal',
+        data: [23],
+        backgroundColor: '#00FF00',
+      },
+      {
+        label: 'Atenção',
+        data: [10],
+        backgroundColor: '#FF2',
+      },
+      {
+        label: 'Crítico',
+        data: [7],
+        backgroundColor: '#ff0022'
+      },
+    ]
+  };
 
   new Chart(ctx, {
     type: 'bar',
-    data:data,
+    data: data,
     options: {
-            indexAxis: 'y',
-        plugins: {
-          legend: { /*Aqui onde fica o posicionamento do label */
+      indexAxis: 'y',
+      plugins: {
+        legend: { /*Aqui onde fica o posicionamento do label */
           display: true,
           position: 'top',
 
           labels: { /*styles do label */
-            display:true,
-                usePointStyle: true,
-                pointStyle: 'rectRounded',
+            display: true,
+            usePointStyle: true,
+            pointStyle: 'rectRounded',
             padding: 20,
             font: {
               size: 14,
@@ -167,26 +201,26 @@
             position: 'nearest',
           },
         },
-      title: {
-        display: true,
-        text: 'GRÁFICO ALERTA 24 HORAS',
-        align:'start',
-        font:{
-            size:30
+        title: {
+          display: true,
+          text: 'GRÁFICO ALERTA 24 HORAS',
+          align: 'start',
+          font: {
+            size: 30
+          },
         },
       },
-    },
-    responsive: true,
+      responsive: true,
       scales: {
         y: {
-            title:{
-        display:'flex',
-        text:'Alertas',
-            },
-          stacked:true,
+          title: {
+            display: 'flex',
+            text: 'Alertas',
+          },
+          stacked: true,
         },
-        x:{
-          stacked:true,
+        x: {
+          stacked: true,
 
         },
       }
