@@ -9,116 +9,16 @@
     --alturaBarraSuperior: 60px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: var(--fundoClaro);
+/* caixa de select*/
+.seletorDropdown {
+    background-color: var(--fundoConteudo);
+    border: 1px solid var(--bordaClara);
     color: var(--textoEscuro);
-}
-
-.containerPrincipal {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.barraSuperior {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: var(--alturaBarraSuperior);
-    background-color: var(--roxoPrincipal);
-    color: var(--corBranca);
-    padding: 0 20px;
-    width: 100%;
-}
-
-.menuSuperiorDireita {
-    display: flex;
-    align-items: center;
-}
-
-.botaoPerfil {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: var(--roxoPrincipal);
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    padding: 8px 15px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 0.9rem;
 }
-
-
-.containerConteudo {
-    display: flex;
-    flex-grow: 1;
-}
-
-/* barra Lateral*/
-.barraLateral {
-    width: 200px;
-    background-color: var(--roxoSecundario);
-    color: var(--corBranca);
-    padding: 0;
-    flex-shrink: 0;
-}
-
-.logoAplicacao {
-    display: none;
-}
-
-.barraSuperior .logoAplicacao {
-    display: block;
-    padding: 0;
-}
-
-.barraSuperior {
-    height: 100px;
-    width: auto;
-    filter: none;
-}
-
-.menuNavegacao {
-    padding-top: 20px;
-}
-
-.itemMenu {
-    padding: 15px 25px;
-    text-decoration: none;
-    color: var(--corBranca);
-    display: flex;
-    align-items: center;
-    font-size: 1.05rem;
-}
-
-.iconeMenu {
-    margin-right: 15px;
-    font-size: 1.1rem;
-    filter: grayscale(100%) brightness(200%);
-}
-
-.itemMenu.ativo {
-    background-color: rgba(255, 255, 255, );
-    cursor: pointer;
-    transition: background-color 0.4s;
-
-}
-
-.itemMenu.ativo:hover {
-    background-color: var(--roxoPrincipal);
-}
-
-
-
 
 /* conteúdo principal */
 .conteudoPrincipal {
@@ -138,17 +38,6 @@ body {
 .cabecalhoPagina h1 {
     font-size: 1.8rem;
     font-weight: normal;
-}
-
-/* caixa de select*/
-.seletorDropdown {
-    background-color: var(--fundoConteudo);
-    border: 1px solid var(--bordaClara);
-    color: var(--textoEscuro);
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
 }
 
 /* seção de ação (botão) */

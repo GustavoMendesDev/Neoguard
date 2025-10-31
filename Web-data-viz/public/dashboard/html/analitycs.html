@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style/esqueleto.css">
+  <link rel="stylesheet" href="../style/analitycs.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <title>Dashboard</title>
@@ -13,23 +14,28 @@
 <body>
   <!--Navebar-->
   <nav>
-    <div id="sidebar">
-      <div class="logo">NeoGuard</div>
-      <div class="foto-perfil">
-        <img src="/Web-data-viz/public/img/pessoa.png">
+    <div class="nav-container">
+      <img class="logo" src="../img/nav/Logo - Branco.svg" alt="Neoguard">
+
+      <div class="nav-item">
+        <img src="../img/nav/analitycs.svg" alt="Icone de analitycs">
+        <span>Analitycs</span>
       </div>
-      <div class="links">
-        <ul>
-          <li><a href=""> <img src="/Web-data-viz/public/img/icon-home.svg">Dashboard</a></li>
-          <li><a href=""> <img src="/Web-data-viz/public/img/vscode-icons_file-type-config.svg">Gerenciamento
-              Incubadoras</a></li>
-          <li><a href=""> <img src="/Web-data-viz/public/img/vscode-icons_file-type-config.svg">Gerenciamento
-              Usuários</a></li>
-        </ul>
+
+      <div class="nav-item">
+        <img src="../img/nav/users.svg" alt="Icone de Users">
+        <span>Usuários</span>
       </div>
-      <button class="logout">Sair</button>
+
+      <div class="nav-item">
+        <img src="../img/nav/incubadoras.svg" alt="Icone de Incubadora">
+        <span>Incubadoras</span>
+      </div>
     </div>
+
+    <img src="../img/nav/log-out.svg" alt="Icone de log-out">
   </nav>
+  <!--Fim do nav-bar-->
 
   <!--Conteúdo principal da Dashboard-->
   <main>
@@ -37,29 +43,81 @@
     <!--Titulo principal da Dashboard-->
     <h1>Bem Vindo, Maternidade <span>X</span>!</h1>
 
-
-    <!--Primeira parte-->
+    <!--Primeira sessão-->
     <section class="primeiraSessao">
+      <div class="carousel">
+        <div class="group">
+          <div class="card">
+            Incubadora 01
+            <div>
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
+            </div>
+            Temperatura critica<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora 13
+            <div>
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
+            </div>
+            Temperatura critica<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora 11
+            <div>
+              <img src="../img/atencao.svg" width="50px">
+              <h3>36,9Cº</h3>
+            </div>
+            Temperatura critica<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora 09
+            <div>
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
+            </div>
+            Temperatura critica<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora 05
+            <div>
+              <img src="../img/atencao.svg" width="50px">
+              <h3>37,1Cº</h3>
+            </div>
+            Temperatura critica<br>
+            Há 30 minutos
+          </div>
+          <div class="card">
+            Incubadora 02
+            <div>
+              <img src="../img/critico.svg" width="50px">
+              <h3>37,6Cº</h3>
+            </div>
+            Temperatura critica<br>
+            Há 30 minutos
+          </div>
+        </div>
+      </div>
+    </section>
 
+
+    <!--Segunda sessão-->
+
+    <section class="segundaSessao">
 
       <div class="container-contador">
         <div class="contador">
-          <div class="titulo-card">Total de Incubadora</div>
+          <div class="titulo-card">Temperatura critica</div>
           <div class="numero-card">40</div>
         </div>
 
         <div class="contador">
-          <div class="titulo-card">Total de Incubadora</div>
-          <div class="numero-card">40</div>
-        </div>
-
-        <div class="contador">
-          <div class="titulo-card">Total de Incubadora</div>
-          <div class="numero-card">40</div>
-        </div>
-
-        <div class="contador">
-          <div class="titulo-card">Total de Incubadora</div>
+          <div class="titulo-card">Temperatura em atenção</div>
           <div class="numero-card">40</div>
         </div>
       </div>
@@ -72,71 +130,8 @@
       </canvas>
     </section>
 
-    <!--Carroceu com todos as incubadoras em alerta-->
-
-    <section>
-      <div class="carousel">
-        <div class="group">
-          <div class="card">
-            Incubadora 01
-            <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
-            </div>
-            Critico<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 13
-            <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
-            </div>
-            Critico<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 11
-            <div>
-              <img src="../img/atencao.svg" width="50px">
-              <h3>36,9Cº</h3>
-            </div>
-            Critico<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 09
-            <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
-            </div>
-            Critico<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 05
-            <div>
-              <img src="../img/atencao.svg" width="50px">
-              <h3>37,1Cº</h3>
-            </div>
-            Critico<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 02
-            <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
-            </div>
-            Critico<br>
-            Há 30 minutos
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!--Historico de Alertas-->
-    <section>
+    <section class="terceiraSessao">
 
       <!--Grafico de linha informando a linha do tempo dos alertas-->
       <div class="grafico-linha">
@@ -150,7 +145,7 @@
       </div>
 
     </section>
-    
+
   </main>
 
 </body>
@@ -183,12 +178,12 @@
 
 
   const dataLinha = {
-labels : ['2 horas', '4 horas', '6 horas', '8 horas', '10 horas', '12 horas', ],
-datasets:[{
-    label: 'Alertas',
-    data: [1,4,6,12,15,18],
+    labels: ['2 horas', '4 horas', '6 horas', '8 horas', '10 horas', '12 horas',],
+    datasets: [{
+      label: 'Alertas',
+      data: [1, 4, 6, 12, 15, 18],
 
-  }]
+    }]
   }
 
   new Chart(ctx, {
@@ -247,35 +242,35 @@ datasets:[{
     type: 'line',
     data: dataLinha,
     options: {
-      plugins:{
-          title:{
-            display:true,
-            text:'Evolução de alertas detectados nas últimas 12 horas',
-            color:'#000',
-            font:{
-              weight:'bold',
-              size:25,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Evolução de alertas detectados nas últimas 12 horas',
+          color: '#000',
+          font: {
+            weight: 'bold',
+            size: 25,
 
-            },
           },
+        },
       },
-         scales: {
+      scales: {
         y: {
-          min:0,
-          max:30,
-          title:{
-            display:true,
-            text:'Alertas',
-            font:{
-              size:20,
-              
+          min: 0,
+          max: 30,
+          title: {
+            display: true,
+            text: 'Alertas',
+            font: {
+              size: 20,
+
             },
           },
         },
       },
     },
-   
-    
+
+
   });
 
 </script>
