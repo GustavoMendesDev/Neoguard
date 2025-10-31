@@ -1,3 +1,6 @@
+:root{
+    --laranja:#F67E27
+}
 /*Resentando todas as margens e paddings*/
 * {
     margin: 0;
@@ -35,10 +38,8 @@ nav>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 20%;
     box-sizing: border-box;
-    padding: 0 2%;
-    gap: 2%;
 }
 
 /*main*/
@@ -70,4 +71,17 @@ main {
     background: none;
     border: 2px solid #F67E27;
     color: #F67E27;
+    border-radius: 10px;
+    transition: 0.4s;
+    color: black;
+    cursor: pointer;
+}
+.btn_Secundario:hover{
+    background-color: #F67E27;
+    transition: 0.4s;
+}
+.btn_Secundario > a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
 }
