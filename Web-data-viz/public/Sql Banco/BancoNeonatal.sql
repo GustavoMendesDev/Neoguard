@@ -1,20 +1,23 @@
-CREATE DATABASE NeoGuard;
-USE NeoGuard;
-DROP DATABASE NeoGuard;
+CREATE DATABASE NeoguardClientes;
+USE NeoguardClientes;
+DROP DATABASE NeoguardClientes;
 
 CREATE TABLE Usuario (
 IdUsuario INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR (99) NOT NULL,
-Email VARCHAR (80) NOT NULL,
+Sobrenome VARCHAR(99) NOT NULL,
+Email VARCHAR (80) NOT NULL UNIQUE,
 Senha VARCHAR (50) NOT NULL,
 FkTipo INT,
-FkHospital INT
+FkHospital INT NOT NULL
 );
 
 CREATE TABLE Tipo (
 IdTipoUsuario INT PRIMARY KEY AUTO_INCREMENT,
 TipoUsuario VARCHAR (40) NOT NULL,
-Nivel CHAR (1) NOT NULL 
+Nivel CHAR (1) NOT NULL,
+CONSTRAINT NIVELAMENTO CHECK (Nivel in('1','2','3')),
+CONSTRAINT TIPOUSER CHECK (TipoUsuario in('Enfermeira','Medico','Enfermeira'))
 );
 
 CREATE TABLE Hospital (
@@ -33,33 +36,18 @@ CONSTRAINT FkHospitalReserva2
 FOREIGN KEY (FkHospital)
 REFERENCES Hospital(IdHospital);
 
-
-CREATE TABLE Bebês (
-IdBebês INT PRIMARY KEY AUTO_INCREMENT,
-PesoNascimento DECIMAL(4,1) NOT NULL,
+CREATE TABLE Bebes (
+IdBebes INT PRIMARY KEY AUTO_INCREMENT,
 PeriodoGestacao CHAR(2),
-FkInternação INT,
+FkInternacao INT,
 FkIncubadora INT UNIQUE
 );
 
-CREATE TABLE Internação (
-IdInternação INT PRIMARY KEY AUTO_INCREMENT,
-DataEntrada DATE,
-DataSaida DATE,
-DescSituação VARCHAR (255),
-ValorDiaria DECIMAL(6,2),
-FkBebe INT
-);
-
-ALTER TABLE Bebês ADD
-CONSTRAINT FkInternacao
-FOREIGN KEY (FkInternação)
-REFERENCES Internação(IdInternação);
-
 CREATE TABLE Incubadora (
 IdIncubadora INT PRIMARY KEY AUTO_INCREMENT,
-NumeroIncubadora INT NOT NULL,
-FkSalaNeoNatal INT
+FkSalaNeoNatal INT NOT NULL,
+FkSensores INT UNIQUE,
+FkBebes INT UNIQUE 
 );
 
 CREATE TABLE Sensores (
@@ -67,16 +55,15 @@ IdSensores INT PRIMARY KEY AUTO_INCREMENT,
 FkIncubadora INT UNIQUE
 );
 
-ALTER TABLE Sensores ADD
-CONSTRAINT FkIncubadoraReserva
-FOREIGN KEY (FkIncubadora)
-REFERENCES Incubadora(IdIncubadora);
+ALTER TABLE Incubadora ADD
+CONSTRAINT FkSensoresRv
+FOREIGN KEY (FkSensores)
+REFERENCES Sensores(IdSensores);
 
-ALTER TABLE Bebês ADD
-CONSTRAINT FkIncubadora
-FOREIGN KEY (FkIncubadora)
-REFERENCES Incubadora(IdIncubadora);
-
+ALTER TABLE Incubadora ADD
+CONSTRAINT FkBebesRv
+FOREIGN KEY (FkBebes)
+REFERENCES Bebes(IdBebes);
 
 CREATE TABLE Historicos (
 IdHistoricos INT PRIMARY KEY AUTO_INCREMENT,
@@ -90,10 +77,21 @@ CONSTRAINT FkSensoresHistorico
 FOREIGN KEY (FkSensores2)
 REFERENCES Sensores(IdSensores);
 
+CREATE TABLE Alertas (
+IdAlertas INT PRIMARY KEY AUTO_INCREMENT,
+TipoAlerta VARCHAR(19) NOT NULL,
+FkHistorico INT,
+CONSTRAINT TipoAlert CHECK (TipoAlerta in('Ideal','Critico','Atenção'))
+);
+
+ALTER TABLE Alertas ADD
+CONSTRAINT FkHistoricoReserva
+FOREIGN KEY (FkHistorico)
+REFERENCES Historicos(IdHistoricos);
+
 CREATE TABLE SalaNeoNatal (
 IdSalaNeoNatal INT PRIMARY KEY AUTO_INCREMENT,
 NumeroSala CHAR(1) NOT NULL,
-QuantIncubadora CHAR(2)NOT NULL,
 FkIncubadora INT,
 FkHospital INT
 ); 
@@ -107,8 +105,3 @@ ALTER TABLE Incubadora ADD
 CONSTRAINT FkSalaNeoNatalReserva
 FOREIGN KEY (FkSalaNeoNatal)
 REFERENCES SalaNeoNatal(IdSalaNeoNatal);
-
-select * from Historicos;
-
-truncate Historicos;
-
