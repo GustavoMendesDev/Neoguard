@@ -45,61 +45,28 @@
 
     <!--Primeira sessão-->
     <section class="primeiraSessao">
+      <h2>Alertas de temperatura</h2>
       <div class="carousel">
         <div class="group">
+
           <div class="card">
             Incubadora 01
             <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
+              <img src="../img/analitycs/critico.svg" width="50px">
+              <span class="card_valor">36,5 C°</span>
             </div>
             Temperatura critica<br>
             Há 30 minutos
           </div>
+
           <div class="card">
             Incubadora 13
             <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
+              <img src="../img/analitycs/atencao.svg" width="50px">
+              <span class="card_valor">36,5 C°</span>
             </div>
-            Temperatura critica<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 11
-            <div>
-              <img src="../img/atencao.svg" width="50px">
-              <h3>36,9Cº</h3>
-            </div>
-            Temperatura critica<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 09
-            <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
-            </div>
-            Temperatura critica<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 05
-            <div>
-              <img src="../img/atencao.svg" width="50px">
-              <h3>37,1Cº</h3>
-            </div>
-            Temperatura critica<br>
-            Há 30 minutos
-          </div>
-          <div class="card">
-            Incubadora 02
-            <div>
-              <img src="../img/critico.svg" width="50px">
-              <h3>37,6Cº</h3>
-            </div>
-            Temperatura critica<br>
-            Há 30 minutos
+            Temperatura em atenção<br>
+            Há 10 minutos
           </div>
         </div>
       </div>
@@ -111,23 +78,22 @@
     <section class="segundaSessao">
 
       <div class="container-contador">
-        <div class="contador">
+        <div class="contador contador_critico">
           <div class="titulo-card">Temperatura critica</div>
           <div class="numero-card">40</div>
         </div>
 
-        <div class="contador">
+        <div class="contador contador_atencao">
           <div class="titulo-card">Temperatura em atenção</div>
           <div class="numero-card">40</div>
         </div>
       </div>
 
-      <div class="graficoBarra">
-        <!--Grafico informando a quantidade de cada alerta-->
-        <canvas id="myChart">
+      <!--Grafico informando a quantidade de cada alerta-->
+      <div class="grafico-Linha_1">
+        <canvas id="graficoLinha_1" style="width: 100%; height: 100%;"></canvas>
       </div>
 
-      </canvas>
     </section>
 
     <!--Historico de Alertas-->
@@ -135,13 +101,11 @@
 
       <!--Grafico de linha informando a linha do tempo dos alertas-->
       <div class="grafico-linha">
-        <canvas id="graficoLinha">
-        </canvas>
+        <canvas id="graficoLinha" style="width: 100%; height: 100%;"></canvas>
       </div>
 
       <!--Tabele de log-->
       <div class="tabela_log">
-
       </div>
 
     </section>
@@ -151,33 +115,10 @@
 </body>
 <script>
 
-  const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById('graficoLinha_1');
   const ctx2 = document.getElementById('graficoLinha');
 
-
-  const data = {
-    labels: [0, 10, 20, 30, 40],
-    datasets: [
-      {
-        label: 'Ideal',
-        data: [23],
-        backgroundColor: '#00FF00',
-      },
-      {
-        label: 'Atenção',
-        data: [10],
-        backgroundColor: '#FF2',
-      },
-      {
-        label: 'Crítico',
-        data: [7],
-        backgroundColor: '#ff0022'
-      },
-    ]
-  };
-
-
-  const dataLinha = {
+  const linha_1 = {
     labels: ['2 horas', '4 horas', '6 horas', '8 horas', '10 horas', '12 horas',],
     datasets: [{
       label: 'Alertas',
@@ -187,72 +128,25 @@
   }
 
   new Chart(ctx, {
-    type: 'bar',
-    data: data,
-    options: {
-      indexAxis: 'y',
-      plugins: {
-        legend: { /*Aqui onde fica o posicionamento do label */
-          display: true,
-          position: 'top',
-
-          labels: { /*styles do label */
-            display: true,
-            usePointStyle: true,
-            pointStyle: 'rectRounded',
-            padding: 20,
-            font: {
-              size: 16,
-            },
-          },
-          tooltip: {
-            position: 'nearest',
-          },
-        },
-        title: {
-          display: true,
-          text: 'GRÁFICO ALERTA 24 HORAS',
-          align: 'start',
-          font: {
-            size: 24
-          },
-        },
-      },
-      responsive: true,
-      scales: {
-        y: {
-          title: {
-            display: 'flex',
-            text: 'Alertas',
-          },
-          stacked: true,
-        },
-        x: {
-          stacked: true,
-
-        },
-      }
-    }
-  });
-
-
-
-
-  new Chart(ctx2, {
     type: 'line',
-    data: dataLinha,
+    data: linha_1,
     options: {
       plugins: {
+        legend: {
+          align: 'end',
+        },
         title: {
           display: true,
           text: 'Evolução de alertas detectados nas últimas 12 horas',
-          color: '#000',
+          align: 'start',
+          color: '#2e2e2e',
           font: {
             weight: 'bold',
-            size: 25,
+            size: 20,
 
           },
         },
+
       },
       scales: {
         y: {
@@ -262,12 +156,88 @@
             display: true,
             text: 'Alertas',
             font: {
-              size: 20,
+              size: 14,
 
             },
           },
         },
+        x: {
+          title: {
+            display: true,
+            text: 'Periodo',
+            font: {
+              size: 14,
+
+            },
+          },
+        },
+
       },
+      responsive: false,
+    },
+
+
+  });
+
+
+
+  
+  const dataLinha = {
+    labels: ['2 horas', '4 horas', '6 horas', '8 horas', '10 horas', '12 horas',],
+    datasets: [{
+      label: 'Alertas',
+      data: [1, 4, 6, 12, 15, 18],
+
+    }]
+  }
+
+  new Chart(ctx2, {
+    type: 'line',
+    data: dataLinha,
+    options: {
+      plugins: {
+        legend: {
+          align: 'end',
+        },
+        title: {
+          display: true,
+          text: 'Evolução de alertas detectados nas últimas 12 horas',
+          align: 'start',
+          color: '#2e2e2e',
+          font: {
+            weight: 'bold',
+            size: 20,
+
+          },
+        },
+
+      },
+      scales: {
+        y: {
+          min: 0,
+          max: 30,
+          title: {
+            display: true,
+            text: 'Alertas',
+            font: {
+              size: 14,
+
+            },
+          },
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Periodo',
+            font: {
+              size: 14,
+
+            },
+          },
+        },
+
+      },
+      responsive: false,
     },
 
 
