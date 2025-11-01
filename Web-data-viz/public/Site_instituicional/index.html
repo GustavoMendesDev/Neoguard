@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoGuard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa58283320.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -20,45 +28,58 @@
             <a>Serviços</a>
             <a>Contato</a>
 
-            <hr class="divisor"></hr>
+            <hr class="divisor">
+            </hr>
 
             <button class="btn btn_Secundario"><a href="app/views/Login.html">Entrar</a></button>
         </div>
     </nav>
 
     <main>
-        <section>
-            <div>
-                <h2>Cuidando de vidas desde os primeiros minutos</h2>
-                <p>Nós a neoGuard, desenvolvemos um sistema inteligente de controle de temperatura que mantêm
-                    recém-nascidos
-                    seguros, estáveis e acolhidos dentro das incubadoras.</p>
+        <section class="saibaMais">
+            <div class="textoSaibaMais">
+                <div class="texto">
+                    <p class="titulo">Cuidando de vidas desde os primeiros minutos</p>
+                    <p class="legendaApresentacao">Nós a neoGuard, desenvolvemos um sistema
+                        inteligente de controle de temperatura que mantêm recém-nascidos
+                        seguros, estáveis e acolhidos dentro das incubadoras.</p>
+                    <div>
+                        <button class="btnSaiba">
+                            <i class="fa-regular fa-circle-right"></i> Saiba mais</button>
+                    </div>
+                </div>
+
             </div>
+
             <img src="../img/Imagem1.png">
+
         </section>
 
-        <section>
+        <section class="valores">
+            <div class="contentValores">
+                <div>
+                    <p class="tituloValores">Valores da NeoGuard</p><br>
+                    <p class="legendValores">Nós a NeoGuard, desenvolvemos um sistema inteligente de controle de temperatura que mantêm
+                        recém-nascidos
+                        seguros, estáveis e acolhidos dentro das incubadoras.</p>
+                </div>
+                <div class="principios">
+                    <div>
+                        <img src="../img/cuidado.png" alt="Cuidado">
+                        <p>Cuidado humano no centro</p>
+                    </div>
+                    <div>
+                        <img src="../img/segurança.png" alt="Segurança">
+                        <p>Segurança inegociável</p>
+                    </div>
+                    <div>
+                        <img src="../img/inovação.png" alt="Inovação">
+                        <p>Inovação que salva vidas</p>
+                    </div>
 
-            <div>
-                <h2>Valores da NeoGuard</h2>
-                <p>Nós a NeoGuard, desenvolvemos um sistema inteligente de controle de temperatura que mantêm
-                    recém-nascidos
-                    seguros, estáveis e acolhidos dentro das incubadoras.</p>
-            </div>
-            <div>
-                <div>
-                    <img src="../img/cuidado.png" alt="Cuidado">
-                    <h3>Cuidado humano no centro</h3>
                 </div>
-                <div>
-                    <img src="../img/segurança.png" alt="Segurança">
-                    <h3>Segurança inegociável</h3>
-                </div>
-                <div>
-                    <img src="../img/inovação.png" alt="Inovação">
-                    <h3>Inovação que salva vidas</h3>
-                </div>
-            </div>
+          </div>
+
         </section>
 
         <section>
@@ -119,7 +140,7 @@
     <footer>
         <img src="../img/Logo - positivo.png">
     </footer>
-    
+
 </body>
 
 </html>

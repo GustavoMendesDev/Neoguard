@@ -1,18 +1,26 @@
-:root{
-    --laranja:#F67E27
+:root {
+    --laranja: #F67E27
 }
+
 /*Resentando todas as margens e paddings*/
+
 * {
     margin: 0;
     padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /*  Por exemplo linhas embaixo do link */
+    transition: 0.2s linear;
+    /* todas as transições do nosso projeto terá 0.2 segundos */
+    font-size: 10px;
 }
 
 body {
     list-style-type: none;
     font-family: 'Nunito', sans-serif;
     background-color: #FEFEFE;
-    height: 100vh;
-    width: 100%;
+
 }
 
 /*Nav*/
@@ -27,6 +35,7 @@ nav {
     background-color: #FEFEFE;
     box-shadow: 2px 0 5px #2E2E2E;
     white-space: nowrap;
+    z-index: 99;
 }
 
 .logo {
@@ -44,13 +53,15 @@ nav>div {
 
 /*main*/
 main {
-    padding: 10% 20%;
+    padding: 5% 5%;
+    width: 100vw;
+    height: 100vh;
 }
 
 
 /*Elementos*/
 .divisor {
-    height: 60%;
+    height: 30%;
     border-color: #2E2E2E;
 }
 
@@ -59,29 +70,157 @@ main {
     width: auto;
     border: none;
     border-radius: 5px;
-    box-shadow: 2px 0px 2px #5b5b5b;
 }
 
 .btn_Primario {
-    background-color: #F67E27;
+    background-color: var(--laranja);
     color: #FEFEFE;
 }
 
 .btn_Secundario {
     background: none;
-    border: 2px solid #F67E27;
-    color: #F67E27;
+    border: 2px solid var(--laranja);
+    color: var(--laranja);
     border-radius: 10px;
     transition: 0.4s;
     color: black;
     cursor: pointer;
+    margin-left: 9%;
 }
-.btn_Secundario:hover{
-    background-color: #F67E27;
+
+.btn_Secundario:hover {
+    background-color: var(--laranja);
     transition: 0.4s;
 }
-.btn_Secundario > a{
+
+.btn_Secundario>a {
     text-decoration: none;
-    color: black;
-    font-weight: 700;
+    color: var(--laranja);
+    font-weight: bold;
+    transition: 0.4s;
+
+}
+
+.btn_Secundario:hover>a {
+    color: #fff;
+}
+
+nav div>a {
+    margin: 4%;
+}
+
+.saibaMais {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+}
+
+.textoSaibaMais {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+
+.titulo {
+    font-size: 8.5rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+
+
+}
+
+.saibaMais>img {
+    position: relative;
+    left: 4%;
+}
+
+.legendaApresentacao {
+    margin-top: 2%;
+    font-size: 4.6rem;
+}
+
+.texto>div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 13%;
+    margin-top: 5%;
+}
+
+.btnSaiba {
+    cursor: pointer;
+    width: 23%;
+    height: 100%;
+    background-color: var(--laranja);
+    border-radius: 30px;
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.btnSaiba:hover {
+    transition: 0.5s;
+    background-color: #ff7300;
+}
+
+.btnSaiba i {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.valores {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    height: 60%;
+    background-color: rgba(0, 0, 255, 0.281);
+}
+
+.contentValores {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.tituloValores {
+    font-size: 5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+.legendValores {
+    font-size: 3.5rem;
+}
+
+.principios {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 40%;
+    background-color: #ff7300;
+    justify-content: space-between;
+    align-content: center;
+}
+.principios div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
 }
