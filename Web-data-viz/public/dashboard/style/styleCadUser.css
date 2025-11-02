@@ -1,8 +1,7 @@
 /* 2. Conteúdo Principal */
-.conteudoPrincipal {
-    flex-grow: 1;
-    padding: 30px;
-    background-color: var(--fundoConteudo);
+section{
+    width: 100%;
+    padding: 1.5%;
 }
 
 /* Cabeçalho da Página */

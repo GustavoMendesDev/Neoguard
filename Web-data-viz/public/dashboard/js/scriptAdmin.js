@@ -96,14 +96,14 @@ function gerarIncubadorasIniciais() {
         <td>
             <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
                 <span class="iconeAcao">
-                    <img class="iconesEditarExcluir" src="/img/editar.png">
+                    <img class="iconesEditarExcluir" src="../img/Admin/editar.svg">
                 </span>
             </button>
         </td>
         <td>
             <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
                 <span class="iconeAcao">
-                    <img class="iconesEditarExcluir" src="/img/excluir.png">
+                    <img class="iconesEditarExcluir" src="../img/Admin/remover.svg">
                 </span>
             </button>
         </td>

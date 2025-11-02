@@ -8,6 +8,12 @@
     --bordaClara: #eeeeee;
     --alturaBarraSuperior: 60px;
 }
+/* sessões */
+section{
+    width: 100%;
+    padding: 1.5%;
+    box-sizing: border-box;
+}
 
 /* caixa de select*/
 .seletorDropdown {
@@ -18,13 +24,6 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
-}
-
-/* conteúdo principal */
-.conteudoPrincipal {
-    flex-grow: 1;
-    padding: 30px;
-    background-color: var(--fundoConteudo);
 }
 
 /* cabeçalho da página */
@@ -44,27 +43,6 @@
 .secaoAcao {
     margin-bottom: 20px;
 }
-
-.botaoCadastrar {
-    background-color: var(--roxoPrincipal);
-    color: var(--corBranca);
-    border: none;
-    padding: 18px 30px;
-    text-align: center;
-    border-radius: 12px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    line-height: 1.2;
-    width: 180px;
-    height: 90px;
-}
-
-.botaoCadastrar:hover{
-    background-color: var(--roxoSecundario);
-}
-
-
 
 /* tabela de dados */
 .secaoTabela {
