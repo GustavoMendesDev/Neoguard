@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/app/views/css/login.css">
 
     <title>Login | NeoGuard</title>
     <link rel="shortcut icon" href="/img/favicon (1).ico" type="image/x-icon">
@@ -58,6 +58,8 @@
 
                 <button type="button" onclick="login()" class="btn-login">Login</button>
 
+                <div id="ERRO"></div>
+
                 <p class="cadastro">Não tem login? <a href="/app/views/Cadastro.html">Cadastre-se</a></p>
             </form>
         </div>
@@ -66,8 +68,14 @@
 <script>
     function login() {
         var email = iptEmail.value;
+        var validacao = "@";
         var senha = Number(iptSenha.value);
 
+        if (email.includes(validacao)) {
+            console.log(`validação ok!`)
+        } else {
+            alert(`O E-mail necessita ter '@' ! `)
+        }
         if (email == 'adm@gmail.com' && senha == 1234) {
             // Leva por enquanto para a página de cadastro
             window.location.href = 'Cadastro.html';

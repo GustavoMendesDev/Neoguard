@@ -1,133 +1,11 @@
-:root { /*inicialização de variáveis*/
-    --roxoPrincipal: #A992F3;
-    --roxoSecundario: #C5B3FF;
-    --corBranca: #ffffff;
-    --fundoClaro: #f9f9fc;
-    --fundoConteudo: #ffffff;
-    --textoEscuro: #333333;
-    --bordaClara: #eeeeee;
-    --alturaBarraSuperior: 60px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: var(--fundoClaro);
-    color: var(--textoEscuro);
-}
-
-.containerPrincipal {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.barraSuperior {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: var(--alturaBarraSuperior);
-    background-color: var(--roxoPrincipal);
-    color: var(--corBranca);
-    padding: 0 20px;
-    width: 100%;
-}
-
-.menuSuperiorDireita {
-    display: flex;
-    align-items: center;
-}
-
-.botaoPerfil {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: var(--roxoPrincipal);
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.containerConteudo {
-    display: flex;
-    flex-grow: 1;
-}
-
-/* barra Lateral*/
-.barraLateral {
-    width: 200px;
-    background-color: var(--roxoSecundario);
-    color: var(--corBranca);
-    padding: 0;
-    flex-shrink: 0;
-}
-
-.logoAplicacao {
-    display: none;
-}
-
-.barraSuperior .logoAplicacao {
-    display: block;
-    padding: 0;
-}
-
-.barraSuperior {
-    height: 100px;
-    width: auto;
-    filter: none;
-}
-
-.menuNavegacao {
-    padding-top: 20px;
-}
-
-.itemMenu {
-    padding: 15px 25px;
-    text-decoration: none;
-    color: var(--corBranca);
-    display: flex;
-    align-items: center;
-    font-size: 1.05rem;
-}
-
-.iconeMenu {
-    margin-right: 15px;
-    font-size: 1.1rem;
-    filter: grayscale(100%) brightness(200%);
-}
-
-.itemMenu.ativo {
-    background-color: rgba(255, 255, 255, );
-    cursor: pointer;
-    transition: background-color 0.4s;
-
-}
-
-.itemMenu.ativo:hover {
-    background-color: var(--roxoPrincipal);
-}
-
-
-
-
-/* conteúdo principal */
+/* 2. Conteúdo Principal */
 .conteudoPrincipal {
     flex-grow: 1;
     padding: 30px;
     background-color: var(--fundoConteudo);
 }
 
-/* cabeçalho da página */
+/* Cabeçalho da Página */
 .cabecalhoPagina {
     display: flex;
     justify-content: space-between;
@@ -140,7 +18,7 @@ body {
     font-weight: normal;
 }
 
-/* caixa de select*/
+/* Dropdown */
 .seletorDropdown {
     background-color: var(--fundoConteudo);
     border: 1px solid var(--bordaClara);
@@ -151,13 +29,13 @@ body {
     font-size: 0.9rem;
 }
 
-/* seção de ação (botão) */
+/* Seção de Ação (Botão) */
 .secaoAcao {
     margin-bottom: 20px;
 }
 
 .botaoCadastrar {
-    background-color: var(--roxoPrincipal);
+    background-color: orange;
     color: var(--corBranca);
     border: none;
     padding: 18px 30px;
@@ -172,24 +50,22 @@ body {
 }
 
 .botaoCadastrar:hover{
-    background-color: var(--roxoSecundario);
+    background-color: rgb(255, 188, 64);
 }
 
-
-
-/* tabela de dados */
+/* 3. Tabela de Dados */
 .secaoTabela {
     padding: 30px;
     border-radius: 5px;
 }
 
-.tabelaIncubadoras {
+.tabelaUsuarios {
     width: 100%;
     border-collapse: collapse;
 }
 
-/* cabeçalho da tabela */
-.tabelaIncubadoras thead {
+/* Cabeçalho da Tabela */
+.tabelaUsuarios thead {
     background-color: var(--roxoPrincipal);
     color: var(--corBranca);
 }
@@ -201,32 +77,26 @@ body {
     font-size: 1.1rem;
 }
 
-.tabelaIncubadoras thead th:first-child {
+/* Cantos arredondados no cabeçalho */
+.tabelaUsuarios thead th:first-child {
     border-top-left-radius: 8px;
 }
 
-.tabelaIncubadoras thead th:last-child {
+.tabelaUsuarios thead th:last-child {
     border-top-right-radius: 8px;
 }
 
-/* estilo das células */
-.tabelaIncubadoras tbody td {
+/* Estilo das Células */
+.tabelaUsuarios tbody td {
     padding: 15px;
     border-bottom: 1px solid var(--bordaClara);
     vertical-align: middle;
     font-size: 1rem;
 }
 
-/* alinhamento das colunas */
-.colunaNumIncubadora {
-    width: 100px;
-}
-.colunaPeso{
-    width: 120px;
-}
-
-.colunaIg{
-    width: 50px;
+/* Alinhamento das Colunas */
+.colunaId {
+    width: 80px;
 }
 
 .colunaEditar,
@@ -235,12 +105,12 @@ body {
     text-align: center;
 }
 
-.tabelaIncubadoras tbody td:nth-child(4),
-.tabelaIncubadoras tbody td:nth-child(5) {
+.tabelaUsuarios tbody td:nth-child(3),
+.tabelaUsuarios tbody td:nth-child(4) {
     text-align: center;
 }
 
-/* botões de ação (ícones de editar e limpar) */
+/* Botões de Ação (Ícones) */
 .botaoAcao {
     background: none;
     border: none;
@@ -254,16 +124,13 @@ body {
     opacity: 1;
 }
 
-/* estilo para os ícones de ação substituídos */
+/* Estilo para os ícones de Ação substituídos (Unicode) */
 .iconeAcao {
     font-size: 1.2rem;
     color: var(--roxoPrincipal);
 }
 
-
-
-
-/* conteúdo do pop-up (modal)*/
+/* ⭐️ NOVO: ESTILOS PARA O MODAL DE CADASTRO */
 
 .modalOverlay {
     position: fixed;

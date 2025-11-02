@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/cadastro.css">
-    
+
     <title>Cadastre-se | NeoGuard</title>
     <link rel="shortcut icon" href="/img/favicon (1).ico" type="image/x-icon">
 </head>
@@ -62,21 +62,32 @@
                 <div class="input-group">
                     <label for="senha">Senha</label>
                     <input type="password" id="iptSenha" oninput="Verificar()" placeholder="Digite sua senha" required>
-                <div id="senhaForte"></div>
-                    <p class="avisoSenha">As senhas devem ter pelo menos oito 
-                        caracteres e conter uma letra maiúscula, uma letra 
+                    <div id="senhaForte"></div>
+                    <p class="avisoSenha">As senhas devem ter pelo menos oito
+                        caracteres e conter uma letra maiúscula, uma letra
                         minúscula e um número e um caracter especial </p>
                 </div>
 
                 <button type="button" onclick="Verificar()" class="btn-cadastro">Cadastrar</button>
-                
+
 
                 <p class="cadastro">Já tem login? <a href="/app/views/Login.html">Entre aqui</a></p>
             </form>
         </div>
     </div>
 </body>
-<script src="js/script.js"></script>
+<script>
 
+    function Verificar() {
+        var email = iptEmail.value;
+        var validacao = "@";
+        var senha = Number(iptSenha.value);
 
+        if (email == '' || email.includes(validacao)) {
+            console.log(`validação ok!`)
+        } else {
+            alert(`O E-mail necessita ter '@' ! `)
+        }
+    }
+</script>
 </html>

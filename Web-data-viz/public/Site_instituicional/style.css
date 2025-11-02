@@ -1,0 +1,294 @@
+:root {
+    --laranja: #F67E27;
+    --roxo: #A88cff;
+
+}
+
+/*Resentando todas as margens e paddings*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /*  Por exemplo linhas embaixo do link */
+    transition: 0.2s linear;
+    /* todas as transições do nosso projeto terá 0.2 segundos */
+    font-size: 10px;
+}
+
+body {
+    list-style-type: none;
+    font-family: 'Nunito', sans-serif;
+    background-color: #FEFEFE;
+
+}
+
+/*Nav*/
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 10%;
+    width: 100%;
+    padding: 0px 5%;
+    background-color: #FEFEFE;
+    box-shadow: 2px 0 5px #2E2E2E;
+    white-space: nowrap;
+    z-index: 99;
+}
+
+.logo {
+    width: 15%;
+    min-width: 150px;
+}
+
+nav>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+/*main*/
+main {
+    padding: 5% 5%;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/*Elementos*/
+.divisor {
+    height: 30%;
+    border-color: #2E2E2E;
+}
+
+.btn {
+    padding: 10px 15px 10px 15px;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn_Primario {
+    background-color: var(--laranja);
+    color: #FEFEFE;
+}
+
+.btn_Secundario {
+    background: none;
+    border: 2px solid var(--laranja);
+    color: var(--laranja);
+    border-radius: 10px;
+    transition: 0.4s;
+    color: black;
+    cursor: pointer;
+    margin-left: 9%;
+}
+
+.btn_Secundario:hover {
+    background-color: var(--laranja);
+    transition: 0.4s;
+}
+
+.btn_Secundario>a {
+    text-decoration: none;
+    color: var(--laranja);
+    font-weight: bold;
+    transition: 0.4s;
+
+}
+
+.btn_Secundario:hover>a {
+    color: #fff;
+}
+
+nav div>a {
+    margin: 4%;
+}
+
+.saibaMais {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+}
+
+.textoSaibaMais {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+
+.titulo {
+    font-size: 8.5rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+
+
+}
+
+.saibaMais>img {
+    position: relative;
+    left: 4%;
+}
+
+.legendaApresentacao {
+    margin-top: 2%;
+    font-size: 4.6rem;
+}
+
+.texto>div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 13%;
+    margin-top: 5%;
+}
+
+.btnSaiba {
+    cursor: pointer;
+    width: 25%;
+    height: 7vh;
+    background-color: var(--laranja);
+    border-radius: 30px;
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.btnSaiba:hover {
+    transition: 0.5s;
+    background-color: #ff7300;
+}
+
+.btnSaiba i {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.valores {
+    margin-top: 15%;
+    width: 100%;
+    display: flex;
+    height: 60%;
+    -color: rgba(0, 0, 255, 0.281);
+}
+
+.contentValores {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.tituloValores {
+    font-size: 5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+.legendValores {
+    font-size: 3.5rem;
+}
+
+.principios {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 40%;
+    justify-content: space-between;
+    align-content: center;
+    margin-left: 10%;
+}
+.principios div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+
+}
+.principioNeoguard{
+    width: 14%;
+    height: 84%;
+    border-radius: 100%;
+    background-color: var(--roxo);
+}
+.principioNeoguard > img{
+    width: 20rem;
+}
+.principios > div > p {
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+.nossoServico{
+    display: flex;
+    align-items: self-end;
+    width: 90%;
+    height: 65%;
+}
+
+.nossoServico > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height: 95%;
+    margin-left: 4%;
+    flex-direction: column;
+}
+.nossoServico > div > p{
+    margin-bottom: 6%;
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+
+}
+.vantagem{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 40%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    border-radius: 40px;
+    border: 0.3rem solid #847e976c;
+}
+.vantagem i{
+    font-size: 8rem;
+}
+.tituloVantagem{
+    margin-bottom: 6%;
+        font-size: 1.6rem;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+}
+.textoVantagem{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.7rem;
+    word-break: normal;
+    margin-left: 7%;
+    margin-bottom: 10%;
+    width: 80%;
+}
