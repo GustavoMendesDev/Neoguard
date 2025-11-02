@@ -97,29 +97,52 @@
                 <div class="vantagem">
                     <img src="../img/temperatura.png">
                     <p class="tituloVantagem">Monitoramento Térmico Inteligente</p>
-                    <p class="textoVantagem">Solução que acompanha em tempo real a estabilidade térmica dos bebês, reduzindo episódios de
+                    <p class="textoVantagem">Solução que acompanha em tempo real a estabilidade térmica dos bebês,
+                        reduzindo episódios de
                         hipotermia e melhorando a taxa de sobrevivência.</p>
                 </div>
 
                 <div class="vantagem">
                     <img src="../img/dash.png">
                     <p class="tituloVantagem">Dashboard Clínico e Relatórios</p>
-                    <p class="textoVantagem">Plataforma intuitiva que reúne dados em tempo real, 
+                    <p class="textoVantagem">Plataforma intuitiva que reúne dados em tempo real,
                         relatórios de desempenho e indicadores clínicos para suporte à tomada de decisão.</p>
                 </div>
             </div>
-                        <!-- <img src="../img/vetores/"> -->
+            <!-- <img src="../img/vetores/"> -->
         </section>
-        <section class="calculadora">
-            
 
-        </section>
+        <section class="calculadora">
+            <div class="textoCalculadora">
+                <p class="tituloCalculadora">Descubra quanto sua UTI Neonatal<br> pode economizar e salvar
+                    vidas com nossa tecnologia de <br> monitoramento inteligente</p>
+                <p class="legendaCalculadora">Insira seus dados e veja o impacto econômico e clínico da temperatura
+                    ideal</p>
+            </div>
+            <div class="inserirDados">
+                <div class="inputs">
+                    <input type="number"  id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="temperatura" placeholder="Temperatura atual (ºC)">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="diaria" placeholder="Custo diário da UTI (R$)">
+                </div>
+                <div class="linha"></div>
+
+                <button onclick="simular()">Calcular Economia e Risco</button>
+            <div class="resultado" id="resultado">
+            Relatório aparecerá aqui.
+        </div>
+            </div>
+            
 
         <section>
             <h2> Nossa Equipe</h2>
             <div>
                 <div>
-                    <img src="../img/erick.png">
+
                     <h3>Erick</h3>
                 </div>
                 <div>
@@ -155,5 +178,191 @@
     </footer> -->
 
 </body>
+<script>
 
+        function simular() {
+            // usei o parseFloat para que no momento em que haja a captura de dado, ele mude
+            // automaticamente para float(decimal)
+            var idadeGestacional = parseFloat(document.getElementById('idadeGestacional').value);
+            var diaria = parseFloat(document.getElementById('diaria').value);
+            var temperatura = parseFloat(document.getElementById('temperatura').value);
+
+            // variaveis para validação
+            let idadeGestacionalMaxima = 42; 
+            let idadeGestacionalMinima = 22;
+            let temperaturaMaxima = 41.0; 
+            let temperaturaMinima = 34.0;
+  
+
+            if (!idadeGestacional || !diaria) {
+                alert("Por favor, preencha o peso, a idade gestacional e o custo da diária para simular.");
+                return;
+            }
+
+
+
+            if (idadeGestacional > idadeGestacionalMaxima) {
+                alert(`Idade Gestacional Incorreta: O valor máximo esperado para idade gestacional é de ${idadeGestacionalMaxima} semanas. Por favor, verifique.`);
+                return;
+            }
+            
+            if (idadeGestacional < idadeGestacionalMinima) {
+                alert(`Idade Gestacional Incorreta: O valor mínimo esperado para idade gestacional é de ${idadeGestacionalMinima} semanas. Por favor, verifique.`);
+                return;
+            }
+
+            if (temperatura > temperaturaMaxima) {
+                alert(`Temperatura Absurda: A temperatura máxima para simulação é de ${temperaturaMaxima}°C. Por favor, verifique o valor inserido.`);
+                return;
+            }
+            
+            if (temperatura < temperaturaMinima) {
+                alert(`Temperatura Baixa: A temperatura mínima para simulação deve ser de pelo menos ${temperaturaMinima}°C. Por favor, verifique o valor inserido.`);
+                return;
+            }
+            
+            let tempoInternacaoBase;
+            let riscoComplicacaoBase;
+            let tipoPrematuro = "Termo ou Pré-termo Próximo";
+
+            if (idadeGestacional < 28) {
+                tempoInternacaoBase = 50;
+                riscoComplicacaoBase = 60;
+                tipoPrematuro = "Prematuro Extremo (< 28 semanas)";
+            } else if (idadeGestacional >= 28 && idadeGestacional <= 33) {
+                tempoInternacaoBase = 20;
+                riscoComplicacaoBase = 40;
+                tipoPrematuro = "Prematuro Moderado (28-33 semanas)";
+            } else if (idadeGestacional >= 34 && idadeGestacional <= 36) {
+                tempoInternacaoBase = 10;
+                riscoComplicacaoBase = 25;
+                tipoPrematuro = "Prematuro Tardio (34-36 semanas)";
+            } else {
+                tempoInternacaoBase = 5;
+                riscoComplicacaoBase = 10;
+                tipoPrematuro = "Bebê a Termo (>= 37 semanas)";
+            }
+
+
+            if (idadeGestacional >= 37) {
+         
+            }
+
+            let ajusteRiscoTemp = 0;
+            let ajusteTempoExtra = 0;
+
+            if (temperatura < 35) {
+                ajusteRiscoTemp = 10;
+                ajusteTempoExtra = 10;
+            }else if (temperatura < 36.0) {
+                ajusteRiscoTemp = 10;
+                ajusteTempoExtra = 5;
+            } else if (temperatura < 36.5) {
+                ajusteRiscoTemp = 5;
+                ajusteTempoExtra = 0;
+            } else if (temperatura < 38) {
+                ajusteRiscoTemp = 10;
+                ajusteTempoExtra = 5; 
+            } else if (temperatura >= 38){
+                ajusteRiscoTemp = 15;
+                ajusteTempoExtra = 10;
+            } else if (temperatura >= 40){
+                ajusteRiscoTemp = 15;
+                ajusteTempoExtra = 15;
+            }
+
+            
+            // ajuste no risco base para evitar valores iniciais muito baixos em prematuros.
+
+            var tempoInternacaoTotal = tempoInternacaoBase + ajusteTempoExtra;
+            var custoTotalEstimado = tempoInternacaoTotal * diaria;
+            var riscoEstimadoSemNeoGuard = riscoComplicacaoBase + ajusteRiscoTemp;
+
+            var diasEconomizados = Math.floor((ajusteTempoExtra + tempoInternacaoBase) / 3);
+            var economiaPotencial = diasEconomizados * diaria;
+
+            var reducaoPorTecnologia = 0.6; // de acordo com o estudo scopes-ahmed
+            var riscoReduzidoNeoGuard = Math.max(10, riscoEstimadoSemNeoGuard * reducaoPorTecnologia);
+
+            var formatarMoeda = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
+
+            
+            let temperaturaHTML = ``
+            if (temperatura == 0 || (temperatura >= 36 && temperatura <= 36.5)) {
+                temperaturaHTML = ``
+                tempoInternacaoTotal = tempoInternacaoBase
+            } else if (temperatura > 0) {
+                temperaturaHTML = `+ ${ajusteTempoExtra} dias por instabilidade térmica)`
+            }
+
+
+            let conteudoHTML = `
+            
+             <div class="resposta">
+                <div>
+                    <div class="tituloCard semSistema">
+                        <p>Sem o Sistema</p>
+                    </div>
+                    <div class="rowCard">
+                        <i class="fa-regular fa-face-frown textSemSistema"></i>
+                        <div class="resultado">
+                            <p class="textValor">Perdas Financeiras</p>
+                            <p class="valor textSemSistema">R$ 120.000</p>
+                        </div>
+                    </div>
+
+                    <div class="rowCard">
+                        <i class="fa-regular fa-calendar textSemSistema"></i>
+                        <div class="resultado">
+                            <p class="textValor">Tempo médio</p>
+                            <p class="valor textSemSistema">17 dias</p>
+                        </div>
+                    </div>
+
+                    <div class="rowCard">
+                        <i class="fa-regular fa-heart textSemSistema"></i>
+                        <div class="resultado">
+                            <p class="textValor">Taxa de complicações</p>
+                            <p class="valor textSemSistema">10%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="tituloCard comSistema">
+                        <p>Com os Sistema</p>
+                    </div>
+                    <div class="rowCard">
+                        <i class="fa-regular fa-face-smile textComSistema"></i>
+                        <div class="resultado">
+                            <p class="textValor">Economia estimada</p>
+                            <p class="valor textComSistema">R$ 120.000</p>
+                        </div>
+                    </div>
+
+                    <div class="rowCard">
+                        <i class="fa-regular fa-calendar textComSistema"></i>
+                        <div class="resultado">
+                            <p class="textValor">Redução de dias <br> de internação</p>
+                            <p class="valor textComSistema">${diasEconomizados}</p>
+                        </div>
+                    </div>
+
+                    <div class="rowCard">
+                        <i class="fa-regular fa-heart textComSistema"></i>
+                        <div class="resultado">
+                            <p class="textValor">Aumento de <br> sobrevida</p>
+                            <p class="valor textComSistema">95%</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+            
+            `
+
+        }
+</script>
 </html>
