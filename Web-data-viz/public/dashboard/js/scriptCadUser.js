@@ -81,12 +81,12 @@ function salvarUsuario(nomeUsuario, emailUsuario, nivelUsuario, senhaUsuario) {
         <td>${senhaUsuario}</td>
             <td>
                 <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
-                    <span class="iconeAcao"><img class="iconesEditarExcluir" src="vetores/Group 48 (1).svg"></span>
+                    <span class="iconeAcao"><img class="iconesEditarExcluir" src="../img/Users/Group 48 (1).svg"></span>
                 </button>
             </td>
         <td>
             <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
-                <span class="iconeAcao"><img class="iconesEditarExcluir" src="vetores/trash-2.svg"></span>
+                <span class="iconeAcao"><img class="iconesEditarExcluir" src="../img/Users/trash-2.svg"></span>
             </button>
         </td>
     `;

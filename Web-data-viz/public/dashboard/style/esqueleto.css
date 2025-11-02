@@ -13,6 +13,13 @@
     margin: 0;
     padding: 0;
 }
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+.selecionado{
+    background-color: #8560F9;
+}
 
 body {
     width: 100vw;
@@ -69,7 +76,6 @@ nav {
 main {
     width: 90%;
     height: 100%;
-    padding: 2.5%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

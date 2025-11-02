@@ -13,23 +13,24 @@
 
 <body>
   <!--Navebar-->
+
   <nav>
     <div class="nav-container">
       <img class="logo" src="../img/nav/Logo - Branco.svg" alt="Neoguard">
 
-      <div class="nav-item">
+      <div class="nav-item selecionado">
         <img src="../img/nav/analitycs.svg" alt="Icone de analitycs">
-        <span>Analitycs</span>
+        <a href="../html/analitycs.html">Analitycs</a>
       </div>
 
       <div class="nav-item">
         <img src="../img/nav/users.svg" alt="Icone de Users">
-        <span>Usuários</span>
+        <a href="../html/TelaCadUser.html">Usuários</a>
       </div>
 
       <div class="nav-item">
         <img src="../img/nav/incubadoras.svg" alt="Icone de Incubadora">
-        <span>Incubadoras</span>
+        <a href="../html/TelaAdmin.html">Incubadoras</a>
       </div>
     </div>
 
@@ -40,209 +41,282 @@
   <!--Conteúdo principal da Dashboard-->
   <main>
 
-    <!--Titulo principal da Dashboard-->
-    <h1>Bem Vindo, Maternidade <span>X</span>!</h1>
+    <!--Sessaão de informações: titulo e legendas-->
+    <section class="header">
+      <h1>Monitoramento - Salas de UTI neonatal</h1>
+    </section>
 
-    <!--Primeira sessão-->
-    <section class="primeiraSessao">
-      <h2>Alertas de temperatura</h2>
-      <div class="carousel">
-        <div class="group">
-
-          <div class="card">
-            Incubadora 01
-            <div>
-              <img src="../img/analitycs/critico.svg" width="50px">
-              <span class="card_valor">36,5 C°</span>
-            </div>
-            Temperatura critica<br>
-            Há 30 minutos
+    <!--Incubadoras em alerta-->
+    <section class="primeira-sessao">
+      <div class="head">
+        <h2>Monitoramento de Alertas</h2>
+        <div class="legendas">
+          <div class="legenda">
+            <img src="../img/analitycs/critico.svg">
+            <span><b>Critico:</b> Temperatura acima de 37,5C° ou abaixo de 36,5C°</span>
           </div>
-
-          <div class="card">
-            Incubadora 13
-            <div>
-              <img src="../img/analitycs/atencao.svg" width="50px">
-              <span class="card_valor">36,5 C°</span>
-            </div>
-            Temperatura em atenção<br>
-            Há 10 minutos
+          <div class="legenda">
+            <img src="../img/analitycs/atencao.svg">
+            <span><b>Atencao:</b> Temperatura acima 36,9C° ou abixo de 36,4C°</span>
           </div>
         </div>
       </div>
-    </section>
+      <div class="alertas">
 
-
-    <!--Segunda sessão-->
-
-    <section class="segundaSessao">
-
-      <div class="container-contador">
-        <div class="contador contador_critico">
-          <div class="titulo-card">Temperatura critica</div>
-          <div class="numero-card">40</div>
+        <div class="alertas-carrosel">
+          <div class="alerta"></div>
+          <div class="alerta"></div>
+          <div class="alerta"></div>
+          <div class="alerta"></div>
+          <div class="alerta"></div>
         </div>
 
-        <div class="contador contador_atencao">
-          <div class="titulo-card">Temperatura em atenção</div>
-          <div class="numero-card">40</div>
+
+        <div class="alertas-total">
+          <div class="total T_critico">
+            <span>3</span>
+            <h3>Total de Criticos</h3>
+          </div>
+          <div class="total T_atencao">
+            <span>1</span>
+            <h3>Total de Atenção</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!--Sessão estratégica-->
+    <section class="titulo-estrategico">
+      <h2>Visualização estratégica</h2>
+    </section>
+
+    <!--Total dos alertas-->
+    <section class="segunda-sessao">
+      <div class="periodo-alertas">
+        <div class="total T_critico">
+          <span>3</span>
+          <h3>Total de Criticos</h3>
+        </div>
+        <div class="total T_atencao">
+          <span>1</span>
+          <h3>Total de Atenção</h3>
         </div>
       </div>
-
-      <!--Grafico informando a quantidade de cada alerta-->
-      <div class="grafico-Linha_1">
-        <canvas id="graficoLinha_1" style="width: 100%; height: 100%;"></canvas>
+      <div class="grafico-pilha">
+        <canvas id="graficoPilha"></canvas>
       </div>
 
     </section>
 
-    <!--Historico de Alertas-->
-    <section class="terceiraSessao">
-
-      <!--Grafico de linha informando a linha do tempo dos alertas-->
+    <!--Macro dos alertas-->
+    <section class="quarta-sessao">
       <div class="grafico-linha">
-        <canvas id="graficoLinha" style="width: 100%; height: 100%;"></canvas>
+        <canvas id="myChart"></canvas>
       </div>
 
-      <!--Tabele de log-->
-      <div class="tabela_log">
+      <div class="historico">
+        <h3>Histórico de alertas</h3>
+        <div class="tabela-log">
+          <table>
+            <thead>
+              <th>Data/Hora</th>
+              <th>Incubadora</th>
+              <th>Alerta</th>
+              <th>Temperatura</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>045</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
     </section>
+
 
   </main>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+  const ctx = document.getElementById('myChart');
+  const ctx2 = document.getElementById('graficoPilha');
 
-  const ctx = document.getElementById('graficoLinha_1');
-  const ctx2 = document.getElementById('graficoLinha');
-
-  const linha_1 = {
-    labels: ['2 horas', '4 horas', '6 horas', '8 horas', '10 horas', '12 horas',],
-    datasets: [{
-      label: 'Alertas',
-      data: [1, 4, 6, 12, 15, 18],
-
-    }]
-  }
 
   new Chart(ctx, {
     type: 'line',
-    data: linha_1,
-    options: {
-      plugins: {
-        legend: {
-          align: 'end',
+    data: {
+      labels: ['0h', '5h', '10h', '15h', '20h', '23h'],
+      datasets: [
+        {
+          label: 'Critico',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1,
+          borderColor: 'red',
         },
+        {
+          label: 'Alerta',
+          data: [20, 21, 5, 7, 6, 4],
+          borderWidth: 1,
+          borderColor: 'orange',
+        },
+      ],
+    },
+    options: {
+
+      responsive: true,
+      plugins: {
         title: {
           display: true,
-          text: 'Evolução de alertas detectados nas últimas 12 horas',
+          text: "Analise de alertas (24h)",
+          font: { size: 18 },
           align: 'start',
-          color: '#2e2e2e',
-          font: {
-            weight: 'bold',
-            size: 20,
-
-          },
+          color: "#2E2E2E"
         },
-
+        legend: {
+          align: 'end',
+        }
       },
       scales: {
         y: {
-          min: 0,
-          max: 30,
+          beginAtZero: true,
           title: {
             display: true,
-            text: 'Alertas',
+            text: 'Quantidaade',
             font: {
-              size: 14,
-
+              size: 16,
+              color: "#2E2E2E"
             },
           },
         },
         x: {
+          beginAtZero: true,
           title: {
             display: true,
             text: 'Periodo',
+            color: "#2e2e2e",
             font: {
-              size: 14,
-
+              size: 16,
             },
           },
         },
-
       },
-      responsive: false,
-    },
-
-
+    }
   });
-
-
-
-  
-  const dataLinha = {
-    labels: ['2 horas', '4 horas', '6 horas', '8 horas', '10 horas', '12 horas',],
-    datasets: [{
-      label: 'Alertas',
-      data: [1, 4, 6, 12, 15, 18],
-
-    }]
-  }
 
   new Chart(ctx2, {
-    type: 'line',
-    data: dataLinha,
-    options: {
-      plugins: {
-        legend: {
-          align: 'end',
+    type: 'bar', // tipo de gráfico
+    data: {
+      labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+      datasets: [
+        {
+          label: 'Produto A',
+          data: [300, 400, 200, 500, 450, 600],
+          backgroundColor: '#007bff'
         },
+        {
+          label: 'Produto B',
+          data: [200, 250, 180, 300, 280, 350],
+          backgroundColor: '#28a745'
+        },
+        {
+          label: 'Produto C',
+          data: [150, 180, 120, 220, 200, 260],
+          backgroundColor: '#ffc107'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
         title: {
           display: true,
-          text: 'Evolução de alertas detectados nas últimas 12 horas',
-          align: 'start',
-          color: '#2e2e2e',
-          font: {
-            weight: 'bold',
-            size: 20,
-
-          },
+          text: 'Vendas por Produto — Gráfico de Pilha',
+          font: { size: 18 }
         },
-
+        legend: {
+          position: 'top'
+        }
       },
       scales: {
-        y: {
-          min: 0,
-          max: 30,
-          title: {
-            display: true,
-            text: 'Alertas',
-            font: {
-              size: 14,
-
-            },
-          },
-        },
         x: {
+          stacked: true, // <-- empilha no eixo X
           title: {
             display: true,
-            text: 'Periodo',
-            font: {
-              size: 14,
-
-            },
-          },
+            text: 'Meses'
+          }
         },
-
-      },
-      responsive: false,
-    },
-
-
+        y: {
+          stacked: true, // <-- empilha no eixo Y
+          title: {
+            display: true,
+            text: 'Vendas (R$)'
+          },
+          beginAtZero: true
+        }
+      }
+    }
   });
-
 </script>
 
 </html>

@@ -1,155 +1,215 @@
-h1 {
-    font-size: 2em;
+section {
+    width: 100%;
+    padding: 1.5%;
+    gap: 1%;
     box-sizing: border-box;
-    font-weight: 700;
-    color: #2e2e2e;
 }
 
-h1>span {
-    font-size: 22px;
-    font-weight: 700;
-    color: #9765e3;
+h1 {
+    font-size: 32px;
 }
 
 h2 {
-    margin-bottom: 2%;
-    height: 8%;
+    font-size: 21px;
 }
 
-.primeiraSessao {
-    width: 100%;
-    height:30%;
-    padding: 2.5% 0;
-    box-sizing: border-box;
-    margin-top: 2.5%;
-}
-
-.carousel {
-    width: 100%;
-    height: 90%;
+/*Estilização da sessão header*/
+.header {
+    border: 2px solid aqua;
+    height: 5%;
     display: flex;
-    overflow-x: auto;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.group {
-    display: flex;
-    width: 100%;
-    height: 100%;
     align-items: center;
-    justify-content: start;
+}
+
+/*Fim da estilização da sessão header --------------------------------------------------------------------------------------------*/
+
+
+/*Estilização da primeira sessão -------------------------------------------------------------------------------------------------*/
+.primeira-sessao {
+    border: 2px solid blue;
+    height: 35%;
+}
+
+/*Cabeçalho da primeira sessão*/
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    box-sizing: border-box;
+}
+
+.legendas {
+    display: flex;
+    gap: 15px;
+}
+
+.legenda {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.legenda>img {
+    width: 25px;
+}
+
+/*Alertas de temperatura*/
+.alertas {
+    width: 100%;
+    height: 80%;
+    display: flex;
     gap: 5%;
 }
 
-.card {
-    flex: 0 0 250px;
+/*Carrossel de alertas*/
+.alertas-carrosel {
+    width: 80%;
     height: 100%;
     display: flex;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    border-radius: 15px;
-    border: 2px solid #DFE2CF;
-    background-color: #FAFAFA;
-    font-size: 20px;
-    text-align: center;
+    gap: 20px;
+    overflow-x: auto;
+    background-color: aqua;
 }
 
-.card>div {
+.alertas-carrosel::-webkit-scrollbar {}
+
+.alerta {}
+
+
+/*Total de alertas*/
+.alertas-total {
+    width: 15%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-
-.segundaSessao {
+.total {
     width: 100%;
-    height: 20%;
-    display: flex;
-    margin-top: 2.5%;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.container-contador {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-    height: 100%;
-    gap: 10%;
-}
-
-.contador {
+    height: 45%;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    border-radius: 15px;
+    justify-content: center;
+    gap: 5px;
+    font-size: 42px;
+}
+
+.total>h3 {
+    font-size: 13px;
+}
+
+.T_critico {
+    background-color: red;
+    color: #FAFAFA;
+}
+
+.T_atencao {
+    background-color: #F67E27;
+    color: #FAFAFA;
+}
+
+/*Fim da estilização da primeira sessão ----------------------------------------------------------------------------------------*/
+
+
+/*Estilização da sessão estrategica -----------------------------------------------------------------------------------------------*/
+.titulo-estrategico{
+    height: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.segunda-sessao {
+    height: 20%;
+    border: 2px solid purple;
+    display: flex;
+    justify-content: space-between;
+}
+.periodo-alertas{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
+}
+.periodo-alertas > .total{
+    height: 100%;
+    width: 45%;
+}
+.grafico-pilha {
     width: 45%;
     height: 100%;
-    text-align: center;
-}
-
-.contador_critico {
-    border: 2px solid red;
-    color: red;
-}
-
-.contador_atencao {
-    border: 2px solid #F67E27;
-    color: #F67E27;
-}
-
-.titulo-card {
-    font-size: 14px;
-    margin-bottom: 6px;
-}
-
-.numero-card {
-    font-size: 50px;
-    font-weight: 700;
-}
-
-
-.grafico-Linha_1 {
-    width: 30%;
-    height: 100%;
-    border: 2px solid #DFE2CF ;
+    border: 2px solid #DFE2CF;
     border-radius: 15px;
-    padding: 1%;
+    padding: 1.5%;
     box-sizing: border-box;
 }
 
 
-.terceiraSessao {
-    width: 100%;
+
+.quarta-sessao {
+    border: 2px solid green;
     height: 35%;
-    margin-top: 2.5%;
+    display: flex;
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
-
 }
 
 .grafico-linha {
-    width: 55%;
+    width: 45%;
     height: 100%;
-    border: 2px solid #DFE2CF ;
+    border: 2px solid #DFE2CF;
     border-radius: 15px;
-    padding: 1%;
+    padding: 1.5%;
     box-sizing: border-box;
 }
 
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
 
-.tabela_log {
-    width: 40%;
-    background-color: aqua;
+/* Tabela de log*/
+.historico {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid #DFE2CF;
+    border-radius: 15px;
+    padding: 1.5%;
+}
+
+.tabela-log {
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+    border: 1px solid #DFE2CF;
+    border-radius: 5px;
+}
+
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+thead {
+    background-color: #A992F3;
+    color: #FAFAFA;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+th,
+td {
+    border: 1px solid #DFE2CF;
+    padding: 10px;
+    text-align: left;
+    max-height: 50px;
+}
+tbody tr {
+background-color: #FAFAFA;
 }
