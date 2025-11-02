@@ -72,11 +72,6 @@ h2 {
     background-color: aqua;
 }
 
-.alertas-carrosel::-webkit-scrollbar {}
-
-.alerta {}
-
-
 /*Total de alertas*/
 .alertas-total {
     width: 15%;
