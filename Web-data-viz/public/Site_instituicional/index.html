@@ -95,7 +95,7 @@
             <div>
                 <p>Nossos Serviços</p>
                 <div class="vantagem">
-                    <img src="../img/temperatura.png">
+                    <img src="../img/vetores/">
                     <p class="tituloVantagem">Monitoramento Térmico Inteligente</p>
                     <p class="textoVantagem">Solução que acompanha em tempo real a estabilidade térmica dos bebês,
                         reduzindo episódios de
@@ -115,7 +115,7 @@
         <section class="calculadora">
             <div class="textoCalculadora">
                 <p class="tituloCalculadora">Descubra quanto sua UTI Neonatal<br> pode economizar e salvar
-                    vidas com nossa tecnologia de <br> monitoramento inteligente</p>
+                    vidas com nossa tecnologia<br> de monitoramento inteligente</p>
                 <p class="legendaCalculadora">Insira seus dados e veja o impacto econômico e clínico da temperatura
                     ideal</p>
             </div>
@@ -138,35 +138,36 @@
             </div>
             
 
-        <section>
-            <h2> Nossa Equipe</h2>
+        <section class="nossaEquipe">
+            <p class="tituloValores"> Nossa Equipe</p>
             <div>
-                <div>
+                <div class="colaborador">
 
-                    <h3>Erick</h3>
+                    <img src="../img/eric.png" alt="">
+                    <p>Erick<p>
                 </div>
-                <div>
+                <div class="colaborador">
                     <img src="../img/guilherme.png">
-                    <h3>Guilherme</h3>
+                    <p>Guilherme Mesquita<p>
                 </div>
-                <div>
+                <div class="colaborador">
                     <img src="../img/Gustavo 1.png">
-                    <h3>Gustavo Emmanoel</h3>
+                    <p>Gustavo Emmanoel</p>
                 </div>
             </div>
 
             <div>
-                <div>
+                <div class="colaborador">
                     <img src="../img/gustavo 2.png">
-                    <h3>Gustavo Mendes</h3>
+                    <p>Gustavo Mendes</p>
                 </div>
-                <div>
+                <div class="colaborador">
                     <img src="../img/lucas.png">
-                    <h3>Lucas</h3>
+                    <p>Lucas</p>
                 </div>
-                <div>
+                <div class="colaborador">
                     <img src="../img/eduarda.png">
-                    <h3>Maria Eduarda</h3>
+                    <p>Maria Eduarda</p>
                 </div>
             </div>
         </section>
@@ -299,7 +300,7 @@
             let conteudoHTML = `
             
              <div class="resposta">
-                <div>
+                <div class="card">
                     <div class="tituloCard semSistema">
                         <p>Sem o Sistema</p>
                     </div>
@@ -307,7 +308,7 @@
                         <i class="fa-regular fa-face-frown textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Perdas Financeiras</p>
-                            <p class="valor textSemSistema">R$ 120.000</p>
+                            <p class="valor textSemSistema">${formatarMoeda(custoTotalEstimado)}</p>
                         </div>
                     </div>
 
@@ -315,7 +316,7 @@
                         <i class="fa-regular fa-calendar textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Tempo médio</p>
-                            <p class="valor textSemSistema">17 dias</p>
+                            <p class="valor textSemSistema">${tempoInternacaoTotal}</p>
                         </div>
                     </div>
 
@@ -323,19 +324,19 @@
                         <i class="fa-regular fa-heart textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Taxa de complicações</p>
-                            <p class="valor textSemSistema">10%</p>
+                            <p class="valor textSemSistema">${riscoEstimadoSemNeoGuard.toFixed(0)}%</p>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="tituloCard comSistema">
-                        <p>Com os Sistema</p>
+                        <p>Com o Sistema</p>
                     </div>
                     <div class="rowCard">
                         <i class="fa-regular fa-face-smile textComSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Economia estimada</p>
-                            <p class="valor textComSistema">R$ 120.000</p>
+                            <p class="valor textComSistema">${formatarMoeda(economiaPotencial)}</p>
                         </div>
                     </div>
 
@@ -351,7 +352,7 @@
                         <i class="fa-regular fa-heart textComSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Aumento de <br> sobrevida</p>
-                            <p class="valor textComSistema">95%</p>
+                            <p class="valor textComSistema">${riscoReduzidoNeoGuard.toFixed(0)}%</p>
                         </div>
                     </div>
                 </div>
@@ -362,6 +363,7 @@
 
             
             `
+            document.getElementById('resultado').innerHTML = conteudoHTML;
 
         }
 </script>
