@@ -72,6 +72,12 @@ h2 {
     background-color: aqua;
 }
 
+.alerta{
+    flex: 0 0 25%;
+    height: 100%;
+    background-color: red;
+}
+
 /*Total de alertas*/
 .alertas-total {
     width: 15%;
