@@ -7,10 +7,13 @@
     <title>NeoGuard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/aa58283320.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -83,58 +86,34 @@
             </div>
         </section>
 
-        <section class="nossoServico">
-            <div>
-                <p>Nossos Serviços</p>
-                <div class="vantagem">
-                    <img src="../img/vetores/">
-                    <p class="tituloVantagem">Monitoramento Térmico Inteligente</p>
-                    <p class="textoVantagem">Solução que acompanha em tempo real a estabilidade térmica dos bebês,
-                        reduzindo episódios de
-                        hipotermia e melhorando a taxa de sobrevivência.</p>
+        <section class="servicos-container">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos">
+                <div class="servico">
+                    <img src="img/temperatura.svg">
+                    <h3>Monitoramento Térmico Inteligente</h3>
+                    <p>
+                        Solução que acompanha em tempo real a estabilidade térmica dos bebês,
+                        reduzindo episódios de hipotermia e melhorando a taxa de sobrevivência.
+                    </p>
                 </div>
 
-                <div class="vantagem">
-                    <img src="../img/dash.png">
-                    <p class="tituloVantagem">Dashboard Clínico e Relatórios</p>
-                    <p class="textoVantagem">Plataforma intuitiva que reúne dados em tempo real,
-                        relatórios de desempenho e indicadores clínicos para suporte à tomada de decisão.</p>
+                <div class="servico">
+                    <img src="img/dash.svg">
+                    <h3>Dashboard Clínico</h3>
+                    <p>
+                        Plataforma intuitiva que reúne dados em tempo real,
+                        relatórios de desempenho e indicadores clínicos para suporte à tomada de decisão.
+                    </p>
                 </div>
             </div>
-            <!-- <img src="../img/vetores/"> -->
         </section>
 
-        <section class="calculadora">
-            <div class="textoCalculadora">
-                <p class="tituloCalculadora">Descubra quanto sua UTI Neonatal<br> pode economizar e salvar
-                    vidas com nossa tecnologia<br> de monitoramento inteligente</p>
-                <p class="legendaCalculadora">Insira seus dados e veja o impacto econômico e clínico da temperatura
-                    ideal</p>
-            </div>
-            <div class="inserirDados">
-                <div class="inputs">
-                    <input type="number" id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
-                </div>
-                <div class="inputs">
-                    <input type="number" id="temperatura" placeholder="Temperatura atual (ºC)">
-                </div>
-                <div class="inputs">
-                    <input type="number" id="diaria" placeholder="Custo diário da UTI (R$)">
-                </div>
-                <div class="linha"></div>
-
-                <button onclick="simular()">Calcular Economia e Risco</button>
-                <div class="resultado" id="resultado">
-                    Relatório aparecerá aqui.
-                </div>
-            </div>
-
-
-            <section class="nossaEquipe">
-                <p class="tituloValores"> Nossa Equipe</p>
+        <section>
+            <h2> Nossa Equipe</h2>
+            <div class="equipe">
                 <div>
                     <div class="colaborador">
-
                         <img src="../img/eric.png" alt="">
                         <p>Erick
                         <p>
@@ -164,7 +143,35 @@
                         <p>Maria Eduarda</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
+
+
+        <section class="calculadora">
+            <div class="textoCalculadora">
+                <p class="tituloCalculadora">Descubra quanto sua UTI Neonatal<br> pode economizar e salvar
+                    vidas com nossa tecnologia<br> de monitoramento inteligente</p>
+                <p class="legendaCalculadora">Insira seus dados e veja o impacto econômico e clínico da temperatura
+                    ideal</p>
+            </div>
+            <div class="inserirDados">
+                <div class="inputs">
+                    <input type="number" id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="temperatura" placeholder="Temperatura atual (ºC)">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="diaria" placeholder="Custo diário da UTI (R$)">
+                </div>
+                <div class="linha"></div>
+
+                <button onclick="simular()">Calcular Economia e Risco</button>
+                <div class="resultado" id="resultado">
+                    Relatório aparecerá aqui.
+                </div>
+            </div>
+
     </main>
 
 
