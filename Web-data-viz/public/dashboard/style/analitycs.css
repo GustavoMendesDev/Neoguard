@@ -1,6 +1,6 @@
 section {
     width: 100%;
-    padding: 1.5%;
+    padding: 2%;
     gap: 1%;
     box-sizing: border-box;
 }
@@ -25,7 +25,7 @@ h2 {
 
 /*Estilização da primeira sessão -------------------------------------------------------------------------------------------------*/
 .primeira-sessao {
-    height: 35%;
+    height: 39%;
 }
 
 /*Cabeçalho da primeira sessão*/
@@ -163,7 +163,7 @@ bottom: 12%;
 }
 
 .segunda-sessao {
-    height: 20%;
+    height: 21%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -190,7 +190,7 @@ bottom: 12%;
 
 
 .quarta-sessao {
-    height: 35%;
+    height: 30%;
     display: flex;
     display: flex;
     justify-content: space-between;

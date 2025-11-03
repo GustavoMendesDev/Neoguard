@@ -13,7 +13,7 @@ var linhaEmEdicao;          // Campo oculto que guarda o índice da linha
 
 
 function mostrarModal() {
-    modalOverlay.style.display = 'block';
+    modalOverlay.style.display = 'flex';
     inputNome.value = nomeUsuario ;
     inputEmail.value = emailUsuario;
     inputNivel.value = nivelUsuario;
