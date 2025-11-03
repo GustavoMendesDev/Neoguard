@@ -7,10 +7,6 @@
     text-decoration: none;
 }
 
-section {
-    padding: 5% 5%;
-}
-
 body {
     list-style-type: none;
     background-color: #FEFEFE;
@@ -19,15 +15,19 @@ body {
     font-size: 18px;
     font-family: "Nunito", sans-serif;
     color: #2E2E2E;
+    overflow-x: hidden;
 }
 
 main {
     padding-top: 15vh;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 section {
     width: 100%;
-    padding: 5% 10%;
+    padding: 2.5% 10%;
     box-sizing: border-box;
 }
 
@@ -68,8 +68,8 @@ nav>div {
 
 /*main*/
 main {
-    width: 89vw;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -99,7 +99,6 @@ a {
 .apresentacao {
     display: flex;
     justify-content: space-between;
-
 }
 
 
@@ -141,6 +140,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+     background-color: #fafafa;
 }
 
 .valores-texto {
@@ -160,6 +160,55 @@ a {
 
 
 /*Serviços  -------------------------------------------------------------------------------------------------*/
-
+.servicos-container{
+    background-color: #fafafa;
+}
+.servicos{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+.servico{
+    width: 45%;
+    height: 250px;
+    padding: 10px;
+    border: 2px solid #F67E27;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
 
 /*Serviços -FIM  -------------------------------------------------------------------------------------------------*/
+
+
+/*Equipe  -------------------------------------------------------------------------------------------------*/
+.equipe{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.equipe > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.colaborador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.colaborador > img{
+    width: 50%;
+}
+
+/*Equipe - Fim -------------------------------------------------------------------------------------------------*/
