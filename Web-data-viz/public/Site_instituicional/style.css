@@ -6,9 +6,9 @@
     border: none;
     text-decoration: none;
 }
-section{
-  padding: 5% 5%;
 
+section {
+    padding: 5% 5%;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
     background-color: #FEFEFE;
     width: 100vw;
     height: 100vh;
-    font-size: 16px;
+    font-size: 18px;
     font-family: "Nunito", sans-serif;
     color: #2E2E2E;
 }
@@ -29,6 +29,15 @@ section {
     width: 100%;
     padding: 5% 10%;
     box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3rem;
+    font-size: 800;
+}
+
+h2 {
+    font-size: 2.5rem;
 }
 
 /*Nav -------------------------------------------------------------------------------------------------*/
@@ -65,44 +74,6 @@ main {
 
 
 /*Elementos*/
-.divisor {
-    height: 30%;
-    border-color: #2E2E2E;
-}
-
-.btn {
-    padding: 10px 15px 10px 15px;
-    width: auto;
-    border: none;
-    border-radius: 5px;
-}
-
-.btn_Primario {
-    background-color: var(--laranja);
-    color: #FEFEFE;
-}
-
-.btn_Secundario {
-    background: none;
-    border: 2px solid var(--laranja);
-    color: var(--laranja);
-    border-radius: 10px;
-    transition: 0.4s;
-    color: black;
-    cursor: pointer;
-    margin-left: 9%;
-}
-
-.btn_Secundario:hover {
-    background-color: var(--laranja);
-    transition: 0.4s;
-}
-
-.btn_Secundario>a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .nav-btn {
     padding: 5px 10px;
     border: 2px solid #F67E27;
@@ -110,9 +81,15 @@ main {
     color: #F67E27;
     background-color: #FEFEFE;
 }
-.nav-btn:hover{
-     background-color: #F67E27;
-     color: #FEFEFE;
+
+.nav-btn:hover {
+    background-color: #F67E27;
+    color: #FEFEFE;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /*Nav -------------------------------------------------------------------------------------------------*/
@@ -132,11 +109,6 @@ main {
     width: 50%;
     gap: 1.5rem;
     font-size: 2rem;
-}
-
-h1 {
-    font-size: 3.5rem;
-    font-size: 800;
 }
 
 .apresentacao-btn {
@@ -160,4 +132,34 @@ h1 {
     width: 45%;
 }
 
-/*Apresentação -------------------------------------------------------------------------------------------------*/
+/*Apresentação - FIM -------------------------------------------------------------------------------------------------*/
+
+
+/*Valores  -------------------------------------------------------------------------------------------------*/
+.valores {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.valores-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.valores-grupo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/*Valores - Fim -------------------------------------------------------------------------------------------------*/
+
+
+/*Serviços  -------------------------------------------------------------------------------------------------*/
+
+
+/*Serviços -FIM  -------------------------------------------------------------------------------------------------*/
