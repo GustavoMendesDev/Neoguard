@@ -23,7 +23,7 @@ function fecharModal() {
 
 // parâmetro do tipo objeto
 function removerLinha(botaoLimpar) {
-    if (confirm('Tem certeza que deseja excluir esta incubadora?')) {
+    if (confirm('Tem certeza que deseja limpar esta incubadora?')) {
         // Encontra o <tr> (linha) a partir do botão clicado:
         // 1º parentNode: sobe para o <td>
         // 2º parentNode: sobe para o <tr>
