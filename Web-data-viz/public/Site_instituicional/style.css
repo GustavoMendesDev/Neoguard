@@ -334,6 +334,77 @@ a {
 .textComSistema {
     color: #F67E27;
 }
+.interface{
+max-width: 400px;
+
+
+
+
+}
+footer{
+
+background-color: #1c3ab4;
+height: 850px;
+width: 1580px;
+color: #FEFEFE;
+margin: 1px;
+padding:1px;
+
+
+}
+footer .line-footer1{
+    display: flex;
+    flex-direction: row;
+}
+footer .line-footer1 h1{
+font-size: 3.5rem;
+
+}
+footer .line-footer1 p{
+    font-size: 2.7rem;
+    margin:5px 0;
+    padding-bottom: 50px;
+    
+}
+footer .box-column-footer1{
+    display: flex;
+    flex-direction: column;
+padding-right: 60px;
+margin-left: 70px;
+}
+footer .box-column-footer1 img{
+width: 850.48px;
+height: 212.172px;
+
+}
+footer .box-column-footer2{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+max-width:33%;
+
+}
+
+.box-column-footer2 .links-footer a
+{
+    color: #fff;
+display: block;
+font-size: 2.4rem;
+white-space:nowrap;
+
+
+
+}
+ footer .line-footer2 p{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.5rem;
+max-width: 100%;
+border-top: #fff solid 2px;
+padding-top: 30px;
+ }
+
 
 
 /*Calculadora - fim -------------------------------------------------------------------------------------------------*/
