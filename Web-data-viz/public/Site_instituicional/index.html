@@ -5,14 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoGuard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-        rel="stylesheet">
-    <script src="https://kit.fontawesome.com/aa58283320.js" crossorigin="anonymous"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-        rel="stylesheet">
+    <!--<script src="https://kit.fontawesome.com/aa58283320.js" crossorigin="anonymous"></script> -->
+
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -28,30 +22,29 @@
             <a>Serviços</a>
             <a>Contato</a>
 
-            <hr class="divisor">
-            </hr>
-
-            <button class="btn btn_Secundario"><a href="app/views/Login.html">Entrar</a></button>
+            <button class="nav-btn">
+                <a href="../AppViews/Login.html">Entrar</a>
+            </button>
         </div>
     </nav>
 
     <main>
-        <section class="saibaMais">
-            <div class="textoSaibaMais">
-                <div class="texto">
-                    <p class="titulo">Cuidando de vidas desde os primeiros minutos</p>
-                    <p class="legendaApresentacao">Nós a neoGuard, desenvolvemos um sistema
-                        inteligente de controle de temperatura que mantêm recém-nascidos
-                        seguros, estáveis e acolhidos dentro das incubadoras.</p>
-                    <div>
-                        <button class="btnSaiba"><i class="fa-regular fa-circle-right"></i> Saiba mais</button>
-                    </div>
+        <section class="apresentacao">
+            <div class="apresentacao-texto">
+                <h1>Cuidando de vidas desde os primeiros minutos</h1>
+                <p>Nós a neoGuard, desenvolvemos um sistema
+                    inteligente de controle de temperatura que mantêm recém-nascidos
+                    seguros, estáveis e acolhidos dentro das incubadoras.
+                </p>
+                <div>
+                    <button class="apresentacao-btn">
+                        <img src="img/saiba_mais.svg">
+                        <span> Saiba mais </span>
+                    </button>
                 </div>
-
             </div>
 
             <img src="../img/Imagem1.png">
-
         </section>
 
         <section class="valores">
@@ -87,9 +80,6 @@
                 </div>
             </div>
         </section>
-        <section>
-
-        </section>
 
         <section class="nossoServico">
             <div>
@@ -121,7 +111,7 @@
             </div>
             <div class="inserirDados">
                 <div class="inputs">
-                    <input type="number"  id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
+                    <input type="number" id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
                 </div>
                 <div class="inputs">
                     <input type="number" id="temperatura" placeholder="Temperatura atual (ºC)">
@@ -132,45 +122,47 @@
                 <div class="linha"></div>
 
                 <button onclick="simular()">Calcular Economia e Risco</button>
-            <div class="resultado" id="resultado">
-            Relatório aparecerá aqui.
-        </div>
-            </div>
-            
-
-        <section class="nossaEquipe">
-            <p class="tituloValores"> Nossa Equipe</p>
-            <div>
-                <div class="colaborador">
-
-                    <img src="../img/eric.png" alt="">
-                    <p>Erick<p>
-                </div>
-                <div class="colaborador">
-                    <img src="../img/guilherme.png">
-                    <p>Guilherme Mesquita<p>
-                </div>
-                <div class="colaborador">
-                    <img src="../img/Gustavo 1.png">
-                    <p>Gustavo Emmanoel</p>
+                <div class="resultado" id="resultado">
+                    Relatório aparecerá aqui.
                 </div>
             </div>
 
-            <div>
-                <div class="colaborador">
-                    <img src="../img/gustavo 2.png">
-                    <p>Gustavo Mendes</p>
+
+            <section class="nossaEquipe">
+                <p class="tituloValores"> Nossa Equipe</p>
+                <div>
+                    <div class="colaborador">
+
+                        <img src="../img/eric.png" alt="">
+                        <p>Erick
+                        <p>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../img/guilherme.png">
+                        <p>Guilherme Mesquita
+                        <p>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../img/Gustavo 1.png">
+                        <p>Gustavo Emmanoel</p>
+                    </div>
                 </div>
-                <div class="colaborador">
-                    <img src="../img/lucas.png">
-                    <p>Lucas</p>
+
+                <div>
+                    <div class="colaborador">
+                        <img src="../img/gustavo 2.png">
+                        <p>Gustavo Mendes</p>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../img/lucas.png">
+                        <p>Lucas</p>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../img/eduarda.png">
+                        <p>Maria Eduarda</p>
+                    </div>
                 </div>
-                <div class="colaborador">
-                    <img src="../img/eduarda.png">
-                    <p>Maria Eduarda</p>
-                </div>
-            </div>
-        </section>
+            </section>
     </main>
 
 
@@ -181,123 +173,123 @@
 </body>
 <script>
 
-        function simular() {
-            // usei o parseFloat para que no momento em que haja a captura de dado, ele mude
-            // automaticamente para float(decimal)
-            var idadeGestacional = parseFloat(document.getElementById('idadeGestacional').value);
-            var diaria = parseFloat(document.getElementById('diaria').value);
-            var temperatura = parseFloat(document.getElementById('temperatura').value);
+    function simular() {
+        // usei o parseFloat para que no momento em que haja a captura de dado, ele mude
+        // automaticamente para float(decimal)
+        var idadeGestacional = parseFloat(document.getElementById('idadeGestacional').value);
+        var diaria = parseFloat(document.getElementById('diaria').value);
+        var temperatura = parseFloat(document.getElementById('temperatura').value);
 
-            // variaveis para validação
-            let idadeGestacionalMaxima = 42; 
-            let idadeGestacionalMinima = 22;
-            let temperaturaMaxima = 41.0; 
-            let temperaturaMinima = 34.0;
-  
-
-            if (!idadeGestacional || !diaria) {
-                alert("Por favor, preencha o peso, a idade gestacional e o custo da diária para simular.");
-                return;
-            }
+        // variaveis para validação
+        let idadeGestacionalMaxima = 42;
+        let idadeGestacionalMinima = 22;
+        let temperaturaMaxima = 41.0;
+        let temperaturaMinima = 34.0;
 
 
-
-            if (idadeGestacional > idadeGestacionalMaxima) {
-                alert(`Idade Gestacional Incorreta: O valor máximo esperado para idade gestacional é de ${idadeGestacionalMaxima} semanas. Por favor, verifique.`);
-                return;
-            }
-            
-            if (idadeGestacional < idadeGestacionalMinima) {
-                alert(`Idade Gestacional Incorreta: O valor mínimo esperado para idade gestacional é de ${idadeGestacionalMinima} semanas. Por favor, verifique.`);
-                return;
-            }
-
-            if (temperatura > temperaturaMaxima) {
-                alert(`Temperatura Absurda: A temperatura máxima para simulação é de ${temperaturaMaxima}°C. Por favor, verifique o valor inserido.`);
-                return;
-            }
-            
-            if (temperatura < temperaturaMinima) {
-                alert(`Temperatura Baixa: A temperatura mínima para simulação deve ser de pelo menos ${temperaturaMinima}°C. Por favor, verifique o valor inserido.`);
-                return;
-            }
-            
-            let tempoInternacaoBase;
-            let riscoComplicacaoBase;
-            let tipoPrematuro = "Termo ou Pré-termo Próximo";
-
-            if (idadeGestacional < 28) {
-                tempoInternacaoBase = 50;
-                riscoComplicacaoBase = 60;
-                tipoPrematuro = "Prematuro Extremo (< 28 semanas)";
-            } else if (idadeGestacional >= 28 && idadeGestacional <= 33) {
-                tempoInternacaoBase = 20;
-                riscoComplicacaoBase = 40;
-                tipoPrematuro = "Prematuro Moderado (28-33 semanas)";
-            } else if (idadeGestacional >= 34 && idadeGestacional <= 36) {
-                tempoInternacaoBase = 10;
-                riscoComplicacaoBase = 25;
-                tipoPrematuro = "Prematuro Tardio (34-36 semanas)";
-            } else {
-                tempoInternacaoBase = 5;
-                riscoComplicacaoBase = 10;
-                tipoPrematuro = "Bebê a Termo (>= 37 semanas)";
-            }
+        if (!idadeGestacional || !diaria) {
+            alert("Por favor, preencha o peso, a idade gestacional e o custo da diária para simular.");
+            return;
+        }
 
 
-            if (idadeGestacional >= 37) {
-         
-            }
 
-            let ajusteRiscoTemp = 0;
-            let ajusteTempoExtra = 0;
+        if (idadeGestacional > idadeGestacionalMaxima) {
+            alert(`Idade Gestacional Incorreta: O valor máximo esperado para idade gestacional é de ${idadeGestacionalMaxima} semanas. Por favor, verifique.`);
+            return;
+        }
 
-            if (temperatura < 35) {
-                ajusteRiscoTemp = 10;
-                ajusteTempoExtra = 10;
-            }else if (temperatura < 36.0) {
-                ajusteRiscoTemp = 10;
-                ajusteTempoExtra = 5;
-            } else if (temperatura < 36.5) {
-                ajusteRiscoTemp = 5;
-                ajusteTempoExtra = 0;
-            } else if (temperatura < 38) {
-                ajusteRiscoTemp = 10;
-                ajusteTempoExtra = 5; 
-            } else if (temperatura >= 38){
-                ajusteRiscoTemp = 15;
-                ajusteTempoExtra = 10;
-            } else if (temperatura >= 40){
-                ajusteRiscoTemp = 15;
-                ajusteTempoExtra = 15;
-            }
+        if (idadeGestacional < idadeGestacionalMinima) {
+            alert(`Idade Gestacional Incorreta: O valor mínimo esperado para idade gestacional é de ${idadeGestacionalMinima} semanas. Por favor, verifique.`);
+            return;
+        }
 
-            
-            // ajuste no risco base para evitar valores iniciais muito baixos em prematuros.
+        if (temperatura > temperaturaMaxima) {
+            alert(`Temperatura Absurda: A temperatura máxima para simulação é de ${temperaturaMaxima}°C. Por favor, verifique o valor inserido.`);
+            return;
+        }
 
-            var tempoInternacaoTotal = tempoInternacaoBase + ajusteTempoExtra;
-            var custoTotalEstimado = tempoInternacaoTotal * diaria;
-            var riscoEstimadoSemNeoGuard = riscoComplicacaoBase + ajusteRiscoTemp;
+        if (temperatura < temperaturaMinima) {
+            alert(`Temperatura Baixa: A temperatura mínima para simulação deve ser de pelo menos ${temperaturaMinima}°C. Por favor, verifique o valor inserido.`);
+            return;
+        }
 
-            var diasEconomizados = Math.floor((ajusteTempoExtra + tempoInternacaoBase) / 3);
-            var economiaPotencial = diasEconomizados * diaria;
+        let tempoInternacaoBase;
+        let riscoComplicacaoBase;
+        let tipoPrematuro = "Termo ou Pré-termo Próximo";
 
-            var reducaoPorTecnologia = 0.6; // de acordo com o estudo scopes-ahmed
-            var riscoReduzidoNeoGuard = Math.max(10, riscoEstimadoSemNeoGuard * reducaoPorTecnologia);
-
-            var formatarMoeda = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
-
-            
-            let temperaturaHTML = ``
-            if (temperatura == 0 || (temperatura >= 36 && temperatura <= 36.5)) {
-                temperaturaHTML = ``
-                tempoInternacaoTotal = tempoInternacaoBase
-            } else if (temperatura > 0) {
-                temperaturaHTML = `+ ${ajusteTempoExtra} dias por instabilidade térmica)`
-            }
+        if (idadeGestacional < 28) {
+            tempoInternacaoBase = 50;
+            riscoComplicacaoBase = 60;
+            tipoPrematuro = "Prematuro Extremo (< 28 semanas)";
+        } else if (idadeGestacional >= 28 && idadeGestacional <= 33) {
+            tempoInternacaoBase = 20;
+            riscoComplicacaoBase = 40;
+            tipoPrematuro = "Prematuro Moderado (28-33 semanas)";
+        } else if (idadeGestacional >= 34 && idadeGestacional <= 36) {
+            tempoInternacaoBase = 10;
+            riscoComplicacaoBase = 25;
+            tipoPrematuro = "Prematuro Tardio (34-36 semanas)";
+        } else {
+            tempoInternacaoBase = 5;
+            riscoComplicacaoBase = 10;
+            tipoPrematuro = "Bebê a Termo (>= 37 semanas)";
+        }
 
 
-            let conteudoHTML = `
+        if (idadeGestacional >= 37) {
+
+        }
+
+        let ajusteRiscoTemp = 0;
+        let ajusteTempoExtra = 0;
+
+        if (temperatura < 35) {
+            ajusteRiscoTemp = 10;
+            ajusteTempoExtra = 10;
+        } else if (temperatura < 36.0) {
+            ajusteRiscoTemp = 10;
+            ajusteTempoExtra = 5;
+        } else if (temperatura < 36.5) {
+            ajusteRiscoTemp = 5;
+            ajusteTempoExtra = 0;
+        } else if (temperatura < 38) {
+            ajusteRiscoTemp = 10;
+            ajusteTempoExtra = 5;
+        } else if (temperatura >= 38) {
+            ajusteRiscoTemp = 15;
+            ajusteTempoExtra = 10;
+        } else if (temperatura >= 40) {
+            ajusteRiscoTemp = 15;
+            ajusteTempoExtra = 15;
+        }
+
+
+        // ajuste no risco base para evitar valores iniciais muito baixos em prematuros.
+
+        var tempoInternacaoTotal = tempoInternacaoBase + ajusteTempoExtra;
+        var custoTotalEstimado = tempoInternacaoTotal * diaria;
+        var riscoEstimadoSemNeoGuard = riscoComplicacaoBase + ajusteRiscoTemp;
+
+        var diasEconomizados = Math.floor((ajusteTempoExtra + tempoInternacaoBase) / 3);
+        var economiaPotencial = diasEconomizados * diaria;
+
+        var reducaoPorTecnologia = 0.6; // de acordo com o estudo scopes-ahmed
+        var riscoReduzidoNeoGuard = Math.max(10, riscoEstimadoSemNeoGuard * reducaoPorTecnologia);
+
+        var formatarMoeda = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
+
+
+        let temperaturaHTML = ``
+        if (temperatura == 0 || (temperatura >= 36 && temperatura <= 36.5)) {
+            temperaturaHTML = ``
+            tempoInternacaoTotal = tempoInternacaoBase
+        } else if (temperatura > 0) {
+            temperaturaHTML = `+ ${ajusteTempoExtra} dias por instabilidade térmica)`
+        }
+
+
+        let conteudoHTML = `
             
              <div class="resposta">
                 <div class="card">
@@ -363,8 +355,9 @@
 
             
             `
-            document.getElementById('resultado').innerHTML = conteudoHTML;
+        document.getElementById('resultado').innerHTML = conteudoHTML;
 
-        }
+    }
 </script>
+
 </html>
