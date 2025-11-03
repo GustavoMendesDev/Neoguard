@@ -9,7 +9,7 @@
 
 body {
     list-style-type: none;
-    background-color: #FEFEFE;
+    background-color: #F2F4EC;
     width: 100vw;
     height: 100vh;
     font-size: 18px;
@@ -38,6 +38,9 @@ h1 {
 
 h2 {
     font-size: 2.5rem;
+}
+h3{
+    font-size: 1.5rem;
 }
 
 /*Nav -------------------------------------------------------------------------------------------------*/
@@ -140,7 +143,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-     background-color: #fafafa;
+    background-color: #fafafa;
 }
 
 .valores-texto {
@@ -160,15 +163,17 @@ a {
 
 
 /*Serviços  -------------------------------------------------------------------------------------------------*/
-.servicos-container{
+.servicos-container {
     background-color: #fafafa;
 }
-.servicos{
+
+.servicos {
     display: flex;
     margin-top: 2rem;
     justify-content: space-between;
 }
-.servico{
+
+.servico {
     width: 45%;
     height: 250px;
     padding: 10px;
@@ -187,7 +192,7 @@ a {
 
 
 /*Equipe  -------------------------------------------------------------------------------------------------*/
-.equipe{
+.equipe {
     width: 100%;
     margin-top: 2rem;
     display: flex;
@@ -196,22 +201,130 @@ a {
     justify-content: center;
     gap: 2rem;
 }
-.equipe > div{
+
+.equipe>div {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.colaborador{
+
+.colaborador {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
-.colaborador > img{
+
+.colaborador>img {
     width: 50%;
 }
 
 /*Equipe - Fim -------------------------------------------------------------------------------------------------*/
+
+
+/*Calculadora -------------------------------------------------------------------------------------------------*/
+.calculadora {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.inserirDados {
+    width: 45%;
+    background-color: #fefefe;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px #7F7F7F;
+}
+
+.inputs>input {
+    background-color: #F7F8F7;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
+
+.inserirDados>button {
+    background-color: #F67E27;
+    color: #fafafa;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.inserirDados>button:hover{
+    cursor: pointer;
+}
+
+.resposta{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.card{
+    width: 48%;
+    height: 400px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap:15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #7F7F7F;
+}
+.resposta-head{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    color: #fafafa;
+    border-radius: 10px 10px 0 0;
+}
+.rowCard{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.resultado{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:start ;
+    justify-content: center;
+}
+.textValor{
+ width: 100%;
+ text-align: start;
+}
+.valor{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.sem-sis{
+    background-color: #522424;
+}
+.textSemSistema{
+    color: #522424;
+}
+.com-sis{
+    background-color:#F67E27 ;
+}
+.textComSistema{
+    color: #F67E27;
+}
+
+
+/*Calculadora - fim -------------------------------------------------------------------------------------------------*/
+
 
 /* 
 - Titulos do painel(Na pagina Analitycs/Dashboard, trocar os titulos dos gráficos e sessões para que faça mais sentido);

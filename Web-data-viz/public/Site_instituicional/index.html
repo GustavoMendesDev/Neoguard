@@ -148,12 +148,10 @@
 
 
         <section class="calculadora">
-            <div class="textoCalculadora">
-                <p class="tituloCalculadora">Descubra quanto sua UTI Neonatal<br> pode economizar e salvar
-                    vidas com nossa tecnologia<br> de monitoramento inteligente</p>
-                <p class="legendaCalculadora">Insira seus dados e veja o impacto econômico e clínico da temperatura
-                    ideal</p>
-            </div>
+            <h2 class="tituloCalculadora">Descubra quanto sua UTI Neonatal<br> pode economizar e salvar
+                vidas com nossa tecnologia<br> de monitoramento inteligente</h2>
+            <p class="legendaCalculadora">Insira seus dados e veja o impacto econômico e clínico da temperatura
+                ideal</p>
             <div class="inserirDados">
                 <div class="inputs">
                     <input type="number" id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
@@ -167,10 +165,11 @@
                 <div class="linha"></div>
 
                 <button onclick="simular()">Calcular Economia e Risco</button>
-                <div class="resultado" id="resultado">
+                <div id="resultado">
                     Relatório aparecerá aqui.
                 </div>
             </div>
+        </section>
 
     </main>
 
@@ -302,8 +301,8 @@
             
              <div class="resposta">
                 <div class="card">
-                    <div class="tituloCard semSistema">
-                        <p>Sem o Sistema</p>
+                    <div class="resposta-head sem-sis">
+                        <h3>Sem o Sistema</h3>
                     </div>
                     <div class="rowCard">
                         <i class="fa-regular fa-face-frown textSemSistema"></i>
@@ -330,8 +329,8 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="tituloCard comSistema">
-                        <p>Com o Sistema</p>
+                    <div class="resposta-head com-sis">
+                        <h3>Com o Sistema</h3>
                     </div>
                     <div class="rowCard">
                         <i class="fa-regular fa-face-smile textComSistema"></i>
