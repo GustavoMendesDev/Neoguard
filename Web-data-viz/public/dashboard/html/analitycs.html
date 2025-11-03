@@ -65,24 +65,77 @@
 
         <div class="alertas-carrosel">
           <div class="alerta">
+            <h2 class="card-title">Incubadora #03</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">38,1°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 60 minutos</p>
+          </div>
 
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #07</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">37,9°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 60 minutos</p>
           </div>
-          <div class="alerta">
-            
+
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #02</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">37,7°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 25 minutos</p>
           </div>
-              <div class="alerta">
-            
+
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #08</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">37,6°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 30 minutos</p>
           </div>
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #07</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/atencao.svg" alt="">
+              <span class="temperature">37,2°C</span>
+            </div>
+            <p class="card-level">Atenção</p>
+            <p class="card-time">Há 45 minutos</p>
+          </div>
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #07</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/atencao.svg" alt="">
+              <span class="temperature">37,1°C</span>
+            </div>
+            <p class="card-level">Atenção</p>
+            <p class="card-time">Há 20 minutos</p>
+          </div>
+     
         </div>
 
 
         <div class="alertas-total">
           <div class="total T_critico">
-            <span>3</span>
+            <span>4</span>
             <h3>Total de Criticos</h3>
           </div>
           <div class="total T_atencao">
-            <span>1</span>
+            <span>2</span>
             <h3>Total de Atenção</h3>
           </div>
         </div>
@@ -92,24 +145,24 @@
 
     <!--Sessão estratégica-->
     <section class="titulo-estrategico">
-      <h2>Visualização estratégica</h2>
+      <h2>Visualização estratégica das ultimas 24 horas</h2>
     </section>
 
     <!--Total dos alertas-->
     <section class="segunda-sessao">
       <div class="periodo-alertas">
         <div class="total T_critico">
-          <span>3</span>
+          <span>35</span>
           <h3>Total de Criticos</h3>
         </div>
         <div class="total T_atencao">
-          <span>1</span>
+          <span>45</span>
           <h3>Total de Atenção</h3>
         </div>
       </div>
       <div class="grafico-pilha">
-        <canvas id="graficoPilha" style="width: 90%; height: 100%;" ></canvas>
-        </div>
+        <canvas id="graficoPilha" style="width: 90%; height: 100%;"></canvas>
+      </div>
     </section>
 
     <!--Macro dos alertas-->
@@ -239,7 +292,7 @@
           align: 'end',
         }
       },
-      
+
       scales: {
         y: {
           beginAtZero: true,
@@ -269,41 +322,41 @@
 
 
 
-    const data = {
-  labels: [0, 10, 20 , 30 , 40],
-  datasets: [
-    {
-      label: 'Ideal',
-      data: [23],
-      backgroundColor: '#00FF00',
-    },
-    {
-      label: 'Atenção',
-      data: [10],
-      backgroundColor: '#FF2',
-    },
-    {
-      label: 'Crítico',
-      data: [7],
-      backgroundColor: '#ff0022'
-    },
-  ]
-};
+  const data = {
+    labels: [0, 10, 20, 30, 40],
+    datasets: [
+      {
+        label: 'Ideal',
+        data: [23],
+        backgroundColor: '#00FF00',
+      },
+      {
+        label: 'Atenção',
+        data: [10],
+        backgroundColor: '#FF2',
+      },
+      {
+        label: 'Crítico',
+        data: [7],
+        backgroundColor: '#ff0022'
+      },
+    ]
+  };
 
   new Chart(ctx3, {
     type: 'bar',
-    data:data,
+    data: data,
     options: {
-            indexAxis: 'y',
-        plugins: {
-          legend: { /*Aqui onde fica o posicionamento do label */
+      indexAxis: 'y',
+      plugins: {
+        legend: { /*Aqui onde fica o posicionamento do label */
           display: true,
           position: 'top',
 
           labels: { /*styles do label */
-            display:true,
-                usePointStyle: true,
-                pointStyle: 'rectRounded',
+            display: true,
+            usePointStyle: true,
+            pointStyle: 'rectRounded',
             padding: 20,
             font: {
               size: 14,
@@ -313,26 +366,26 @@
             position: 'nearest',
           },
         },
-      title: {
-        display: true,
-        text: 'GRÁFICO ALERTA 24 HORAS',
-        align:'start',
-        font:{
-            size:30
+        title: {
+          display: true,
+          text: 'GRÁFICO ALERTA 24 HORAS',
+          align: 'start',
+          font: {
+            size: 30
+          },
         },
       },
-    },
-    responsive: true,
+      responsive: true,
       scales: {
         y: {
-            title:{
-        display:'flex',
-        text:'Alertas',
-            },
-          stacked:true,
+          title: {
+            display: 'flex',
+            text: 'Alertas',
+          },
+          stacked: true,
         },
-        x:{
-          stacked:true,
+        x: {
+          stacked: true,
 
         },
       }
