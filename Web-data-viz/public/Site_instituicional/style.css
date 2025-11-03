@@ -336,92 +336,81 @@ a {
 }
 
 
-
-footer{
-   background-color: #1c3ab4;
-height: 50%;
-width: 100%;
-color: #FEFEFE;
-display: flex;
-align-items: end;
-
-}
-.content{
-    display: flex;
-    width: 60%;
-    height: 100%;
-    background-color: #2E2E2E;
-}
-.faleConosco{
-    width: 40%;
-    height: 50%;
-    
-}
-/* footer .line-footer1{
-    display: flex;
-    flex-direction: row;
-    height: 80%;
-}
-footer .line-footer1 h1{
-font-size: 2.5rem;
-
-}
-footer .line-footer1 p{
-    font-size: 2rem;
-    margin:5px 0;
-    padding-bottom: 50px;
-    
-}
-footer .box-column-footer1{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10%;
-}
-footer .box-column-footer1 img{
-width: 100%;
-height: 40%;
-
-}
-footer .box-column-footer2{
-    display: flex;
-    flex-direction: column;
-    padding-left: 70%;
-    
-    max-width: 100%;
-
-} */
-
-/* .box-column-footer2 .links-footer a
-{
-    color: #fff;
-display: block;
-font-size: 2.4rem;
-white-space:nowrap;
-
-
-
-}
- footer .line-footer2 p{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 1.5rem;
-max-width: 100%;
-border-top: #fff solid 2px;
-padding-top: 30px;
- }
- */
-
-
 /*Calculadora - fim -------------------------------------------------------------------------------------------------*/
 
+/*footer  -------------------------------------------------------------------------------------------------*/
+footer{
+    width: 100%;
+    height: 500px;
+    padding: 5%;
+    box-sizing: border-box;
+    background-color: #1C3AB4;
+    display: flex;
+    justify-content: space-between;
+    color: #fafafa;
+}
+.neo{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+.info > div  >div{
+    display: flex;
+    align-items: center;
+    gap:10px;
+
+}
+.f-img{
+    width: 24px;
+}
+
+.formes{
+    width: 30%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #A88CFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.f-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.f-input > input{
+    padding: 10px;
+    border-radius: 10px;
+}
+.f-button{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #F67E27;
+    color: #fafafa;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+}
 
 /* 
 - Titulos do painel(Na pagina Analitycs/Dashboard, trocar os titulos dos gráficos e sessões para que faça mais sentido);
 - Trocar o nome/imgs das paginas do painel (Analityc, Usuarios e incubadoras)
 - Link do log-out;
 - icone de limpar;
+- Tela de login: tirar cadastro
 
-- calculadora;
 - footer - Formulario (loop);
 */
