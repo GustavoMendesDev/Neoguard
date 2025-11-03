@@ -19,7 +19,6 @@ body {
 }
 
 main {
-    padding-top: 15vh;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -39,7 +38,8 @@ h1 {
 h2 {
     font-size: 2.5rem;
 }
-h3{
+
+h3 {
     font-size: 1.5rem;
 }
 
@@ -101,7 +101,9 @@ a {
 /*Apresentação -------------------------------------------------------------------------------------------------*/
 .apresentacao {
     display: flex;
+    padding-top: 150px;
     justify-content: space-between;
+    background-color: #fafafa;
 }
 
 
@@ -143,7 +145,6 @@ a {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    background-color: #fafafa;
 }
 
 .valores-texto {
@@ -230,6 +231,7 @@ a {
     align-items: center;
     gap: 15px;
     text-align: center;
+    background-color: #fafafa;
 }
 
 .inserirDados {
@@ -258,35 +260,39 @@ a {
     padding: 10px 0;
     border-radius: 5px;
 }
-.inserirDados>button:hover{
+
+.inserirDados>button:hover {
     cursor: pointer;
 }
 
-.resposta{
+.resposta {
     width: 100%;
     display: flex;
     align-items: start;
     justify-content: space-between;
 }
-.card{
+
+.card {
     width: 48%;
     height: 400px;
     display: flex;
     align-items: start;
     justify-content: start;
     flex-direction: column;
-    gap:15px;
+    gap: 15px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px #7F7F7F;
 }
-.resposta-head{
+
+.resposta-head {
     width: 100%;
     box-sizing: border-box;
     padding: 5px;
     color: #fafafa;
     border-radius: 10px 10px 0 0;
 }
-.rowCard{
+
+.rowCard {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
@@ -294,31 +300,38 @@ a {
     align-items: center;
     gap: 15px;
 }
-.resultado{
+
+.resultado {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items:start ;
+    align-items: start;
     justify-content: center;
 }
-.textValor{
- width: 100%;
- text-align: start;
+
+.textValor {
+    width: 100%;
+    text-align: start;
 }
-.valor{
+
+.valor {
     font-size: 1.5rem;
     font-weight: 800;
 }
-.sem-sis{
+
+.sem-sis {
     background-color: #522424;
 }
-.textSemSistema{
+
+.textSemSistema {
     color: #522424;
 }
-.com-sis{
-    background-color:#F67E27 ;
+
+.com-sis {
+    background-color: #F67E27;
 }
-.textComSistema{
+
+.textComSistema {
     color: #F67E27;
 }
 
