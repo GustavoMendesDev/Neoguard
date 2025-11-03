@@ -6,6 +6,10 @@
     border: none;
     text-decoration: none;
 }
+section{
+  padding: 5% 5%;
+
+}
 
 body {
     list-style-type: none;
@@ -60,7 +64,48 @@ nav>div {
     box-sizing: border-box;
 }
 
-a {
+/*main*/
+main {
+    width: 89vw;
+    height: 90vh;
+}
+
+
+/*Elementos*/
+.divisor {
+    height: 30%;
+    border-color: #2E2E2E;
+}
+
+.btn {
+    padding: 10px 15px 10px 15px;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn_Primario {
+    background-color: var(--laranja);
+    color: #FEFEFE;
+}
+
+.btn_Secundario {
+    background: none;
+    border: 2px solid var(--laranja);
+    color: var(--laranja);
+    border-radius: 10px;
+    transition: 0.4s;
+    color: black;
+    cursor: pointer;
+    margin-left: 9%;
+}
+
+.btn_Secundario:hover {
+    background-color: var(--laranja);
+    transition: 0.4s;
+}
+
+.btn_Secundario>a {
     text-decoration: none;
     color: inherit;
 }
