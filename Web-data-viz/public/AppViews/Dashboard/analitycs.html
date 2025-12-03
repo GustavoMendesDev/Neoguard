@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/esqueleto.css">
+  <link rel="stylesheet" href="./style/analitycs.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <!--Navebar-->
+
+  <nav>
+    <div class="nav-container">
+      <img class="logo" src="../img/nav/Logo - Branco.svg" alt="Neoguard">
+
+      <div class="nav-item selecionado">
+        <img src="../img/nav/analitycs.svg" alt="Icone de analitycs">
+        <a href="../html/analitycs.html">Panorama</a>
+      </div>
+
+      <div class="nav-item">
+        <img src="../img/nav/users.svg" alt="Icone de Users">
+        <a href="../html/TelaCadUser.html">Usuários</a>
+      </div>
+
+      <div class="nav-item">
+        <img src="../img/nav/incubadoras.svg" alt="Icone de Incubadora">
+        <a href="../html/TelaAdmin.html">Incubadoras</a>
+      </div>
+    </div>
+
+     <a href="../../AppViews/Login.html" class="exit">
+        <img src="../img/nav/log-out.svg" alt="Icone de log-out">
+    </a>
+  </nav>
+  <!--Fim do nav-bar-->
+
+  <!--Conteúdo principal da Dashboard-->
+  <main>
+
+    <!--Sessaão de informações: titulo e legendas-->
+    <section class="header">
+      <h1>Monitoramento - Salas de UTI neonatal</h1>
+    </section>
+
+    <!--Incubadoras em alerta-->
+    <section class="primeira-sessao">
+      <div class="head">
+        <h2>Monitoramento de Alertas</h2>
+        <div class="legendas">
+          <div class="legenda">
+            <img src="../img/analitycs/critico.svg">
+            <span><b>Critico:</b> Temperatura acima de 37,5C° ou abaixo de 36,5C°</span>
+          </div>
+          <div class="legenda">
+            <img src="../img/analitycs/atencao.svg">
+            <span><b>Atencao:</b> Temperatura acima 37,2C° ou abaixo de 36,8C°</span>
+          </div>
+        </div>
+      </div>
+      <div class="alertas">
+
+        <div class="alertas-carrosel">
+          <div class="alerta">
+            <h2 class="card-title">Incubadora #03</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">38,1°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 60 minutos</p>
+          </div>
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #07</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">37,9°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 60 minutos</p>
+          </div>
+
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #02</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">37,7°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 25 minutos</p>
+          </div>
+
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #08</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/critico.svg" alt="">
+              <span class="temperature">37,6°C</span>
+            </div>
+            <p class="card-level">Crítico</p>
+            <p class="card-time">Há 30 minutos</p>
+          </div>
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #07</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/atencao.svg" alt="">
+              <span class="temperature">37,2°C</span>
+            </div>
+            <p class="card-level">Atenção</p>
+            <p class="card-time">Há 45 minutos</p>
+          </div>
+
+                    <div class="alerta">
+            <h2 class="card-title">Incubadora #07</h2>
+            <div class="card-status critical">
+                <img src="../img/analitycs/atencao.svg" alt="">
+              <span class="temperature">37,1°C</span>
+            </div>
+            <p class="card-level">Atenção</p>
+            <p class="card-time">Há 20 minutos</p>
+          </div>
+     
+        </div>
+
+
+        <div class="alertas-total">
+          <div class="total T_critico">
+            <span>4</span>
+            <h3>Total de Criticos</h3>
+          </div>
+          <div class="total T_atencao">
+            <span>2</span>
+            <h3>Total de Atenção</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!--Sessão estratégica-->
+    <section class="titulo-estrategico">
+      <h2>Visualização estratégica das ultimas 24 horas</h2>
+    </section>
+
+    <!--Total dos alertas-->
+    <section class="segunda-sessao">
+      <div class="periodo-alertas">
+        <div class="total T_critico">
+          <span>35</span>
+          <h3>Total de Criticos</h3>
+        </div>
+        <div class="total T_atencao">
+          <span>45</span>
+          <h3>Total de Atenção</h3>
+        </div>
+      </div>
+      <div class="grafico-pilha">
+        <canvas id="graficoPilha" style="width: 90%; height: 100%;"></canvas>
+      </div>
+    </section>
+
+    <!--Macro dos alertas-->
+    <section class="quarta-sessao">
+      <div class="grafico-linha">
+        <canvas id="myChart" style="width: 100%; height: 100%;"></canvas>
+      </div>
+
+      <div class="historico">
+        <h3>Histórico de alertas</h3>
+        <div class="tabela-log">
+          <table>
+            <thead>
+              <th>Data/Hora</th>
+              <th>Incubadora</th>
+              <th>Alerta</th>
+              <th>Temperatura</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>045</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+              <tr>
+                <th>10/03/25 06:33:00</th>
+                <th>03</th>
+                <th>Critico</th>
+                <th>36,0C°</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+
+  </main>
+
+</body>
+<script>
+  const ctx = document.getElementById('myChart');
+  const ctx3 = document.getElementById('graficoPilha');
+
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['0h', '5h', '10h', '15h', '20h', '23h'],
+      datasets: [
+        {
+          label: 'Critico',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1,
+          borderColor: 'red',
+        },
+        {
+          label: 'Alerta',
+          data: [20, 21, 5, 7, 6, 4],
+          borderWidth: 1,
+          borderColor: 'orange',
+        },
+      ],
+    },
+    options: {
+
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: "Analise de alertas (24h)",
+          font: { size: 18 },
+          align: 'start',
+          color: "#2E2E2E"
+        },
+        legend: {
+          align: 'end',
+        }
+      },
+
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Quantidaade',
+            font: {
+              size: 16,
+              color: "#2E2E2E"
+            },
+          },
+        },
+        x: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Periodo',
+            color: "#2e2e2e",
+            font: {
+              size: 16,
+            },
+          },
+        },
+      },
+    }
+  });
+
+
+
+  const data = {
+    labels: [0, 10, 20, 30, 40],
+    datasets: [
+      {
+        label: 'Ideal',
+        data: [13],
+        backgroundColor: '#00FF00',
+      },
+      {
+        label: 'Crítico',
+        data: [15],
+        backgroundColor: '#ff0022'
+      },
+    ]
+  };
+
+  new Chart(ctx3, {
+    type: 'bar',
+    data: data,
+    options: {
+      indexAxis: 'y',
+      plugins: {
+        legend: { /*Aqui onde fica o posicionamento do label */
+          display: true,
+          position: 'top',
+
+          labels: { /*styles do label */
+            display: true,
+            usePointStyle: true,
+            pointStyle: 'rectRounded',
+            padding: 20,
+            font: {
+              size: 14,
+            },
+          },
+          tooltip: {
+            position: 'nearest',
+          },
+        },
+        title: {
+          display: true,
+          text: 'Situação UTI Neonatal',
+          align: 'start',
+          font: {
+            size: 30
+          },
+        },
+      },
+      responsive: true,
+      scales: {
+        y: {
+          title: {
+            display: 'flex',
+            text: 'Alertas',
+          },
+          stacked: true,
+        },
+        x: {
+          stacked: true,
+
+        },
+      }
+    }
+  });
+
+</script>
+
+</html>
