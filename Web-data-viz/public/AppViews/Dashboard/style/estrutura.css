@@ -21,12 +21,27 @@ body {
     color: #2E2E2E;
 }
 
+
+
+/*Estilização do logo-------------*/
+.logo {
+    width: 80%;
+    margin-bottom: 15%;
+    align-self: center;
+}
+/* -------------------------------*/
+
+.perfil{
+    width: 70%;
+    text-align: center;
+}
+
 /*Conteiner principal do nav-bar*/
 nav {
     width: 15%;
     height: 100%;
     padding: 2% 0;
-    border-radius: 0 12% 12% 0;
+    border-radius: 0 20px 20px 0;
     background-color: #A992F3;
     display: flex;
     flex-direction: column;
@@ -38,22 +53,47 @@ nav {
 .nav-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
 }
-
-/*Estilização do logo*/
-.logo {
-    width: 80%;
-    margin-bottom: 15%;
-    align-self: center;
+.nav-item {
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    color: #FAFAFA;
+    font-weight: bold;
+    font-family: "Nunito";
 }
 
-/* Fim da estilização do logo*/
-
-.nav-item {
-    width: 90%;
-    margin-top: 5%;
+.nav-item > img {
+    width: 10%;
     padding: 5%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    color: #FAFAFA;
+}
+.nav-item:hover {
+    background-color: #8560F9;
+}
+.selecionado {
+    background-color: #6343C7;
+}
+
+
+.monitoramento{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+.monitoramento-item {
+    width: 100%;
+    padding: 3% 0 3% 15%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     gap: 3%;
@@ -61,32 +101,30 @@ nav {
     font-weight: bold;
     font-family: "Nunito";
 }
-
-.nav-item img {
+.monitoramento-item > img {
     width: 10%;
-    margin-top: 3%;
     padding: 5%;
     display: flex;
     align-items: center;
-    gap: 3%;
+    gap: 5%;
     color: #FAFAFA;
 }
+.monitoramento-item:hover {
+    background-color: #C5B3FF;
+}
+.monitoramento-selecionado {
+    background-color: #8560F9;
+}
 
-/*Quando estiver naquela página*/
-.selecionado {
-    width: 90%;
-    margin-top: 5%;
-    padding: 5%;
+.exit{
     display: flex;
-    align-items: center;
-    gap: 3%;
-    color: #FAFAFA;
-    background-color: #8560F9;
+    justify-content: center;
+}
+.exit > img{
+    width:20% ;
 }
 
-.nav-item:hover {
-    background-color: #8560F9;
-}
+
 
 
 /**/
