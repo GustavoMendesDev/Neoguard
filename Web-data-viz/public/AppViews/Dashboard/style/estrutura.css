@@ -1,11 +1,14 @@
+/*Fonte Nunito*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&family=Russo+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
 a {
-  text-decoration: none;
-  color: inherit; 
+    text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -23,7 +26,7 @@ nav {
     width: 15%;
     height: 100%;
     padding: 2% 0;
-    border-radius: 0 10% 10% 0;
+    border-radius: 0 12% 12% 0;
     background-color: #A992F3;
     display: flex;
     flex-direction: column;
@@ -32,7 +35,7 @@ nav {
     box-sizing: border-box;
 }
 
-.nav-container{
+.nav-container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -44,6 +47,7 @@ nav {
     margin-bottom: 15%;
     align-self: center;
 }
+
 /* Fim da estilização do logo*/
 
 .nav-item {
@@ -52,8 +56,32 @@ nav {
     padding: 5%;
     display: flex;
     align-items: center;
-    gap: 5%;
+    gap: 3%;
     color: #FAFAFA;
+    font-weight: bold;
+    font-family: "Nunito";
+}
+
+.nav-item img {
+    width: 10%;
+    margin-top: 3%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    color: #FAFAFA;
+}
+
+/*Quando estiver naquela página*/
+.selecionado {
+    width: 90%;
+    margin-top: 5%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    color: #FAFAFA;
+    background-color: #8560F9;
 }
 
 .nav-item:hover {
