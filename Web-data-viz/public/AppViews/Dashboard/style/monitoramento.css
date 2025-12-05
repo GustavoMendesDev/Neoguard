@@ -1,15 +1,15 @@
-main{
-    padding: 2% 0;
-}
 section{
     width:100%;
-    padding: 0 2%;
+    padding: 2% 2%;
     box-sizing: border-box;
 }
-.headar{
+
+/* Configuração do header */
+.containerHeadar{
 display: flex;
 justify-content: space-between;
-height: 20%;
+align-items: center;
+height: 25%;
 }
 
 .titulo{
@@ -28,7 +28,7 @@ height: 20%;
     display: flex;
     gap:20px;
     border-radius:15px;
-    padding: 20px 10px;
+    padding: 15px 10px;
     color: #fefefe;
 }
 .tituloItem > img{
@@ -45,7 +45,7 @@ height: 20%;
     box-sizing: border-box;
     padding: 20px;
     height: 100%;
-    font-size: 20px;
+    font-size: 18px;
 }
 .legendaItem{
     display: flex;
@@ -55,3 +55,60 @@ height: 20%;
 .legendaItem > img {
     width: 30px;
 }
+
+/* Fim da configuração do header --------------------------- */
+
+
+
+/* Configuração dos cards de alerta */
+.containerAlerta{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:6.25%;
+    height: 40%;
+    overflow-y: scroll;
+}
+
+.alertaItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+    border: 2px solid #C5B3FF;
+    border-radius: 15px;
+    min-width: 200px;
+    width: 15%;
+    height: 50%;
+    padding: 20px;
+}
+
+.numeroIncubadora{
+    font-size: 18px;
+    font-weight: 600;
+}
+.containerTemperatura{
+    display: flex;
+    align-items:center;
+    gap: 20px;
+    font-size: 21px;
+    font-weight: 600;
+}
+.containerTemperatura > img{
+    width: 30%;
+}
+/* Fim - Configuração dos cards de alerta ------------------------------------------------------------- */
+
+
+/* Configuração dos graficos */
+.containerInfo{
+    height: 35%;
+}
+.containerGrafico{
+    box-sizing: border-box;
+    width: 45%;
+    height: 100%;
+    padding: 20px;
+}
+/* Configuração dos graficos ----------------------------------------------------------------- */

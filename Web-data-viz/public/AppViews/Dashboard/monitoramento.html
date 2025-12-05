@@ -7,6 +7,8 @@
 
   <link rel="stylesheet" href="./style/estrutura.css">
   <link rel="stylesheet" href="./style/monitoramento.css">
+
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <title>Dashboard | NeoGuard</title>
@@ -65,7 +67,7 @@
 
   <!--Conteúdo principal da Dashboard-->
   <main>
-    <section class="headar">
+    <section class="containerHeadar">
       <div class="titulo">
         <div class="tituloItem">
           <img src="../../assets/dashboard-img/nav-bar/sala.svg">
@@ -89,12 +91,112 @@
           <img src="../../assets/dashboard-img/icone-alerta/Ok.svg">
           <p><b>IDEAL:</b> Temperatura entre 36,5 °C</p>
         </div>
-        
+
       </div>
     </section>
-    
+
+    <section class="containerAlerta">
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+      <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>1</b></span>
+        <span class="containerTemperatura">
+          <img src="../../Assets/dashboard-img/icone-alerta/Critico.svg">
+          <span>36 °C</span>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>60</b> minuto</span>
+      </div>
+    </section>
+
+    <section class="containerInfo">
+      <div class="containerGrafico">
+        <canvas id="myChart"></canvas>
+      </div>
+    </section>
+
   </main>
 
 </body>
+<script src="./js/monitoramento.js"></script>
 
 </html>
