@@ -15,7 +15,7 @@
 
 body {
     list-style-type: none;
-    background-color: #F2F4EC;
+    background-color: #f2f3ee;
     width: 100vw;
     height: 100vh;
     font-size: 18px;
@@ -201,6 +201,7 @@ a {
 
 
 /*Valores  -------------------------------------------------------------------------------------------------*/
+
 .valores {
     width: 100%;
     display: flex;
@@ -218,6 +219,7 @@ a {
 .valores-texto h2{
     font-family: "Montserrat";
     flex-direction: column;
+    color: #2E2E2E;
 }
 
 .valores-texto span{
@@ -227,11 +229,43 @@ a {
     flex-direction: column;
 }
 
+.valores-texto p{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Nunito";
+    color: #2E2E2E;
+}
+
 .valores-grupo {
     width: 100%;
     display: flex;
     justify-content: space-between;
     text-align: center;
+}
+
+.valor {
+    justify-content: center;
+    width: 70%;
+}
+
+.valor p {
+    color: #2E2E2E;
+    margin-top: 4%;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Montserrat";
+}
+
+.valor img {
+  transition: transform 0.4s ease;
+}
+
+.valor img:hover {
+  transform: scale(1.1);
 }
 
 /*Valores - Fim -------------------------------------------------------------------------------------------------*/
