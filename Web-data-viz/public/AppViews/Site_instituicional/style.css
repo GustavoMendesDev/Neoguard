@@ -141,10 +141,21 @@ a {
 .apresentacao-texto {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 50%;
     gap: 2rem;
     font-weight: 400;
     font-size: 1.1rem;
+    font-family: "Nunito";
+    color: #2E2E2E;
+}
+
+.apresentacao-texto p {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    gap: 2rem;
+    font-weight: 400;
+    font-size: 20px;
     font-family: "Nunito";
     color: #2E2E2E;
 }
@@ -163,11 +174,11 @@ a {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 10px 15px;
+    padding: 10px 17px;
     border-radius: 10px;
     background-color: #F67E27;
     color: #FEFEFE;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: bold;
     font-family: "Nunito";
 }
