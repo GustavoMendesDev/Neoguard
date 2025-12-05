@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /*Resentando todas as margens e paddings*/
 * {
     margin: 0;
@@ -143,7 +145,7 @@ a {
     flex-direction: column;
     width: 90%;
     font-size: 32px;
-    font-family: "Monteserrat";
+    font-family: "Montserrat";
 }
 
 .apresentacao-btn {
@@ -451,3 +453,38 @@ footer {
 
 - footer - Formulario (loop);
 */
+
+
+.bolinhas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+.bolinhas span {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    opacity: 0.18;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+/* cores diferentes para cada bolinha */
+.bolinhas span:nth-child(1) { 
+    margin-left: 90%;
+    background-color: #A5D8FF; 
+}
+.bolinhas span:nth-child(2) { background-color: #A88CFF; }
+.bolinhas span:nth-child(3) { background-color: #A5D8FF; } 
+.bolinhas span:nth-child(4) { background-color: #A88CFF; } 
+.bolinhas span:nth-child(5) { background-color: #A5D8FF; }
+
+/* posições */
+.bolinhas span:nth-child(1) { top: 5%; left: 8%; }
+.bolinhas span:nth-child(2) { top: 30%; left: -10px; }
+.bolinhas span:nth-child(3) { top: 75%; left: 12%; }
+.bolinhas span:nth-child(4) { top: 20%; right: 5%; }
+.bolinhas span:nth-child(5) { top: 60%; right: 12%; }
