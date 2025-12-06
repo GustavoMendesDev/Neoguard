@@ -6,7 +6,7 @@ function cadastrar(nome, cnpj) {
     
   
     var instrucaoSql = `
-        INSERT INTO Hospital (Nome, Cnpj) VALUES ('${nome}', '${cnpj}');
+        INSERT INTO hospital (NomeFantasia, Cnpj) VALUES ('${nome}', '${cnpj}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
