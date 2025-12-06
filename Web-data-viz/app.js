@@ -1,4 +1,4 @@
-// var ambiente_processo = 'producao';
+ // var ambiente_processo = 'producao';
 var ambiente_processo = 'desenvolvimento';
 
 var caminho_env = ambiente_processo === 'producao' ? '.env' : '.env.dev';
@@ -15,6 +15,7 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
+var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var tipoRouter = require("./src/routes/tipos");
 var sensorRouter = require("./src/routes/sensores");
@@ -24,6 +25,7 @@ var IncubadoraRouter = require("./src/routes/incubadoras");
 var hospitalRouter = require("./src/routes/hospitais");
 var historicoRouter = require("./src/routes/historicos");
 var bebeRouter = require("./src/routes/bebes");
+
 
 
 
