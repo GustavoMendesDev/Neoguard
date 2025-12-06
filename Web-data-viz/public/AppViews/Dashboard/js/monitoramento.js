@@ -1,21 +1,65 @@
-  const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
+new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
+        labels: [''],
+        datasets: [{
+            label: 'Ideal',
+            data: [5],
+            backgroundColor: [
+                '#75C900',  // ideal
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Critico',
+            data: [3],
+            backgroundColor: [
+                '#FF0000',  // ideal
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Atenção',
+            data: [2],
+            backgroundColor: [
+                '#FF8400',  // ideal
+            ],
+            borderWidth: 1
+        }],
+
     },
     options: {
+        indexAxis: 'y',
+        scales: {
+            x: {
+                stacked: true,
+                min: 0,
+                max: 10
+            },
+            y: {
+                stacked: true,
+                ticks: {
+                    display: false   // remove os valores do eixo Y
+                },
+                grid: {
+                    display: false   // opcional: remove as linhas do grid do eixo Y
+                }
+            }
+        },
         responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: "TOTAL INCUBADORAS POR CADA ESTADO",
+                font: {
+                    size: 16
+                }
+            }
+        },
+
     }
-  });
+}
+);
