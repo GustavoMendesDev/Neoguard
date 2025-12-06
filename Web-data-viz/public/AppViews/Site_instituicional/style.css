@@ -120,7 +120,7 @@ main {
     color: #ffffff;
 }
 
-.nav-btn:hover{
+.nav-btn:hover {
     transition: 0.5s;
     background-color: #F67E27;
 }
@@ -216,20 +216,20 @@ a {
     gap: 2rem;
 }
 
-.valores-texto h2{
+.valores-texto h2 {
     font-family: "Montserrat";
     flex-direction: column;
     color: #2E2E2E;
 }
 
-.valores-texto span{
+.valores-texto span {
     color: #A992F3;
     margin-left: 0%;
     font-family: "Montserrat";
     flex-direction: column;
 }
 
-.valores-texto p{
+.valores-texto p {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -261,11 +261,11 @@ a {
 }
 
 .valor img {
-  transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .valor img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /*Valores - Fim -------------------------------------------------------------------------------------------------*/
@@ -325,7 +325,7 @@ a {
 
 .servico:hover {
     transition: 0.8s;
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /*Serviços -FIM  -------------------------------------------------------------------------------------------------*/
@@ -336,27 +336,26 @@ a {
     width: 100%;
     margin-top: 2rem;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
     padding: 1rem;
 }
 
-.sessao-equipe h2{
+.sessao-equipe h2 {
     font-family: "Montserrat";
 }
 
-
 .colaborador {
     flex: 1 1 300px;
-    width: 330px;
+    width: 320px;
     position: relative;
     border-radius: 18px;
     overflow: hidden;
     text-align: center;
 }
 
-.colaborador > img {
+.colaborador>img {
     width: 70%;
     height: 260px;
     object-fit: cover;
@@ -367,7 +366,7 @@ a {
     padding: 0.8rem 1rem;
     border-radius: 12px;
     border: 3px solid #a992f384;
-    box-shadow: 0px 5px 12px rgba(0,0,0,0.10);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.10);
     width: 80%;
     position: absolute;
     bottom: 15px;
@@ -393,6 +392,7 @@ a {
 .links img:hover {
     transform: scale(1.1);
 }
+
 /*Equipe - Fim -------------------------------------------------------------------------------------------------*/
 
 
@@ -402,29 +402,68 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     text-align: center;
     background-color: #fafafa;
 }
 
+.tituloCalculadora {
+    font-size: 26px;
+    text-align: center;
+    font-family: "Montserrat";
+}
+
+.legendaCalculadora {
+    font-weight: 300;
+    color: #2E2E2E;
+    font-size: 20px;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-family: "Nunito";
+}
+
 .inserirDados {
-    width: 45%;
+    width: 60%;
     background-color: #fefefe;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     border-radius: 15px;
-    box-shadow: 1px 1px 5px #7F7F7F;
+    box-shadow: 1px 5px 8px rgba(127, 127, 127, 0.61);
+
 }
 
-.inputs>input {
-    background-color: #F7F8F7;
+.input-icon {
+    position: relative;
+    width: 100%; 
+}
+
+.input-icon img {
+    position: absolute;
+    width: 70px;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.input-icon input {
+    background-color: #f7f7f7;
     width: 100%;
-    padding: 10px;
+    padding: 20px 20px 20px 50px;
     border-radius: 5px;
     box-sizing: border-box;
+    border: none;
+    outline: none;
+    color: #999999;
+    font-size: 1rem;
+    font-family: "Nunito";
+}
 
+.input-icon input::placeholder{
+    color: #b5b5b5;
 }
 
 .inserirDados>button {
@@ -670,3 +709,16 @@ footer {
     top: 60%;
     right: 12%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
