@@ -4,5 +4,10 @@ var router = express.Router();
 var historicoController = require("../controllers/historicoController");
 
 
+router.post("/cadastrar", function (req, res) {
+    historicoController.cadastrar(req, res);
+});
+
+
 
 module.exports = router;
