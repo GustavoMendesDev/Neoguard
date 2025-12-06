@@ -35,18 +35,24 @@ section{
 }
 
 .botaoCadastrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     background-color: orange;
-    color: var(--corBranca);
+    color: #FEFEFE;
     border: none;
-    padding: 18px 30px;
+    padding: 20px 30px;
     text-align: center;
     border-radius: 12px;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     line-height: 1.2;
-    width: 180px;
     height: 90px;
+}
+.botaoCadastrar > img{
+    width: 30px;
 }
 
 .botaoCadastrar:hover{
@@ -130,7 +136,7 @@ section{
     color: var(--roxoPrincipal);
 }
 
-/* ⭐️ NOVO: ESTILOS PARA O MODAL DE CADASTRO */
+/* NOVO: ESTILOS PARA O MODAL DE CADASTRO */
 
 .modalOverlay {
     position: fixed;
@@ -146,14 +152,18 @@ section{
 }
 
 .modalConteudo {
-    background-color: var(--corBranca);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#fefefe;
     padding: 40px;
     border-radius: 10px;
     width: 90%;
     max-width: 550px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    border: 3px solid var(--roxoPrincipal);
+    border: 3px solid #8560F9;
 }
 
 .tituloModal {
@@ -166,10 +176,12 @@ section{
 }
 
 .campoFormulario {
+    width: 100%;
     margin-bottom: 30px;
 }
 
 .labelCampo {
+    width: 100%;
     display: block;
     margin-bottom: 8px;
     font-weight: normal;
@@ -179,6 +191,7 @@ section{
 .inputCampo {
     width: 100%;
     padding: 12px 15px;
+    margin-bottom: 20px;
     border: 1px solid var(--roxoPrincipal);
     border-radius: 8px;
     font-size: 1rem;
@@ -192,8 +205,8 @@ section{
 }
 
 .botaoCadastrarModal {
-    background-color: var(--roxoPrincipal);
-    color: var(--corBranca);
+    background-color: #8560F9;
+    color: #FEFEFE;
     border: none;
     padding: 15px 40px;
     border-radius: 10px;
@@ -204,7 +217,7 @@ section{
 }
 
 .botaoCadastrarModal:hover {
-    background-color: var(--roxoSecundario);
+    background-color: #C5B3FF;
 }
 
 .botaoFecharModal {
