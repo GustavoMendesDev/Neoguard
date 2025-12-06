@@ -336,29 +336,63 @@ a {
     width: 100%;
     margin-top: 2rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap; 
     justify-content: center;
     gap: 2rem;
+    padding: 1rem;
 }
 
-.equipe>div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.sessao-equipe h2{
+    font-family: "Montserrat";
 }
+
 
 .colaborador {
+    flex: 1 1 300px;
+    width: 330px;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.colaborador > img {
+    width: 70%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.links-container {
+    background: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: 3px solid #a992f384;
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.10);
+    width: 80%;
+    position: absolute;
+    bottom: 15px;
+    left: 6%;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.colaborador>img {
-    width: 50%;
+.links-container .nome {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Montserrat";
 }
 
+.links img {
+    width: 28px;
+    transition: 0.2s ease;
+}
+
+.links img:hover {
+    transform: scale(1.1);
+}
 /*Equipe - Fim -------------------------------------------------------------------------------------------------*/
 
 
