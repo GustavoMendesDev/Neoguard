@@ -437,13 +437,13 @@ a {
 
 .input-icon {
     position: relative;
-    width: 100%; 
+    width: 100%;
 }
 
 .input-icon img {
     position: absolute;
-    width: 70px;
-    left: -10px;
+    width: 35px;
+    left: 6px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
@@ -462,7 +462,7 @@ a {
     font-family: "Nunito";
 }
 
-.input-icon input::placeholder{
+.input-icon input::placeholder {
     color: #969696;
 }
 
@@ -488,72 +488,93 @@ a {
 .resposta {
     width: 100%;
     display: flex;
-    align-items: start;
+    gap: 30px;
     justify-content: space-between;
 }
 
-.card {
-    width: 48%;
-    height: 400px;
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    flex-direction: column;
-    gap: 15px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px #7F7F7F;
-}
+/* Cabeçalho do card */
 
 .resposta-head {
-    width: 100%;
-    box-sizing: border-box;
+    width: 88%;
     padding: 20px;
-    color: #fafafa;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
     border-radius: 12px;
 }
 
-.rowCard {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    display: flex;
-    align-items: center;
+.card {
     gap: 15px;
+    width: 50%;
+    display: flex;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
 }
 
-.resultado {
+.card h3 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-family: "Nunito";
+}
+
+/* Linhas do card */
+
+.rowCard {
+    gap: 25px;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
+    padding: 20px;
+    justify-content: flex-start;
+}
+
+.rowCard i {
+    width: 70px;
+    font-size: 3rem;
+}
+
+.divisor {
+    border: 0;
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid rgba(0,0,0,0.12);
 }
 
 .textValor {
-    width: 100%;
-    text-align: start;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    font-family: "Nunito";
 }
 
 .valor {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 28px;
+    font-weight: bolder;
+    text-align: left;
+    font-family: "Nunito";
 }
 
+
 .sem-sis {
-    background-color: #b42c2c;
+    background-color: #A992F3;
 }
 
 .textSemSistema {
-    color: #522424;
+    color: #A992F3;
 }
 
 .com-sis {
     background-color: #F67E27;
+    /* laranja */
 }
 
 .textComSistema {
     color: #F67E27;
 }
+
+
+
 
 
 /*Calculadora - fim -------------------------------------------------------------------------------------------------*/
@@ -717,16 +738,3 @@ footer {
     top: 60%;
     right: 12%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -477,26 +477,31 @@
                         <i class="fa-solid fa-face-frown textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Perdas Financeiras</p>
-                            <p class="valor textSemSistema">${formatarMoeda(custoTotalEstimado)}</p>
+                            <p class="valor textSemSistema"><b>${formatarMoeda(custoTotalEstimado)}</b></p>
                         </div>
                     </div>
+
+                    <hr class="divisor">
 
                     <div class="rowCard">
                         <i class="fa-solid fa-calendar textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Tempo médio</p>
-                            <p class="valor textSemSistema">${tempoInternacaoTotal}</p>
+                            <p class="valor textSemSistema"><b>${tempoInternacaoTotal}</b></p>
                         </div>
                     </div>
+
+                    <hr class="divisor">
 
                     <div class="rowCard">
                         <i class="fa-solid fa-heart textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Taxa de complicações</p>
-                            <p class="valor textSemSistema">${riscoEstimadoSemNeoGuard.toFixed(0)}%</p>
+                            <p class="valor textSemSistema"><b>${riscoEstimadoSemNeoGuard.toFixed(0)}%</b></p>
                         </div>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="resposta-head com-sis">
                         <h3>Com o Sistema</h3>
@@ -505,23 +510,27 @@
                         <i class="fa-solid fa-face-smile textComSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Economia estimada</p>
-                            <p class="valor textComSistema">${formatarMoeda(economiaPotencial)}</p>
+                            <p class="valor textComSistema"><b>${formatarMoeda(economiaPotencial)}</b></p>
                         </div>
                     </div>
+
+                    <hr class="divisor">
 
                     <div class="rowCard">
                         <i class="fa-solid fa-calendar textComSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Redução de dias <br> de internação</p>
-                            <p class="valor textComSistema">${diasEconomizados}</p>
+                            <p class="valor textComSistema"><b>${diasEconomizados}</b></p>
                         </div>
                     </div>
+
+                    <hr class="divisor">
 
                     <div class="rowCard">
                         <i class="fa-solid fa-heart textComSistema"></i>
                         <div class="resultado">
-                            <p class="textValor">Aumento de <br> sobrevida</p>
-                            <p class="valor textComSistema">${riscoReduzidoNeoGuard.toFixed(0)}%</p>
+                            <p class="textValor">Aumento de sobrevida</p>
+                            <p class="valor textComSistema"><b>${riscoReduzidoNeoGuard.toFixed(0)}%</b></p>
                         </div>
                     </div>
                 </div>
