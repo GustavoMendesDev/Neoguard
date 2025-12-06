@@ -296,11 +296,12 @@ a {
     box-sizing: border-box;
     justify-content: center;
     border: 2px solid #F67E27;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .servico img {
     width: 50px;
-    margin-top: 10%;
+    margin-top: 4%;
 }
 
 .servicos-container h2 {
@@ -314,12 +315,18 @@ a {
 }
 
 .servicos-container p {
-    font-size: 16px;
+    font-size: 15px;
     padding: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
     text-align: justify;
     font-family: "Montserrat";
 }
 
+.servico:hover {
+    transition: 0.8s;
+  transform: scale(1.1);
+}
 
 /*Serviços -FIM  -------------------------------------------------------------------------------------------------*/
 
