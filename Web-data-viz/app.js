@@ -40,7 +40,7 @@ app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/tipos", tipoRouter);
 app.use("/sensores", sensorRouter);
-app.use("/salasNeonatais",salaNeoNatalRouter);
+app.use("/salasNeoNatais",salaNeoNatalRouter);
 app.use("/internacoes", internacaoRouter);
 app.use("/incubadoras", IncubadoraRouter);
 app.use("/hospitais", hospitalRouter);
