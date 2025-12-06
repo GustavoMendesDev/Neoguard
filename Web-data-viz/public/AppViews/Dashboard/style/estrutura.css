@@ -84,6 +84,7 @@ nav {
 }
 .nav-item:hover {
     background-color: #8560F9;
+    cursor: pointer;
 }
 .selecionado {
     background-color: #6343C7;
@@ -106,6 +107,7 @@ nav {
     color: #FAFAFA;
     font-weight: bold;
     font-family: "Nunito";
+    cursor: pointer;
 }
 .monitoramento-item > img {
     width: 10%;
