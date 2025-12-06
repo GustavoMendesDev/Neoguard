@@ -277,25 +277,49 @@ a {
 }
 
 .servicos {
+    z-index: 2;
     display: flex;
     margin-top: 2rem;
     justify-content: space-between;
 }
 
 .servico {
-    width: 45%;
+    gap: 14px;
+    width: 48%;
     height: 250px;
     padding: 10px;
-    border: 2px solid #F67E27;
-    border-radius: 15px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    box-sizing: border-box;
     text-align: center;
+    border-radius: 15px;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    border: 2px solid #F67E27;
 }
+
+.servico img {
+    width: 50px;
+    margin-top: 10%;
+}
+
+.servicos-container h2 {
+    font-family: "Montserrat";
+}
+
+.servicos-container h3 {
+    font-size: 19px;
+    margin-top: 1%;
+    font-family: "Montserrat";
+}
+
+.servicos-container p {
+    font-size: 16px;
+    padding: 20px;
+    text-align: justify;
+    font-family: "Montserrat";
+}
+
 
 /*Serviços -FIM  -------------------------------------------------------------------------------------------------*/
 
