@@ -7,6 +7,8 @@
 
     <title>Home | NeoGuard</title>
     <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -217,6 +219,14 @@
             </div>
         </section>
         <br>
+
+
+
+
+
+
+
+
         <!--Calculdora financeira-->
         <section class="calculadora">
             <div class="bolinhas">
@@ -251,13 +261,27 @@
                     <input type="number" id="diaria" placeholder="Custo diário da UTI (R$)">
                 </div>
 
-                <div class="linha"></div>
+                <hr class="linha">
 
                 <button onclick="simular()">Calcular Economia e Risco</button>
                 <div id="resultado">
                 </div>
             </div>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!--Footer-->
         <footer>
             <div class="neo">
@@ -450,7 +474,7 @@
                         <h3>Sem o Sistema</h3>
                     </div>
                     <div class="rowCard">
-                        <i class="fa-regular fa-face-frown textSemSistema"></i>
+                        <i class="fa-solid fa-face-frown textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Perdas Financeiras</p>
                             <p class="valor textSemSistema">${formatarMoeda(custoTotalEstimado)}</p>
@@ -458,7 +482,7 @@
                     </div>
 
                     <div class="rowCard">
-                        <i class="fa-regular fa-calendar textSemSistema"></i>
+                        <i class="fa-solid fa-calendar textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Tempo médio</p>
                             <p class="valor textSemSistema">${tempoInternacaoTotal}</p>
@@ -466,7 +490,7 @@
                     </div>
 
                     <div class="rowCard">
-                        <i class="fa-regular fa-heart textSemSistema"></i>
+                        <i class="fa-solid fa-heart textSemSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Taxa de complicações</p>
                             <p class="valor textSemSistema">${riscoEstimadoSemNeoGuard.toFixed(0)}%</p>
@@ -478,7 +502,7 @@
                         <h3>Com o Sistema</h3>
                     </div>
                     <div class="rowCard">
-                        <i class="fa-regular fa-face-smile textComSistema"></i>
+                        <i class="fa-solid fa-face-smile textComSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Economia estimada</p>
                             <p class="valor textComSistema">${formatarMoeda(economiaPotencial)}</p>
@@ -486,7 +510,7 @@
                     </div>
 
                     <div class="rowCard">
-                        <i class="fa-regular fa-calendar textComSistema"></i>
+                        <i class="fa-solid fa-calendar textComSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Redução de dias <br> de internação</p>
                             <p class="valor textComSistema">${diasEconomizados}</p>
@@ -494,7 +518,7 @@
                     </div>
 
                     <div class="rowCard">
-                        <i class="fa-regular fa-heart textComSistema"></i>
+                        <i class="fa-solid fa-heart textComSistema"></i>
                         <div class="resultado">
                             <p class="textValor">Aumento de <br> sobrevida</p>
                             <p class="valor textComSistema">${riscoReduzidoNeoGuard.toFixed(0)}%</p>

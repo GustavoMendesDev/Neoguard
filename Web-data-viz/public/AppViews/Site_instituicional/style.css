@@ -463,19 +463,27 @@ a {
 }
 
 .input-icon input::placeholder{
-    color: #b5b5b5;
+    color: #969696;
 }
 
+
 .inserirDados>button {
+    font-size: 22px;
+    font-family: "Nunito";
+    font-weight: bolder;
     background-color: #F67E27;
     color: #fafafa;
-    padding: 10px 0;
+    padding: 20px;
     border-radius: 5px;
 }
 
 .inserirDados>button:hover {
     cursor: pointer;
+    transition: 0.6s;
+    background-color: #ff6a00;
 }
+
+/* Depois que clica */
 
 .resposta {
     width: 100%;
@@ -499,9 +507,9 @@ a {
 .resposta-head {
     width: 100%;
     box-sizing: border-box;
-    padding: 5px;
+    padding: 20px;
     color: #fafafa;
-    border-radius: 10px 10px 0 0;
+    border-radius: 12px;
 }
 
 .rowCard {
@@ -532,7 +540,7 @@ a {
 }
 
 .sem-sis {
-    background-color: #522424;
+    background-color: #b42c2c;
 }
 
 .textSemSistema {
