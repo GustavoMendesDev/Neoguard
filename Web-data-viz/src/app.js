@@ -15,12 +15,18 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
-var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-var avisosRouter = require("./src/routes/avisos");
-var medidasRouter = require("./src/routes/medidas");
-var aquariosRouter = require("./src/routes/aquarios");
-var empresasRouter = require("./src/routes/empresas");
+var tipoRouter = require("./src/routes/tipos");
+var sensorRouter = require("./src/routes/sensores");
+var salaNeoNatalRouter = require("./src/routes/salasNeoNatais");
+var internacaoRouter = require("./src/routes/internacoes");
+var IncubadoraRouter = require("./src/routes/incubadoras");
+var hospitalRouter = require("./src/routes/hospitais");
+var historicoRouter = require("./src/routes/historicos");
+var bebeRouter = require("./src/routes/bebes");
+
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,10 +36,15 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/avisos", avisosRouter);
-app.use("/medidas", medidasRouter);
-app.use("/aquarios", aquariosRouter);
-app.use("/empresas", empresasRouter);
+app.use("/tipos", tipoRouter);
+app.use("/sensores", sensorRouter);
+app.use("/salasNeonatais",salaNeoNatalRouter);
+app.use("/internacoes", internacaoRouter);
+app.use("/incubadoras", IncubadoraRouter);
+app.use("/hospitais", hospitalRouter);
+app.use("/historicos", historicoRouter);
+app.use("/bebes", bebeRouter);
+
 
 app.listen(PORTA_APP, function () {
     console.log(`
