@@ -510,7 +510,7 @@ a {
     border-radius: 10px;
     padding-bottom: 20px;
     flex-direction: column;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
@@ -538,7 +538,7 @@ a {
     border: 0;
     width: 90%;
     margin: 0 auto;
-    border-top: 1px solid rgba(0,0,0,0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .textValor {
@@ -582,75 +582,137 @@ a {
 /*footer  -------------------------------------------------------------------------------------------------*/
 footer {
     width: 100%;
-    height: 500px;
     padding: 5%;
     box-sizing: border-box;
     background-color: #1C3AB4;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     color: #fafafa;
+    gap: 20px;
 }
 
 .neo {
     width: 30%;
-    height: 100%;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     gap: 20px;
 }
 
+.neo img {
+    width: 160px;
+}
+
+.neo p {
+    font-family: "Nunito";
+    font-weight: 300;
+}
+
+.neo b {
+    font-size: 20px;
+    font-family: "Montserrat";
+    line-height: 1.4;
+}
+
+/* Coluna 02 */
+
 .info {
+    gap: 60px;
     width: 20%;
-    height: 100%;
     display: flex;
+    margin-top: 1%;
     flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
+}
+
+.info b {
+    font-size: 20px;
+    font-family: "Montserrat";
+    line-height: 1.4;
+}
+
+.info ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.info li {
+    margin-bottom: 8px;
+}
+
+.infoa {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info ul li a:hover {
+    color: #ff9d00; 
 }
 
 .info>div>div {
     display: flex;
     align-items: center;
     gap: 10px;
-
+    margin: 6px 0;
 }
 
 .f-img {
-    width: 24px;
+    width: 22px;
 }
+
+/* Coluna 03 com formulário */
 
 .formes {
     width: 30%;
-    height: 100%;
-    border-radius: 15px;
     background-color: #A88CFF;
+    border-radius: 16px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 14px;
+    font-size: 20px;
 }
 
-.f-input {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.f-input input {
+    width: 92%;
+    padding: 14px;
+    border-radius: 8px;
+    background-color: #fefefe4c;
 }
 
-.f-input>input {
-    padding: 10px;
-    border-radius: 10px;
+.f-input b {
+    font-size: 16px;
+    font-family: "Nunito";
 }
 
 .f-button {
-    margin-top: 20px;
-    width: 100%;
-    background-color: #F67E27;
-    color: #fafafa;
-    box-sizing: border-box;
+    color: #fefefe;
+    font-weight: 700;
+    font-family: "Nunito";
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
+    font-size: 20px;
+    background-color: #F67E27;
 }
+
+/* Direitos reservados */
+.divisor02 {
+    border: 0;
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom {
+    width: 100%;
+    background-color: #1C3AB4;
+    color: #fafafa;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
 
 /* 
 - Titulos do painel(Na pagina Analitycs/Dashboard, trocar os titulos dos gráficos e sessões para que faça mais sentido);
