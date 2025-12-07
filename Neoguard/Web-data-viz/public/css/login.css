@@ -1,29 +1,99 @@
+/* Tudo completo por aqui */
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*Resentando todas as margens e paddings*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #A88CFF;
-    
+    font-family: 'Nunito', sans-serif;
 }
 
-/* CONTAINER PRINCIPAL */
+/* NavBar --------------------------------------------------------------------------------------*/
+
+nav {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 10vh;
+    width: 100%;
+    padding: 10px 2%;
+    background-color: #FEFEFE;
+    box-shadow: 2px 0 4px #2E2E2E;
+}
+
+.logo {
+    width: 15%;
+    min-width: 150px;
+}
+
+nav>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.4rem;
+    box-sizing: border-box;
+}
+
+nav>div a {
+    font-family: "Nunito";
+    color: #000000;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Elementos --------------------------------------------------------------------------------------*/
+
+.nav-btn {
+    padding: 8px 10px;
+    border: 2px solid #F67E27;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.nav-btn a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #F67E27;
+}
+
+.nav-btn a:hover {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-btn:hover {
+    transition: 0.5s;
+    background-color: #F67E27;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NavBar Fim  --------------------------------------------------------------------------------------*/
 
 .container {
     display: flex;
-    width: 90%;
-    max-width: 1100px;
-    height: 90vh;
+    width: 90%;   
+    height: 60%;   
+    margin: 4vh auto 0;  
+    background-color: #FEFEFE; 
     border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;      
 }
 
 /* LADO ESQUERDO */ 
@@ -59,124 +129,9 @@ body {
     opacity: 0.6;
 }
 
-/*  ANIMAÇÕES  */
 
-@keyframes mover1 {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
 
-    50% {
-        transform: translate(20px, -25px) scale(1.05);
-    }
 
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-}
-
-@keyframes mover2 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    50% {
-        transform: translate(-25px, 30px) rotate(8deg);
-    }
-
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-}
-
-@keyframes mover3 {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(15px, -20px) scale(0.95);
-    }
-
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-}
-
-@keyframes mover4 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    50% {
-        transform: translate(-15px, 15px) rotate(-5deg);
-    }
-
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-}
-
-@keyframes mover5 {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(30px, -15px);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-/* CORES DAS BOLINHAS */
-
-.cor1 {
-    background-color: #A5D8FF;
-    width: 150px;
-    height: 150px;
-    top: 10%;
-    left: 5%;
-    animation: mover1 6s ease-in-out infinite alternate;
-}
-
-.cor2 {
-    background-color: #A88CFF;
-    width: 220px;
-    height: 220px;
-    top: 26%;
-    left: 35%;
-    animation: mover2 7s ease-in-out infinite alternate;
-}
-
-.cor3 {
-    background-color: #DFE2CF;
-    width: 100px;
-    height: 100px;
-    top: 76%;
-    left: 60%;
-    animation: mover3 6s ease-in-out infinite alternate;
-}
-
-.cor3-a {
-    background-color: #DFE2CF;
-    width: 80px;
-    height: 80px;
-    top: 10%;
-    right: 10%;
-    animation: mover4 7s ease-in-out infinite alternate;
-}
-
-.cor4 {
-    background-color: #F67E27;
-    width: 180px;
-    height: 180px;
-    bottom: 3%;
-    left: 10%;
-    animation: mover5 8s ease-in-out infinite alternate;
-}
 
 /* LADO DIREITO (LOGIN) */
 
@@ -309,4 +264,124 @@ h2 {
 
 .cadastro a:hover {
     text-decoration: underline;
+}
+
+
+/* CORES DAS BOLINHAS */
+
+.cor1 {
+    background-color: #A5D8FF;
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    left: 5%;
+    animation: mover1 6s ease-in-out infinite alternate;
+}
+
+.cor2 {
+    background-color: #A88CFF;
+    width: 220px;
+    height: 220px;
+    top: 26%;
+    left: 35%;
+    animation: mover2 7s ease-in-out infinite alternate;
+}
+
+.cor3 {
+    background-color: #DFE2CF;
+    width: 100px;
+    height: 100px;
+    top: 76%;
+    left: 60%;
+    animation: mover3 6s ease-in-out infinite alternate;
+}
+
+.cor3-a {
+    background-color: #DFE2CF;
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    right: 10%;
+    animation: mover4 7s ease-in-out infinite alternate;
+}
+
+.cor4 {
+    background-color: #F67E27;
+    width: 180px;
+    height: 180px;
+    bottom: 3%;
+    left: 10%;
+    animation: mover5 8s ease-in-out infinite alternate;
+}
+
+/*  Keyframes das bolinhas */
+
+@keyframes mover1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(20px, -25px) scale(1.05);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes mover2 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-25px, 30px) rotate(8deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes mover3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(15px, -20px) scale(0.95);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes mover4 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-15px, 15px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes mover5 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -15px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
