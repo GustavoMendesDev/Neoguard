@@ -218,14 +218,13 @@ body {
 #linha {
     width: 32%;
     height: 15%;
-
     border: 2px solid #A88CFF;
     display: block;
 
 
 }
 
-.etapa2 {
+#etapa2 {
     width: 35px;
     height: 35px;
     border-radius: 29px;
@@ -263,6 +262,12 @@ body {
     font-size: 14px;
     color: #555;
     margin-bottom: 4px;
+}
+
+#tabelaSalas {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
 }
 
 /* FORMULÁRIO */

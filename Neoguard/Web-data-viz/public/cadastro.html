@@ -36,7 +36,7 @@
                 <div class="etapasContent">
                     <div class="etapa1"></div>
                     <div id="linha"></div>
-                    <div class="etapa2"></div>
+                    <div id="etapa2"></div>
                     <div id="linha2"></div>
                     <div class="etapa3"></div>
 
@@ -70,74 +70,13 @@
             </form>
 
 
-            <div class="contentCriarSala" style="display: none;">
-                <h3 style="margin-top: 25px; color:#333; font-weight:600;">
-                    Cadastro das Salas Neonatais
-                </h3>
-                <p style="font-size: 14px; color:#555; margin-bottom: 10px;">
-                    Adicione até 5 salas neonatais do hospital recém cadastrado.
-                </p>
-
-                <form id="formCadastroSala" >
-                    <div class="input-group">
-                        <label for="numeroSala">Número da Sala</label>
-                        <input type="text" id="iptNumeroSala" placeholder="Ex: 01, 02..." required>
-                    </div>
-
-                    <button type="button" class="btn-cadastro" onclick="adicionarSala()">
-                        Adicionar Sala
-                    </button>
-                </form>
-
-                <table id="tabelaSalas" style="width:100%; margin-top:15px; border-collapse: collapse; display:none;">
-                    <thead>
-                        <tr style="text-align:left; border-bottom:2px solid #A5D8FF;">
-                            <th style="padding:6px 0;">Número da Sala</th>
-                            <th style="padding:6px 0; width:120px;">Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-
-                <button id="btnConfirmarSalas" class="btn-cadastro" style="margin-top:20px; display:none;"
-                    onclick="confirmarSalas()">
-                    Confirmar Salas
-                </button>
-            </div>
+            <div id="cadastrarSalaNeonatal"></div>
+       
 
 
 
-
-            <form id="formCadastroGestor" style="display: none;">
-                <div class="input-group">
-                    <label>Nome</label>
-                    <input type="text" id="iptNome" placeholder="Digite seu nome" required>
-                </div>
-
-                <div class="input-group">
-                    <label>Sobrenome</label>
-                    <input type="text" id="iptSobrenome" placeholder="Digite seu sobrenome" required>
-                </div>
-
-                <div class="input-group">
-                    <label>E-mail</label>
-                    <input type="email" id="iptEmail" placeholder="Digite seu e-mail" required>
-                </div>
-
-                <div class="input-group">
-                    <label>Senha</label>
-                    <input type="password" id="iptSenha" oninput="VerificarSenha()" placeholder="Digite sua senha"
-                        required>
-                    <div id="senhaForte"></div>
-                    <p class="avisoSenha">As senhas devem ter pelo menos 8 caracteres, contendo maiúscula, minúscula,
-                        número e símbolo.</p>
-                </div>
-
-
-                <button type="button" onclick="cadastrarGestor()" class="btn-cadastro">Cadastrar</button>
-
-                <p class="cadastro">Já tem login? <a href="/app/views/Login.html">Entre aqui</a></p>
-            </form>
+          
+            <div id="formCadastroGestor" style="display: none;"></div>
             <div id="msgErro" style="display: none;">
                 <p>Preencha todos os campos em brancos</p>
             </div>
