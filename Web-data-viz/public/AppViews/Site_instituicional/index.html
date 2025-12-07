@@ -1,559 +1,499 @@
+<!--Esqueleto finalizado!-->
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home | NeoGuard</title>
+        <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
 
-    <title>Home | NeoGuard</title>
-    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-    <!--Navbar-->
-    <nav>
-        <img src="../../assets/Logo - Default (2).svg" alt="NeoGuard - Logo" class="logo">
-        <div>
-            <a>Home</a>
-            <a>Sobre nós</a>
-            <a>Serviços</a>
-            <a>Contato</a>
-            <a class="traco"> | </a>
-            <button class="nav-btn">
-                <a href="../AppViews/Login.html">Entrar</a>
-            </button>
-        </div>
-    </nav>
-    <!--Main-->
-    <main>
-        <section class="apresentacao">
-            <div class="bolinhas">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+    <body>
+        <!--Navbar-->
+        <nav>
+            <img src="../../assets/Logo - Default (2).svg" alt="NeoGuard - Logo" class="logo">
+            <div>
+                <a>Home</a>
+                <a>Sobre nós</a>
+                <a>Serviços</a>
+                <a>Contato</a>
+                <a class="traco"> | </a>
+                <button class="nav-btn">
+                    <a href="../AppViews/Login.html">Entrar</a>
+                </button>
             </div>
-            <div class="apresentacao-texto">
-                <h1 class="titulo">Cuidando de vidas desde <br>
-                    os primeiros minutos</h1>
-                <p>Nós a NeoGuard, desenvolvemos um sistema
-                    inteligente de controle de temperatura que mantêm recém-nascidos
-                    seguros, estáveis e acolhidos dentro das incubadoras.
-                </p>
-                <div>
-                    <button class="apresentacao-btn">
-                        <img src="../../assets/Seta.svg">
-                        <span> Saiba mais </span>
-                    </button>
+        </nav>
+        <!--Main-->
+        <main>
+            <section class="apresentacao">
+                <div class="bolinhas">
+                    <span class="cor1 animada" style="left: -2%; top: -4%;"></span>
+                    <span class="cor2 animada" style="top: -16%; left: 85%;"></span>
+                    <span class="cor3 animada" style="top: 40%; left: 10%;"></span>
                 </div>
-            </div>
-
-            <img src="../../assets/MaeBebe.svg">
-        </section>
-        <!--Sessão sobre valores-->
-        <br>
-        <section class="valores">
-            <div class="bolinhas">
-                <span></span>
-                <span></span>
-            </div>
-            <div class="valores-texto">
-                <h2>Valores da Neo<span>Guard</span></h2>
-                <p>
-                    Nós a NeoGuard, desenvolvemos um sistema inteligente de controle de
-                    temperatura que mantêm recém-nascidos seguros,
-                    estáveis e acolhidos dentro das incubadoras.
-                </p>
-            </div>
-            <!--Cards de valores-->
-            <div class="valores-grupo">
-                <div class="valor">
-                    <img src="../../assets/CoracaoValor.svg" alt="Cuidado">
-                    <p>Cuidado e saúde em primeiro lugar</p>
+                <div class="apresentacao-texto">
+                    <h1 class="titulo">
+                        Cuidando de vidas desde <br>
+                        os primeiros minutos
+                    </h1>
+                    <p>Nós a NeoGuard, desenvolvemos um sistema
+                        inteligente de controle de temperatura que mantêm recém-nascidos
+                        seguros, estáveis e acolhidos dentro das incubadoras.
+                    </p>
+                    <div>
+                        <button class="apresentacao-btn">
+                            <img src="../../assets/Seta.svg">
+                            <span> Saiba mais </span>
+                        </button>
+                    </div>
                 </div>
-                <div class="valor">
-                    <img src="../../assets/EscudoValor.svg" alt="Segurança">
+                <img src="../../assets/MaeBebe.svg">
+            </section>
+            <!--Sessão sobre valores-->
+            <br>
+            <section class="valores">
+                <div class="bolinhas">
+                    <span class="cor1 animada" style="top: -2%; left: -1%; width: 6%; height: 12%;"></span>
+                    <span class="cor2 animada" style="top: 30%; left: 85%; width: 8%; height: 16%;"></span>
+                </div>
+                <div class="valores-texto">
+                    <h2>Valores da Neo<span>Guard</span></h2>
                     <p>
-                        Segurança inegociável
+                        Nós a NeoGuard, desenvolvemos um sistema inteligente de controle de
+                        temperatura que mantêm recém-nascidos seguros,
+                        estáveis e acolhidos dentro das incubadoras.
                     </p>
                 </div>
-                <div class="valor">
-                    <img src="../../assets/LampadaValor.svg" alt="Inovação">
-                    <p>
-                        Inovação que salva vidas
-                    </p>
-                </div>
-            </div>
-        </section>
-        <br><br>
-        <!--Sessão serviços-->
-        <div class="bolinhas">
-            <span></span>
-            <span style="background-color: blueviolet; margin-top: -8%;"></span>
-            <span></span>
-            <span></span>
-        </div>
-        <section class="servicos-container">
-            <h2>Nossos Serviços</h2>
-            <div class="servicos">
-                <div class="servico">
-                    <img src="../../assets/termometro.svg">
-                    <h3>Monitoramento Térmico Inteligente</h3>
-                    <p>
-                        Solução que acompanha em tempo real a estabilidade térmica dos bebês,
-                        reduzindo episódios de hipotermia e melhorando a taxa de sobrevivência.
-                    </p>
-                </div>
-                <div class="servico">
-                    <img src="../../assets/tabela.svg">
-                    <h3>Dashboard Clínico</h3>
-                    <p>
-                        Plataforma intuitiva que reúne dados em tempo real,
-                        relatórios de desempenho e indicadores clínicos para suporte à tomada de decisão.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <!--Sessão equipe-->
-        <section class="sessao-equipe">
-            <div class="bolinhas">
-                <span></span>
-                <span style="background-color: blueviolet; margin-top: -8%;"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <h2> Nossa Equipe</h2>
-            <div class="equipe">
-                <div class="colaborador">
-                    <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
-                    <div class="links-container">
-                        <span class="nome">Eric Barbosa</span>
-                        <div class="links">
-                            <a href="https://www.linkedin.com/in/eric-barbosa-costa-82110835b/">
-                                <img src="../../assets/Linkedin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="https://github.com/BcEric1">
-                                <img src="../../assets/Github.svg" alt="GitHub">
-                            </a>
-                        </div>
+                <!--Cards de valores-->
+                <div class="valores-grupo">
+                    <div class="valor">
+                        <img src="../../assets/CoracaoValor.svg" alt="Cuidado">
+                        <p>Cuidado e saúde em primeiro lugar</p>
+                    </div>
+                    <div class="valor">
+                        <img src="../../assets/EscudoValor.svg" alt="Segurança">
+                        <p>
+                            Segurança inegociável
+                        </p>
+                    </div>
+                    <div class="valor">
+                        <img src="../../assets/LampadaValor.svg" alt="Inovação">
+                        <p>
+                            Inovação que salva vidas
+                        </p>
                     </div>
                 </div>
-                <div class="colaborador">
-                    <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
-                    <div class="links-container">
-                        <span class="nome">Guilherme Mesquita</span>
-                        <div class="links">
-                            <a href="https://www.linkedin.com/in/guilherme-mesquita-06b08b341/">
-                                <img src="../../assets/Linkedin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="https://github.com/BcEric1">
-                                <img src="../../assets/Github.svg" alt="GitHub">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="colaborador">
-                    <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
-                    <div class="links-container">
-                        <span class="nome">Gustavo Emmanoel</span>
-                        <div class="links">
-                            <a href="https://br.linkedin.com/in/gustavo-ferreira-5b8633393">
-                                <img src="../../assets/Linkedin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="https://github.com/Gusttavo-Emmanoel">
-                                <img src="../../assets/Github.svg" alt="GitHub">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="colaborador">
-                    <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
-                    <div class="links-container">
-                        <span class="nome">Gustavo Mendes</span>
-                        <div class="links">
-                            <a href="https://www.linkedin.com/in/gustavo-mendes002/">
-                                <img src="../../assets/Linkedin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="https://github.com/GustavoMendesDev">
-                                <img src="../../assets/Github.svg" alt="GitHub">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="colaborador">
-                    <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
-                    <div class="links-container">
-                        <span class="nome">Lucas Tertuliano</span>
-                        <div class="links">
-                            <a href="">
-                                <img src="../../assets/Linkedin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="">
-                                <img src="../../assets/Github.svg" alt="GitHub">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="colaborador">
-                    <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
-                    <div class="links-container">
-                        <span class="nome">Maria Eduarda Lima</span>
-                        <div class="links">
-                            <a href="https://www.linkedin.com/in/maria-eduarda-de-lima-833829264/">
-                                <img src="../../assets/Linkedin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="https://github.com/EduardaLima-09">
-                                <img src="../../assets/Github.svg" alt="GitHub">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <br>
-
-
-
-
-
-
-
-
-        <!--Calculdora financeira-->
-        <section class="calculadora">
-            <div class="bolinhas">
-                <span></span>
-                <span style="background-color: blueviolet; margin-top: -8%;"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <h2 class="tituloCalculadora">
-                Descubra quanto sua UTI Neonatal <br>
-                pode economizar e salvar vidas com nossa tecnologia <br>
-                de monitoramento inteligente
-            </h2>
-            <p class="legendaCalculadora">
-                Insira seus dados e veja o impacto econômico e clínico da temperatura ideal
-            </p>
-            <div class="inserirDados">
-                <div class="input-icon">
-                    <img src="../../assets/calendario.svg" alt="">
-                    <input type="number" id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
-                </div>
-                <div class="input-icon">
-                    <img src="../../assets/temperatura.svg" alt="">
-                    <input type="number" id="temperatura" placeholder="Temperatura atual (ºC)">
-                </div>
-                <div class="input-icon">
-                    <img src="../../assets/real.svg" alt="">
-                    <input type="number" id="diaria" placeholder="Custo diário da UTI (R$)">
-                </div>
-
-                <hr class="linha">
-
-                <button onclick="simular()">Calcular Economia e Risco</button>
-                <div id="resultado">
-                </div>
-            </div>
+            </section>
             <br><br>
-        </section>
-        <!--Footer-->
-        <footer>
-            <div class="neo">
-                <img src="../../assets/Logo - positvo.svg">
-                <p>
-                    Tecnologia avançada para cuidados neonatais, garantindo segurança e precisão no monitoramento de
-                    recém-nascidos.
+            <!--Sessão serviços-->
+            <div class="bolinhas">
+                <span class="cor1 animada" style="top: -4%; left: 90%;"></span>
+                <span class="cor2 animada" style="top: 40%; left: 2%; width: 4%; height: 8%;"></span>
+                <span class="cor3 animada" style="top: -7%; left: 6%; width: 5%; height: 10%;"></span>
+            </div>
+            <section class="servicos-container">
+                <h2>Nossos Serviços</h2>
+                <div class="servicos">
+                    <div class="servico">
+                        <img src="../../assets/termometro.svg">
+                        <h3>Monitoramento Térmico Inteligente</h3>
+                        <p>
+                            Solução que acompanha em tempo real a estabilidade térmica dos bebês,
+                            reduzindo episódios de hipotermia e melhorando a taxa de sobrevivência.
+                        </p>
+                    </div>
+                    <div class="servico">
+                        <img src="../../assets/tabela.svg">
+                        <h3>Dashboard Clínico</h3>
+                        <p>
+                            Plataforma intuitiva que reúne dados em tempo real,
+                            relatórios de desempenho e indicadores clínicos para suporte à tomada de decisão.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!--Sessão equipe-->
+            <section class="sessao-equipe">
+                <h2> Nossa Equipe</h2>
+                <div class="equipe">
+                    <div class="colaborador">
+                        <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
+                        <div class="links-container">
+                            <span class="nome">Eric Barbosa</span>
+                            <div class="links">
+                                <a href="https://www.linkedin.com/in/eric-barbosa-costa-82110835b/">
+                                    <img src="../../assets/Linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/BcEric1">
+                                    <img src="../../assets/Github.svg" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
+                        <div class="links-container">
+                            <span class="nome">Guilherme Mesquita</span>
+                            <div class="links">
+                                <a href="https://www.linkedin.com/in/guilherme-mesquita-06b08b341/">
+                                    <img src="../../assets/Linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/BcEric1">
+                                    <img src="../../assets/Github.svg" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
+                        <div class="links-container">
+                            <span class="nome">Gustavo Emmanoel</span>
+                            <div class="links">
+                                <a href="https://br.linkedin.com/in/gustavo-ferreira-5b8633393">
+                                    <img src="../../assets/Linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/Gusttavo-Emmanoel">
+                                    <img src="../../assets/Github.svg" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
+                        <div class="links-container">
+                            <span class="nome">Gustavo Mendes</span>
+                            <div class="links">
+                                <a href="https://www.linkedin.com/in/gustavo-mendes002/">
+                                    <img src="../../assets/Linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/GustavoMendesDev">
+                                    <img src="../../assets/Github.svg" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
+                        <div class="links-container">
+                            <span class="nome">Lucas Tertuliano</span>
+                            <div class="links">
+                                <a href="">
+                                    <img src="../../assets/Linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="">
+                                    <img src="../../assets/Github.svg" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colaborador">
+                        <img src="../../assets/MaeBebe.svg" alt="Colaborador Eric Barbosa">
+                        <div class="links-container">
+                            <span class="nome">Maria Eduarda Lima</span>
+                            <div class="links">
+                                <a href="https://www.linkedin.com/in/maria-eduarda-de-lima-833829264/">
+                                    <img src="../../assets/Linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/EduardaLima-09">
+                                    <img src="../../assets/Github.svg" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <!--Calculdora financeira-->
+            <section class="calculadora">
+                <div class="bolinhas">
+                    <span class="cor1 animada" style="top: 5%; left: 10%;"></span>
+                    <span class="cor2 animada" style="top: 12%; left: 60%; width: 4%; height: 8%;"></span>
+                    <span class="cor3 animada" style="top: 50%; left: -10%; width: 20%; height: 35%;"></span>
+
+                    <span class="cor1 animada" style="top: 75%; left: 90%;"></span>
+                    <span class="cor2 animada" style="top: 92%; left: 30%; width: 4%; height: 8%;"></span>
+                    <span class="cor3 animada" style="top: 10%; left: 90%;"></span>
+                </div>
+                <h2 class="tituloCalculadora">
+                    Descubra quanto sua UTI Neonatal <br>
+                    pode economizar e salvar vidas com nossa tecnologia <br>
+                    de monitoramento inteligente
+                </h2>
+                <p class="legendaCalculadora">
+                    Insira seus dados e veja o impacto econômico e clínico da temperatura ideal
                 </p>
-                <br><br><br><br>
-                <div>
-                    <b>Localização</b>
-                    <p>Rua Haddock Lobo, 595 - São Paulo</p>
+                <div class="inserirDados">
+                    <div class="input-icon">
+                        <img src="../../assets/calendario.svg" alt="">
+                        <input type="number" id="idadeGestacional" placeholder="Idade gestacional (Semanas)">
+                    </div>
+                    <div class="input-icon">
+                        <img src="../../assets/temperatura.svg" alt="">
+                        <input type="number" id="temperatura" placeholder="Temperatura atual (ºC)">
+                    </div>
+                    <div class="input-icon">
+                        <img src="../../assets/real.svg" alt="">
+                        <input type="number" id="diaria" placeholder="Custo diário da UTI (R$)">
+                    </div>
+                    <hr class="linha">
+                    <button onclick="simular()">Calcular Economia e Risco</button>
+                    <div id="resultado">
+                    </div>
                 </div>
-            </div>
-
-            <div class="info">
-                <div>
-                    <b>Empresa</b>
-                    <br><br>
-                    <ul>
-                        <li><a href="sobre.html">Sobre nós</a></li>
-                        <li><a href="servico.html">Serviço</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <b>Contato</b>
-                    <br><br>
+                <br><br><br><br><br>
+            </section>
+            <!--Footer-->
+            <footer>
+                <div class="neo">
+                    <img src="../../assets/Logo - positvo.svg">
+                    <p>
+                        Tecnologia avançada para cuidados neonatais, garantindo segurança e precisão no monitoramento de
+                        recém-nascidos.
+                    </p>
+                    <br><br><br><br>
                     <div>
-                        <img src="../../assets/email.svg" class="f-img">
-                        <a href="mailto:neoguard@gmail.com">neoguard@gmail.com</a>
+                        <b>Localização</b>
+                        <p>Rua Haddock Lobo, 595 - São Paulo</p>
                     </div>
-
+                </div>
+                <div class="info">
                     <div>
-                        <img src="../../assets/telefone.svg" class="f-img">
-                        <a href="tel:+5511916862533">(11) 91686-2533</a>
+                        <b>Empresa</b>
+                        <br><br>
+                        <ul>
+                            <li><a href="sobre.html">Sobre nós</a></li>
+                            <li><a href="servico.html">Serviço</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
                     </div>
-
                     <div>
-                        <img src="../../assets/instagram.svg" class="f-img">
-                        <a href="https://instagram.com/NeoGuard" target="_blank">@NeoGuard</a>
+                        <b>Contato</b>
+                        <br><br>
+                        <div>
+                            <img src="../../assets/email.svg" class="f-img">
+                            <a href="mailto:neoguard@gmail.com">neoguard@gmail.com</a>
+                        </div>
+                        <div>
+                            <img src="../../assets/telefone.svg" class="f-img">
+                            <a href="tel:+5511916862533">(11) 91686-2533</a>
+                        </div>
+                        <div>
+                            <img src="../../assets/instagram.svg" class="f-img">
+                            <a href="https://instagram.com/NeoGuard" target="_blank">@NeoGuard</a>
+                        </div>
                     </div>
                 </div>
+                <div class="formes">
+                    <h3>Fale Conosco</h3>
+
+                    <div class="f-input">
+                        <b>Nome</b>
+                        <br>
+                        <input placeholder="Digite seu nome">
+                    </div>
+                    <div class="f-input">
+                        <b>E-mail</b>
+                        <br>
+                        <input placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="f-input">
+                        <b>Número</b>
+                        <br>
+                        <input placeholder="Digite seu número">
+                    </div>
+                    <div class="f-input">
+                        <b>Mensagem</b>
+                        <br>
+                        <input placeholder="Digite sua mensagem">
+                    </div>
+                    <button class="f-button">Enviar</button>
+                </div>
+            </footer>
+            <hr class="divisor02">
+            <div class="footer-bottom">
+                © 2025 NeoGuard — Todos os direitos reservados.
             </div>
+        </main>
+    </body>
+    <script>
+
+        function simular() {
+            // usei o parseFloat para que no momento em que haja a captura de dado, ele mude
+            // automaticamente para float(decimal)
+            var idadeGestacional = parseFloat(document.getElementById('idadeGestacional').value);
+            var diaria = parseFloat(document.getElementById('diaria').value);
+            var temperatura = parseFloat(document.getElementById('temperatura').value);
+
+            // variaveis para validação
+            let idadeGestacionalMaxima = 42;
+            let idadeGestacionalMinima = 22;
+            let temperaturaMaxima = 41.0;
+            let temperaturaMinima = 34.0;
 
 
-            <div class="formes">
-                <h3>Fale Conosco</h3>
+            if (!idadeGestacional || !diaria) {
+                alert("Por favor, preencha o peso, a idade gestacional e o custo da diária para simular.");
+                return;
+            }
 
-                <div class="f-input">
-                    <b>Nome</b>
-                    <br>
-                    <input placeholder="Digite seu nome">
-                </div>
+            if (idadeGestacional > idadeGestacionalMaxima) {
+                alert(`Idade Gestacional Incorreta: O valor máximo esperado para idade gestacional é de ${idadeGestacionalMaxima} semanas. Por favor, verifique.`);
+                return;
+            }
 
-                <div class="f-input">
-                    <b>E-mail</b>
-                    <br>
-                    <input placeholder="Digite seu e-mail">
-                </div>
+            if (idadeGestacional < idadeGestacionalMinima) {
+                alert(`Idade Gestacional Incorreta: O valor mínimo esperado para idade gestacional é de ${idadeGestacionalMinima} semanas. Por favor, verifique.`);
+                return;
+            }
 
-                <div class="f-input">
-                    <b>Número</b>
-                    <br>
-                    <input placeholder="Digite seu número">
-                </div>
+            if (temperatura > temperaturaMaxima) {
+                alert(`Temperatura Absurda: A temperatura máxima para simulação é de ${temperaturaMaxima}°C. Por favor, verifique o valor inserido.`);
+                return;
+            }
 
-                <div class="f-input">
-                    <b>Mensagem</b>
-                    <br>
-                    <input placeholder="Digite sua mensagem">
-                </div>
+            if (temperatura < temperaturaMinima) {
+                alert(`Temperatura Baixa: A temperatura mínima para simulação deve ser de pelo menos ${temperaturaMinima}°C. Por favor, verifique o valor inserido.`);
+                return;
+            }
 
-                <button class="f-button">Enviar</button>
-            </div>
-        </footer>
-        <hr class="divisor02">
-        <div class="footer-bottom">
-            © 2025 NeoGuard — Todos os direitos reservados.
-        </div>
+            let tempoInternacaoBase;
+            let riscoComplicacaoBase;
+            let tipoPrematuro = "Termo ou Pré-termo Próximo";
 
+            if (idadeGestacional < 28) {
+                tempoInternacaoBase = 50;
+                riscoComplicacaoBase = 60;
+                tipoPrematuro = "Prematuro Extremo (< 28 semanas)";
+            } else if (idadeGestacional >= 28 && idadeGestacional <= 33) {
+                tempoInternacaoBase = 20;
+                riscoComplicacaoBase = 40;
+                tipoPrematuro = "Prematuro Moderado (28-33 semanas)";
+            } else if (idadeGestacional >= 34 && idadeGestacional <= 36) {
+                tempoInternacaoBase = 10;
+                riscoComplicacaoBase = 25;
+                tipoPrematuro = "Prematuro Tardio (34-36 semanas)";
+            } else {
+                tempoInternacaoBase = 5;
+                riscoComplicacaoBase = 10;
+                tipoPrematuro = "Bebê a Termo (>= 37 semanas)";
+            }
 
-    </main>
+            if (idadeGestacional >= 37) {
 
+            }
 
+            let ajusteRiscoTemp = 0;
+            let ajusteTempoExtra = 0;
 
+            if (temperatura < 35) {
+                ajusteRiscoTemp = 10;
+                ajusteTempoExtra = 10;
+            } else if (temperatura < 36.0) {
+                ajusteRiscoTemp = 10;
+                ajusteTempoExtra = 5;
+            } else if (temperatura < 36.5) {
+                ajusteRiscoTemp = 5;
+                ajusteTempoExtra = 0;
+            } else if (temperatura < 38) {
+                ajusteRiscoTemp = 10;
+                ajusteTempoExtra = 5;
+            } else if (temperatura >= 38) {
+                ajusteRiscoTemp = 15;
+                ajusteTempoExtra = 10;
+            } else if (temperatura >= 40) {
+                ajusteRiscoTemp = 15;
+                ajusteTempoExtra = 15;
+            }
 
-</body>
-<script>
+            // ajuste no risco base para evitar valores iniciais muito baixos em prematuros.
 
-    function simular() {
-        // usei o parseFloat para que no momento em que haja a captura de dado, ele mude
-        // automaticamente para float(decimal)
-        var idadeGestacional = parseFloat(document.getElementById('idadeGestacional').value);
-        var diaria = parseFloat(document.getElementById('diaria').value);
-        var temperatura = parseFloat(document.getElementById('temperatura').value);
+            var tempoInternacaoTotal = tempoInternacaoBase + ajusteTempoExtra;
+            var custoTotalEstimado = tempoInternacaoTotal * diaria;
+            var riscoEstimadoSemNeoGuard = riscoComplicacaoBase + ajusteRiscoTemp;
 
-        // variaveis para validação
-        let idadeGestacionalMaxima = 42;
-        let idadeGestacionalMinima = 22;
-        let temperaturaMaxima = 41.0;
-        let temperaturaMinima = 34.0;
+            var diasEconomizados = Math.floor((ajusteTempoExtra + tempoInternacaoBase) / 3);
+            var economiaPotencial = diasEconomizados * diaria;
 
+            var reducaoPorTecnologia = 0.6; // de acordo com o estudo scopes-ahmed
+            var riscoReduzidoNeoGuard = Math.max(10, riscoEstimadoSemNeoGuard * reducaoPorTecnologia);
 
-        if (!idadeGestacional || !diaria) {
-            alert("Por favor, preencha o peso, a idade gestacional e o custo da diária para simular.");
-            return;
-        }
-
-
-
-        if (idadeGestacional > idadeGestacionalMaxima) {
-            alert(`Idade Gestacional Incorreta: O valor máximo esperado para idade gestacional é de ${idadeGestacionalMaxima} semanas. Por favor, verifique.`);
-            return;
-        }
-
-        if (idadeGestacional < idadeGestacionalMinima) {
-            alert(`Idade Gestacional Incorreta: O valor mínimo esperado para idade gestacional é de ${idadeGestacionalMinima} semanas. Por favor, verifique.`);
-            return;
-        }
-
-        if (temperatura > temperaturaMaxima) {
-            alert(`Temperatura Absurda: A temperatura máxima para simulação é de ${temperaturaMaxima}°C. Por favor, verifique o valor inserido.`);
-            return;
-        }
-
-        if (temperatura < temperaturaMinima) {
-            alert(`Temperatura Baixa: A temperatura mínima para simulação deve ser de pelo menos ${temperaturaMinima}°C. Por favor, verifique o valor inserido.`);
-            return;
-        }
-
-        let tempoInternacaoBase;
-        let riscoComplicacaoBase;
-        let tipoPrematuro = "Termo ou Pré-termo Próximo";
-
-        if (idadeGestacional < 28) {
-            tempoInternacaoBase = 50;
-            riscoComplicacaoBase = 60;
-            tipoPrematuro = "Prematuro Extremo (< 28 semanas)";
-        } else if (idadeGestacional >= 28 && idadeGestacional <= 33) {
-            tempoInternacaoBase = 20;
-            riscoComplicacaoBase = 40;
-            tipoPrematuro = "Prematuro Moderado (28-33 semanas)";
-        } else if (idadeGestacional >= 34 && idadeGestacional <= 36) {
-            tempoInternacaoBase = 10;
-            riscoComplicacaoBase = 25;
-            tipoPrematuro = "Prematuro Tardio (34-36 semanas)";
-        } else {
-            tempoInternacaoBase = 5;
-            riscoComplicacaoBase = 10;
-            tipoPrematuro = "Bebê a Termo (>= 37 semanas)";
-        }
+            var formatarMoeda = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
 
 
-        if (idadeGestacional >= 37) {
-
-        }
-
-        let ajusteRiscoTemp = 0;
-        let ajusteTempoExtra = 0;
-
-        if (temperatura < 35) {
-            ajusteRiscoTemp = 10;
-            ajusteTempoExtra = 10;
-        } else if (temperatura < 36.0) {
-            ajusteRiscoTemp = 10;
-            ajusteTempoExtra = 5;
-        } else if (temperatura < 36.5) {
-            ajusteRiscoTemp = 5;
-            ajusteTempoExtra = 0;
-        } else if (temperatura < 38) {
-            ajusteRiscoTemp = 10;
-            ajusteTempoExtra = 5;
-        } else if (temperatura >= 38) {
-            ajusteRiscoTemp = 15;
-            ajusteTempoExtra = 10;
-        } else if (temperatura >= 40) {
-            ajusteRiscoTemp = 15;
-            ajusteTempoExtra = 15;
-        }
+            let temperaturaHTML = ``
+            if (temperatura == 0 || (temperatura >= 36 && temperatura <= 36.5)) {
+                temperaturaHTML = ``
+                tempoInternacaoTotal = tempoInternacaoBase
+            } else if (temperatura > 0) {
+                temperaturaHTML = `+ ${ajusteTempoExtra} dias por instabilidade térmica)`
+            }
 
 
-        // ajuste no risco base para evitar valores iniciais muito baixos em prematuros.
-
-        var tempoInternacaoTotal = tempoInternacaoBase + ajusteTempoExtra;
-        var custoTotalEstimado = tempoInternacaoTotal * diaria;
-        var riscoEstimadoSemNeoGuard = riscoComplicacaoBase + ajusteRiscoTemp;
-
-        var diasEconomizados = Math.floor((ajusteTempoExtra + tempoInternacaoBase) / 3);
-        var economiaPotencial = diasEconomizados * diaria;
-
-        var reducaoPorTecnologia = 0.6; // de acordo com o estudo scopes-ahmed
-        var riscoReduzidoNeoGuard = Math.max(10, riscoEstimadoSemNeoGuard * reducaoPorTecnologia);
-
-        var formatarMoeda = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
-
-
-        let temperaturaHTML = ``
-        if (temperatura == 0 || (temperatura >= 36 && temperatura <= 36.5)) {
-            temperaturaHTML = ``
-            tempoInternacaoTotal = tempoInternacaoBase
-        } else if (temperatura > 0) {
-            temperaturaHTML = `+ ${ajusteTempoExtra} dias por instabilidade térmica)`
-        }
-
-
-        let conteudoHTML = `
-            
-             <div class="resposta">
-                <div class="card">
-                    <div class="resposta-head sem-sis">
-                        <h3>Sem o Sistema</h3>
-                    </div>
-                    <div class="rowCard">
-                        <i class="fa-solid fa-face-frown textSemSistema"></i>
-                        <div class="resultado">
-                            <p class="textValor">Perdas Financeiras</p>
-                            <p class="valor textSemSistema"><b>${formatarMoeda(custoTotalEstimado)}</b></p>
+            let conteudoHTML = `
+                <div class="resposta">
+                    <div class="card">
+                        <div class="resposta-head sem-sis">
+                            <h3>Sem o Sistema</h3>
+                        </div>
+                        <div class="rowCard">
+                            <i class="fa-solid fa-face-frown textSemSistema"></i>
+                            <div class="resultado">
+                                <p class="textValor">Perdas Financeiras</p>
+                                <p class="valor textSemSistema"><b>${formatarMoeda(custoTotalEstimado)}</b></p>
+                            </div>
+                        </div>
+                        <hr class="divisor">
+                        <div class="rowCard">
+                            <i class="fa-solid fa-calendar textSemSistema"></i>
+                            <div class="resultado">
+                                <p class="textValor">Tempo médio</p>
+                                <p class="valor textSemSistema"><b>${tempoInternacaoTotal}</b></p>
+                            </div>
+                        </div>
+                        <hr class="divisor">
+                        <div class="rowCard">
+                            <i class="fa-solid fa-heart textSemSistema"></i>
+                            <div class="resultado">
+                                <p class="textValor">Taxa de complicações</p>
+                                <p class="valor textSemSistema"><b>${riscoEstimadoSemNeoGuard.toFixed(0)}%</b></p>
+                            </div>
                         </div>
                     </div>
-
-                    <hr class="divisor">
-
-                    <div class="rowCard">
-                        <i class="fa-solid fa-calendar textSemSistema"></i>
-                        <div class="resultado">
-                            <p class="textValor">Tempo médio</p>
-                            <p class="valor textSemSistema"><b>${tempoInternacaoTotal}</b></p>
+                    <div class="card">
+                        <div class="resposta-head com-sis">
+                            <h3>Com o Sistema</h3>
                         </div>
-                    </div>
-
-                    <hr class="divisor">
-
-                    <div class="rowCard">
-                        <i class="fa-solid fa-heart textSemSistema"></i>
-                        <div class="resultado">
-                            <p class="textValor">Taxa de complicações</p>
-                            <p class="valor textSemSistema"><b>${riscoEstimadoSemNeoGuard.toFixed(0)}%</b></p>
+                        <div class="rowCard">
+                            <i class="fa-solid fa-face-smile textComSistema"></i>
+                            <div class="resultado">
+                                <p class="textValor">Economia estimada</p>
+                                <p class="valor textComSistema"><b>${formatarMoeda(economiaPotencial)}</b></p>
+                            </div>
+                        </div>
+                        <hr class="divisor">
+                        <div class="rowCard">
+                            <i class="fa-solid fa-calendar textComSistema"></i>
+                            <div class="resultado">
+                                <p class="textValor">Redução de dias <br> de internação</p>
+                                <p class="valor textComSistema"><b>${diasEconomizados}</b></p>
+                            </div>
+                        </div>
+                        <hr class="divisor">
+                        <div class="rowCard">
+                            <i class="fa-solid fa-heart textComSistema"></i>
+                            <div class="resultado">
+                                <p class="textValor">Aumento de sobrevida</p>
+                                <p class="valor textComSistema"><b>${riscoReduzidoNeoGuard.toFixed(0)}%</b></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="resposta-head com-sis">
-                        <h3>Com o Sistema</h3>
-                    </div>
-                    <div class="rowCard">
-                        <i class="fa-solid fa-face-smile textComSistema"></i>
-                        <div class="resultado">
-                            <p class="textValor">Economia estimada</p>
-                            <p class="valor textComSistema"><b>${formatarMoeda(economiaPotencial)}</b></p>
-                        </div>
-                    </div>
-
-                    <hr class="divisor">
-
-                    <div class="rowCard">
-                        <i class="fa-solid fa-calendar textComSistema"></i>
-                        <div class="resultado">
-                            <p class="textValor">Redução de dias <br> de internação</p>
-                            <p class="valor textComSistema"><b>${diasEconomizados}</b></p>
-                        </div>
-                    </div>
-
-                    <hr class="divisor">
-
-                    <div class="rowCard">
-                        <i class="fa-solid fa-heart textComSistema"></i>
-                        <div class="resultado">
-                            <p class="textValor">Aumento de sobrevida</p>
-                            <p class="valor textComSistema"><b>${riscoReduzidoNeoGuard.toFixed(0)}%</b></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-            
-            `
-        document.getElementById('resultado').innerHTML = conteudoHTML;
-
-    }
-</script>
-
+            </section>`
+            document.getElementById('resultado').innerHTML = conteudoHTML;
+        }
+    </script>
 </html>

@@ -1,3 +1,5 @@
+/* Tudo completo por aqui */
+
 /* Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* Nunito */
@@ -11,6 +13,33 @@
     outline: none;
     border: none;
     text-decoration: none;
+}
+
+.bolinhas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bolinhas span {
+    position: absolute;
+    border-radius: 50%;
+    width: 8%;
+    height: 16%;
+    opacity: 0.4;
+}
+
+.bolinhas span.cor1 {
+    background-color: #A5D8FF;
+}
+
+.bolinhas span.cor2 {
+    background-color: #A88CFF;
+}
+
+.bolinhas span.cor3 {
+    background-color: #FFD2A5;
 }
 
 body {
@@ -49,7 +78,7 @@ h3 {
     font-size: 1.5rem;
 }
 
-/*Nav -------------------------------------------------------------------------------------------------*/
+/* NavBar --------------------------------------------------------------------------------------*/
 
 nav {
     z-index: 6;
@@ -85,21 +114,7 @@ nav>div a {
     cursor: pointer;
 }
 
-/*main*/
-
-main {
-    width: 100%;
-    height: 100%;
-}
-
-.traco {
-    margin-top: -1%;
-    color: rgb(38, 38, 38);
-    font-size: 35px;
-    font-weight: 100;
-}
-
-/*Elementos*/
+/* Elementos --------------------------------------------------------------------------------------*/
 
 .nav-btn {
     padding: 8px 10px;
@@ -130,10 +145,24 @@ a {
     color: inherit;
 }
 
-/*Nav -------------------------------------------------------------------------------------------------*/
+/* NavBar Fim  --------------------------------------------------------------------------------------*/
 
+/*main ---------------------------------------------------------------------------------------------*/
 
-/*Apresentação -------------------------------------------------------------------------------------------------*/
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.traco {
+    margin-top: -1%;
+    color: rgb(38, 38, 38);
+    font-size: 35px;
+    font-weight: 100;
+}
+
+/* Apresentação da empresa -------------------------------------------------------------------------------------------------*/
+
 .apresentacao {
     display: flex;
     padding-top: 15%;
@@ -243,6 +272,7 @@ a {
 .valores-grupo {
     width: 100%;
     display: flex;
+    margin-left: 8%;
     justify-content: space-between;
     text-align: center;
 }
@@ -272,6 +302,7 @@ a {
 
 
 /*Serviços  -------------------------------------------------------------------------------------------------*/
+
 .servicos-container {
     background-color: #fafafa;
 }
@@ -332,6 +363,7 @@ a {
 
 
 /*Equipe  -------------------------------------------------------------------------------------------------*/
+
 .equipe {
     width: 100%;
     margin-top: 2rem;
@@ -393,10 +425,11 @@ a {
     transform: scale(1.1);
 }
 
-/*Equipe - Fim -------------------------------------------------------------------------------------------------*/
+/* Equipe - Fim -------------------------------------------------------------------------------------------------*/
 
 
-/*Calculadora -------------------------------------------------------------------------------------------------*/
+/* Calculadora -------------------------------------------------------------------------------------------------*/
+
 .calculadora {
     display: flex;
     flex-direction: column;
@@ -418,6 +451,7 @@ a {
     color: #2E2E2E;
     font-size: 20px;
     margin-top: 1%;
+    z-index: 3;
     margin-bottom: 3%;
     text-align: center;
     font-family: "Nunito";
@@ -573,13 +607,10 @@ a {
     color: #F67E27;
 }
 
-
-
-
-
 /*Calculadora - fim -------------------------------------------------------------------------------------------------*/
 
 /*footer  -------------------------------------------------------------------------------------------------*/
+
 footer {
     width: 100%;
     padding: 5%;
@@ -632,7 +663,7 @@ footer {
 }
 
 .info ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -647,7 +678,7 @@ footer {
 }
 
 .info ul li a:hover {
-    color: #ff9d00; 
+    color: #ff9d00;
 }
 
 .info>div>div {
@@ -697,6 +728,7 @@ footer {
 }
 
 /* Direitos reservados */
+
 .divisor02 {
     border: 0;
     width: 90%;
@@ -714,6 +746,24 @@ footer {
 }
 
 
+@keyframes flutuar {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 15px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.animada {
+    animation: flutuar 8s ease-in-out infinite alternate;
+}
+
 /* 
 - Titulos do painel(Na pagina Analitycs/Dashboard, trocar os titulos dos gráficos e sessões para que faça mais sentido);
 - Trocar o nome/imgs das paginas do painel (Analityc, Usuarios e incubadoras)
@@ -723,80 +773,3 @@ footer {
 
 - footer - Formulario (loop);
 */
-
-
-.bolinhas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-
-.bolinhas span {
-    position: absolute;
-    opacity: 0.18;
-    border-radius: 50%;
-}
-
-/* cores diferentes para cada bolinha */
-
-.bolinhas span:nth-child(1) {
-    margin-left: 90%;
-    margin-top: 40%;
-    background-color: #A5D8FF;
-}
-
-.bolinhas span:nth-child(2) {
-    width: 8%;
-    height: 16%;
-    margin-top: -18%;
-    background-color: #A5D8FF;
-}
-
-.bolinhas span:nth-child(3) {
-    width: 10%;
-    height: 20%;
-    margin-left: -26%;
-    margin-top: -16%;
-    background-color: #A88CFF;
-}
-
-.bolinhas span:nth-child(4) {
-    width: 9%;
-    height: 19%;
-    margin-top: -19%;
-    background-color: #A88CFF;
-}
-
-.bolinhas span:nth-child(5) {
-    width: 8%;
-    height: 16%;
-    background-color: #A5D8FF;
-}
-
-/* posições */
-.bolinhas span:nth-child(1) {
-    top: 5%;
-    left: 8%;
-}
-
-.bolinhas span:nth-child(2) {
-    top: 30%;
-    left: -10px;
-}
-
-.bolinhas span:nth-child(3) {
-    top: 75%;
-    left: 12%;
-}
-
-.bolinhas span:nth-child(4) {
-    top: 20%;
-    right: 5%;
-}
-
-.bolinhas span:nth-child(5) {
-    top: 60%;
-    right: 12%;
-}
