@@ -10,11 +10,13 @@ a {
     text-decoration: none;
     color: inherit;
 }
-h1{
-    font-size: clamp(1.2em, 3vw,1.5em)
+
+h1 {
+    font-size: clamp(1.2em, 3vw, 1.5em)
 }
-h2{
-   font-size: clamp(1em, 2vw,1.2em) 
+
+h2 {
+    font-size: clamp(1em, 2vw, 1.2em)
 }
 
 body {
@@ -35,9 +37,10 @@ body {
     margin-bottom: 15%;
     align-self: center;
 }
+
 /* -------------------------------*/
 
-.perfil{
+.perfil {
     width: 70%;
     text-align: center;
 }
@@ -62,6 +65,7 @@ nav {
     align-items: center;
     width: 100%;
 }
+
 .nav-item {
     width: 100%;
     padding: 5%;
@@ -74,7 +78,7 @@ nav {
     font-family: "Nunito";
 }
 
-.nav-item > img {
+.nav-item>img {
     width: 10%;
     padding: 5%;
     display: flex;
@@ -82,34 +86,54 @@ nav {
     gap: 5%;
     color: #FAFAFA;
 }
+
 .nav-item:hover {
     background-color: #8560F9;
     cursor: pointer;
 }
+
 .selecionado {
     background-color: #6343C7;
 }
 
 
-.monitoramento{
+.select-radio {
     display: flex;
     flex-direction: column;
-    gap: 0;
     width: 100%;
 }
-.monitoramento-item {
+
+.option {
     width: 100%;
-    padding: 3% 0 3% 15%;
-    box-sizing: border-box;
+}
+
+.option input {
+    display: none;
+}
+
+.option label {
     display: flex;
     align-items: center;
-    gap: 3%;
-    color: #FAFAFA;
-    font-weight: bold;
-    font-family: "Nunito";
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0 10px 20px;
     cursor: pointer;
+    transition: .2s;
+    user-select: none;
+    color: #FAFAFA;
 }
-.monitoramento-item > img {
+
+/* Cor quando selecionado */
+.option input:checked+label {
+    background-color: #8560F9;
+}
+
+/* Hover */
+.option label:hover {
+    background-color: #C5B3FF;
+}
+
+.iconeUTI {
     width: 10%;
     padding: 5%;
     display: flex;
@@ -117,19 +141,17 @@ nav {
     gap: 5%;
     color: #FAFAFA;
 }
-.monitoramento-item:hover {
-    background-color: #C5B3FF;
-}
-.monitoramento-selecionado {
-    background-color: #8560F9;
-}
 
-.exit{
+
+
+
+.exit {
     display: flex;
     justify-content: center;
 }
-.exit > img{
-    width:20% ;
+
+.exit>img {
+    width: 20%;
 }
 
 
