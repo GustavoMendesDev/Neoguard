@@ -8,6 +8,7 @@
 
     <title>Cadastre-se | NeoGuard</title>
     <link rel="shortcut icon" href="../../assets/ (1).ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -31,6 +32,19 @@
 
         <!-- LADO DIREITO -->
         <div class="lado-direito">
+            <div class="etapas">
+                <div class="etapasContent">
+                    <div class="etapa1"></div>
+                    <div id="linha"></div>
+                    <div class="etapa2"></div>
+                    <div id="linha2"></div>
+                    <div class="etapa3"></div>
+
+
+                </div>
+                <label for="etapa1">Hospital</label>
+                <label for="etapa2">Gestor Hospital</label>
+            </div>
             <div class="logo-cadastro">
                 <h1>Neo<span>Guard</span></h1>
             </div>
@@ -41,53 +55,97 @@
             <form id="formCadastroHospital">
                 <div class="input-group">
                     <label for="nome">Nome do Hospital</label>
-                    <input type="text" id="nome" placeholder="Digite o nome do hospital" required>
+                    <input type="text" id="iptHospital" placeholder="Digite o nome do hospital" required>
                 </div>
 
                 <div class="input-group">
                     <label for="cnpj">CNPJ</label>
-                    <input type="text" id="cnpj" placeholder="00.000.000/0001-00" required>
+                    <input type="text" id="iptCnpj" placeholder="00.000.000/0001-00" required>
                 </div>
 
-                <div class="input-group">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="iptEmail" placeholder="Digite seu e-mail" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="iptSenha" oninput="Verificar()" placeholder="Digite sua senha" required>
-                    <div id="senhaForte"></div>
-                    <p class="avisoSenha">As senhas devem ter pelo menos oito
-                        caracteres e conter uma letra maiúscula, uma letra
-                        minúscula e um número e um caracter especial </p>
-                </div>
-
-                <button type="button" onclick="Verificar()" class="btn-cadastro">Cadastrar</button>
+                <button type="button" onclick="cadastrarHospital()" class="btn-cadastro">Cadastrar</button>
 
 
                 <p class="cadastro">Já tem login? <a href="/app/views/Login.html">Entre aqui</a></p>
             </form>
+
+
+            <div class="contentCriarSala" style="display: none;">
+                <h3 style="margin-top: 25px; color:#333; font-weight:600;">
+                    Cadastro das Salas Neonatais
+                </h3>
+                <p style="font-size: 14px; color:#555; margin-bottom: 10px;">
+                    Adicione até 5 salas neonatais do hospital recém cadastrado.
+                </p>
+
+                <form id="formCadastroSala" >
+                    <div class="input-group">
+                        <label for="numeroSala">Número da Sala</label>
+                        <input type="text" id="iptNumeroSala" placeholder="Ex: 01, 02..." required>
+                    </div>
+
+                    <button type="button" class="btn-cadastro" onclick="adicionarSala()">
+                        Adicionar Sala
+                    </button>
+                </form>
+
+                <table id="tabelaSalas" style="width:100%; margin-top:15px; border-collapse: collapse; display:none;">
+                    <thead>
+                        <tr style="text-align:left; border-bottom:2px solid #A5D8FF;">
+                            <th style="padding:6px 0;">Número da Sala</th>
+                            <th style="padding:6px 0; width:120px;">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <button id="btnConfirmarSalas" class="btn-cadastro" style="margin-top:20px; display:none;"
+                    onclick="confirmarSalas()">
+                    Confirmar Salas
+                </button>
+            </div>
+
+
+
+
+            <form id="formCadastroGestor" style="display: none;">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text" id="iptNome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Sobrenome</label>
+                    <input type="text" id="iptSobrenome" placeholder="Digite seu sobrenome" required>
+                </div>
+
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" id="iptEmail" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Senha</label>
+                    <input type="password" id="iptSenha" oninput="VerificarSenha()" placeholder="Digite sua senha"
+                        required>
+                    <div id="senhaForte"></div>
+                    <p class="avisoSenha">As senhas devem ter pelo menos 8 caracteres, contendo maiúscula, minúscula,
+                        número e símbolo.</p>
+                </div>
+
+
+                <button type="button" onclick="cadastrarGestor()" class="btn-cadastro">Cadastrar</button>
+
+                <p class="cadastro">Já tem login? <a href="/app/views/Login.html">Entre aqui</a></p>
+            </form>
+            <div id="msgErro" style="display: none;">
+                <p>Preencha todos os campos em brancos</p>
+            </div>
         </div>
     </div>
+    <script src="./js/cadastro.js"></script>
+
 </body>
-<script>
 
-    function Verificar() {
-        var email = iptEmail.value;
-        var validacao = "@";
-        var senha = Number(iptSenha.value);
 
-        if (email == '' || email.includes(validacao)) {
-            console.log(`validação ok!`)
-        } else {
-            alert(`O E-mail necessita ter '@' ! `)
-        }
-    }
-</script>
 </html>
