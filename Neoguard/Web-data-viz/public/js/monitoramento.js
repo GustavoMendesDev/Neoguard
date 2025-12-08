@@ -77,8 +77,8 @@ function entrarSala(idSala) {
     sessionStorage.ID_SALA = idSala;
     console.log("Sala selecionada:", idSala);
 
-        window.location = "monitoramento.html";
-    }
+    window.location = "monitoramento.html";
+}
 
 
 function listarSalas(idHospital) {
@@ -103,7 +103,7 @@ function listarSalas(idHospital) {
 
             salas.forEach(sala => {
                 i++
-                
+
                 console.log(sala)
                 navContainer.innerHTML += `
 
@@ -122,6 +122,38 @@ function listarSalas(idHospital) {
         });
 
 }
+
+
+function listarIncubadoras() {
+    fetch(`/buscar/${idSala}`)
+        .then(resposta => resposta.json())
+        .then(inc => {
+            console.log("Incubadora criada:", inc);
+
+            // 2. Criar linha na tabela
+
+            inc.forEach(incs => {
+                i++
+                containerAlerta.innerHTML = `
+            
+
+            <div class="alertaItem">
+        <span class="numeroIncubadora">Incubadora #<b>${i}</b></span>
+        <span class="containerTemperatura">
+          <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
+          <div id="inc1"> °C</div>
+        </span>
+        <span>Critico</span>
+        <span>Há <b>0</b> minuto</span>
+      </div>
+            `;
+
+
+            });
+        })
+
+}
+
 
 function aleatoryIncubadoras() {
 
@@ -145,6 +177,13 @@ function aleatoryIncubadoras() {
     inc8.innerHTML = `${aleatorio8}`;
     inc9.innerHTML = `${aleatorio9}`;
     inc10.innerHTML = `${aleatorio10}`;
+
+    window.onload = () => {
+        aleatoryIncubadoras();
+
+        setInterval(aleatoryIncubadoras, 60000);
+
+    }
 
 };
 

@@ -20,7 +20,8 @@ function buscar (idSala){
 
     var instrucaoSql = `
     SELECT
-	i.id AS idIncubadora
+	i.id AS idIncubadora,
+    i.fkSensor AS idSensor
 	FROM salaNeoNatal AS s
     JOIN hospital AS h
     ON s.fkHospital = h.id

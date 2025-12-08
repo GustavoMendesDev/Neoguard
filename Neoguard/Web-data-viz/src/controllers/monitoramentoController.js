@@ -4,7 +4,7 @@ function MonitoramentoInc(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var idSala = req.body.idSalaServer
     var idHospital = req.body.idHospitalServer
-    var idIncubadora = eq.body.idIncubadoraServer // sessiostorage aqui
+    var idIncubadora = req.body.idIncubadoraServer // sessiostorage aqui
 
 
     // Faça as validações dos valores

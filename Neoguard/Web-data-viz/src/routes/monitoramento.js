@@ -4,7 +4,7 @@ var router = express.Router();
 var monitoramentoController = require("../controllers/monitoramentoController");
 
 
-router.get("/MonitoramentoInc", function (req, res) {
+router.get("/buscar", function (req, res) {
     monitoramentoController.MonitoramentoInc(req, res);
 });
 

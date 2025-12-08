@@ -78,6 +78,9 @@ function gerarIncubadorasIniciais() {
     i++;
     console.log(i)
     // 1. Cadastrar incubadora no backend
+
+        corpoTabela.innerHTML = "";
+
     fetch('/incubadoras/cadastrar', {
         method: 'POST',
         headers: {
@@ -87,15 +90,21 @@ function gerarIncubadorasIniciais() {
             idSalaServer: idSala,
             idSensorServer: i
         })
-    }).then(resposta => {
-        console.log('CADASTRO FEITO COM SUCESSO', resposta)
+    }).then(resposta => resposta.json())
+        .then(cadInc => {
+            listarIncubadoras(idSala)
+           console.log('CADASTRO FEITO COM SUCESSO (incubadora)', cadInc)
 
-        listarIncubadoras(idSala);
-    })
+
+        })
+
+    
 
         .catch(err => {
             console.log("Erro ao cadastrar incubadora:", err);
         });
+
+
 }
 
 let i = 0;
@@ -109,33 +118,31 @@ function listarIncubadoras(idSala) {
 
             // 2. Criar linha na tabela
 
-          inc.forEach(incubadora => {
-            i++
-
-            novaLinha.innerHTML += `
-                <td>${incubadora.idIncubadora}</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                    <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
-                        <span class="iconeAcao">
-                            <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/editar.svg">
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
-                        <span class="iconeAcao">
-                            <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/remover.svg">
-                        </span>
-                    </button>
-                </td>
-            `;
-            
-          });  
+     inc.forEach((incubadora, i) => {
+                
+    document.getElementById("novaLinha").innerHTML += `
+        <td>${i + 1}</td>
+        <td>0</td>
+        <td>0</td>
+        <td>
+            <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
+                <span class="iconeAcao">
+                    <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/editar.svg">
+                </span>
+            </button>
+        </td>
+        <td>
+            <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
+                <span class="iconeAcao">
+                    <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/remover.svg">
+                </span>
+            </button>
+        </td>
+    `;
+});
 
 
-            corpoTabela.appendChild(novaLinha);
+
 
 
 
@@ -206,6 +213,6 @@ function editarLinha(botao) {
 // Inicia o site após o carregamento
 document.addEventListener('DOMContentLoaded', inicializarEventos);
 
-window.onload = listarIncubadoras(idSala) ;
+window.onload = listarIncubadoras(idSala);
 
 
