@@ -1,136 +1,139 @@
 <!--Finalizado-->
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/login.css">
 
-        <title>Login | NeoGuard</title>
-        <link rel="shortcut icon" href="../public/assets/favicon.ico" type="image/x-icon">
-    </head>
-    <body>
-        <!--Navbar-->
-        <nav>
-            <img src="./assets/Logo - Default (2).svg" alt="NeoGuard - Logo" class="logo">
-            <div>
-                <a href="../public/index.html">Home</a>
-                <a href="../public/index.html#sobre">Sobre nós</a>
-                <a href="../public/index.html#servicos">Serviços</a>
-                <a href="../public/index.html#contato">Contato</a>
-                <a class="traco"> | </a>
-                <button class="nav-btn">
-                    <a href="../public/login.html">Entrar</a>
-                </button>
-            </div>
-        </nav>
-        <!--Container do login-->
-        <div class="container">
-            <!-- LADO ESQUERDO -->
-            <div class="lado-esquerdo">
-                <div class="decoracao">
-                    <div class="bola cor1"></div>
-                    <div class="bola cor2"></div>
-                    <div class="bola cor3"></div>
-                    <div class="bola cor3-a"></div>
-                    <div class="bola cor4"></div>
-                </div>
-                <!--Imagem e bolinhas-->
-                <div class="conteudo-esquerdo">
-                    <div class="ilustracao">
-                        <img src="./assets/login-img/login.png" alt="Ilustração de alguém fazendo login">
-                    </div>
-                </div>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
 
-            <!-- LADO DIREITO -->
-            <div class="lado-direito">
-                <div class="logo-login">
-                    <h1><span>Login</span></h1>
+    <title>Login | NeoGuard</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav>
+        <img src="./assets/Logo - Default (2).svg" alt="NeoGuard - Logo" class="logo">
+        <div>
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#sobre">Sobre nós</a>
+            <a href="../../index.html#servicos">Serviços</a>
+            <a href="../../index.html#contato">Contato</a>
+            <a class="traco"> | </a>
+            <button class="nav-btn">
+                <a href="../../login.html">Entrar</a>
+            </button>
+        </div>
+    </nav>
+    <!--Container do login-->
+    <div class="container">
+        <!-- LADO ESQUERDO -->
+        <div class="lado-esquerdo">
+            <div class="decoracao">
+                <div class="bola cor1"></div>
+                <div class="bola cor2"></div>
+                <div class="bola cor3"></div>
+                <div class="bola cor3-a"></div>
+                <div class="bola cor4"></div>
+            </div>
+            <!--Imagem e bolinhas-->
+            <div class="conteudo-esquerdo">
+                <div class="ilustracao">
+                    <img src="./assets/login-img/login.png" alt="Ilustração de alguém fazendo login">
                 </div>
-                <h2>Bem vindo de volta!</h2>
-                <div class="mensagem-login">
-                    <p>Entre com suas credenciais para <br> continuar protegendo o que mais importa.</p>
+            </div>
+        </div>
+
+        <!-- LADO DIREITO -->
+        <div class="lado-direito">
+            <div class="logo-login">
+                <h1><span>Login</span></h1>
+            </div>
+            <h2>Bem vindo de volta!</h2>
+            <div class="mensagem-login">
+                <p>Entre com suas credenciais para <br> continuar protegendo o que mais importa.</p>
+            </div>
+            <!--Formulário-->
+            <form>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="iptEmail" placeholder="Digite seu e-mail" required>
                 </div>
-                <!--Formulário-->
-                <form>
-                    <div class="input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="iptEmail" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" id="iptSenha" placeholder="Digite sua senha" required>
-                    </div>
-                    <!--
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="iptSenha" placeholder="Digite sua senha" required>
+                </div>
+                <!--
                     <div class="opcoes">
                         <label><input type="checkbox"> Lembrar-me</label>
                         <a href="/app/views/EsqueceuSenha.html">Esqueceu a senha?</a>
                     </div>
                     -->
-                    <button type="button" onclick="login()" class="btn-login">Login</button>
-                    <div id="ERRO"></div>
-                    <div id="neoAlert" class="neo-alert">
-                        <div class="neo-alert-box">
-                            <p id="neoAlertMsg"></p>
-                            <button onclick="fecharNeoAlert()">Fechar</button>
-                        </div>
+                <button type="button" onclick="login()" class="btn-login">Login</button>
+                <div id="ERRO"></div>
+                <div id="neoAlert" class="neo-alert">
+                    <div class="neo-alert-box">
+                        <p id="neoAlertMsg"></p>
+                        <button onclick="fecharNeoAlert()">Fechar</button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-    </body>
-    <script>
-        function login() {
-            var email = iptEmail.value;
-            var senha = iptSenha.value;
+    </div>
+</body>
+<script>
+    function login() {
+        var email = iptEmail.value;
+        var senha = iptSenha.value;
 
-            // Verifica sem está tudo preenchido
-            if (email === "" || senha === "") {
-                neoAlert("Por favor, preencha todos os campos.");
-                return;
-            }
-
-            // Verifica se tem @
-            if (!email.includes("@")) {
-                neoAlert("O e-mail precisa conter '@'.");
-                return;
-            }
-
-            // Verifica se tem algo antes e depois do @, importante
-            var posicaoArroba = email.indexOf("@");
-
-            if (posicaoArroba == 0) {
-                neoAlert("O e-mail não pode começar com '@'.");
-                return;
-            }
-
-            if (posicaoArroba == email.length - 1) {
-                neoAlert("O e-mail precisa ter algo depois do '@'.");
-                return;
-            }
-
-            // Verifica se senha foi preenchida
-            if (senha.length == 0) {
-                neoAlert("Preencha sua senha.");
-                return;
-            }
-
-            // Verificação total
-            if (email === "adm@gmail.com" && senha === "1234") {
-                window.location.href = "../dashboard/html/analitycs.html";
-            } else {
-                neoAlert("E-mail ou senha incorretos!");
-            }
+        // Verifica sem está tudo preenchido
+        if (email === "" || senha === "") {
+            neoAlert("Por favor, preencha todos os campos.");
+            return;
         }
 
-        function neoAlert(msg) {
-            document.getElementById("neoAlertMsg").innerText = msg;
-            document.getElementById("neoAlert").style.display = "flex";
+        // Verifica se tem @
+        if (!email.includes("@")) {
+            neoAlert("O e-mail precisa conter '@'.");
+            return;
         }
 
-        function fecharNeoAlert() {
-            document.getElementById("neoAlert").style.display = "none";
+        // Verifica se tem algo antes e depois do @, importante
+        var posicaoArroba = email.indexOf("@");
+
+        if (posicaoArroba == 0) {
+            neoAlert("O e-mail não pode começar com '@'.");
+            return;
         }
-    </script>
+
+        if (posicaoArroba == email.length - 1) {
+            neoAlert("O e-mail precisa ter algo depois do '@'.");
+            return;
+        }
+
+        // Verifica se senha foi preenchida
+        if (senha.length == 0) {
+            neoAlert("Preencha sua senha.");
+            return;
+        }
+
+        // Verificação total
+        if (email === "adm@gmail.com" && senha === "1234") {
+            window.location.href = "../dashboard/html/analitycs.html";
+        } else {
+            neoAlert("E-mail ou senha incorretos!");
+        }
+    }
+
+    function neoAlert(msg) {
+        document.getElementById("neoAlertMsg").innerText = msg;
+        document.getElementById("neoAlert").style.display = "flex";
+    }
+
+    function fecharNeoAlert() {
+        document.getElementById("neoAlert").style.display = "none";
+    }
+</script>
+
 </html>

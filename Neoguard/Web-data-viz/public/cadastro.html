@@ -7,11 +7,24 @@
     <link rel="stylesheet" href="./css/cadastro.css">
 
     <title>Cadastre-se | NeoGuard</title>
-    <link rel="shortcut icon" href="./assets/cadastro-img/Cadastro.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+    <!--Navbar-->
+    <nav>
+        <img src="./assets/Logo - Default (2).svg" alt="NeoGuard - Logo" class="logo">
+        <div>
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#sobre">Sobre nós</a>
+            <a href="../../index.html#servicos">Serviços</a>
+            <a href="../../index.html#contato">Contato</a>
+            <a class="traco"> | </a>
+            <button class="nav-btn">
+                <a href="../../login.html">Entrar</a>
+            </button>
+        </div>
+    </nav>
     <div class="container">
         <!-- LADO ESQUERDO -->
         <div class="lado-esquerdo">
@@ -39,16 +52,12 @@
                     <div id="etapa2"></div>
                     <div id="linha2"></div>
                     <div class="etapa3"></div>
-
-
                 </div>
-                <label for="etapa1">Hospital</label>
-                <label for="etapa2">Gestor Hospital</label>
+                <div class="etapasLabels">
+                    <label id="labelEtapa1">Hospital</label>
+                    <label id="labelEtapa2">Gestor Hospital</label>
+                </div>
             </div>
-            <div class="logo-cadastro">
-                <h1>Neo<span>Guard</span></h1>
-            </div>
-
             <h2>Cadastre-se</h2>
             <p class="mensagem-cadastro">Preencha os dados abaixo para se cadastrar.</p>
 
@@ -62,29 +71,50 @@
                     <label for="cnpj">CNPJ</label>
                     <input type="text" id="iptCnpj" placeholder="00.000.000/0001-00" required>
                 </div>
-
                 <button type="button" onclick="cadastrarHospital()" class="btn-cadastro">Cadastrar</button>
-
-
-                <p class="cadastro">Já tem login? <a href="/app/views/Login.html">Entre aqui</a></p>
             </form>
-
-
             <div id="cadastrarSalaNeonatal"></div>
-       
-
-
-
-          
             <div id="formCadastroGestor" style="display: none;"></div>
             <div id="msgErro" style="display: none;">
                 <p>Preencha todos os campos em brancos</p>
             </div>
+            <!-- Alerta customizado NeoGuard -->
+            <div class="neo-alert" id="neoAlert">
+                <div class="neo-alert-box">
+                    <p id="neoAlertMsg"></p>
+                    <button onclick="fecharNeoAlert()">Fechar</button>
+                </div>
+            </div>
+
         </div>
     </div>
-    <script src="./js/cadastro.js"></script>
-
 </body>
+<script src="./js/cadastro.js"></script>
+
+<script>
+    function ativarLabel(n) {
+        const labels = [
+            document.getElementById("labelEtapa1"),
+            document.getElementById("labelEtapa2")
+        ];
+
+        labels.forEach((l, i) => {
+            l.classList.remove("ativa", "concluida");
+
+            if (i < n - 1) l.classList.add("concluida");
+            if (i === n - 1) l.classList.add("ativa");
+        });
+    }
+
+    function neoAlert(msg) {
+        document.getElementById("neoAlertMsg").innerText = msg;
+        document.getElementById("neoAlert").style.display = "flex";
+    }
+
+    function fecharNeoAlert() {
+        document.getElementById("neoAlert").style.display = "none";
+    }
+</script>
 
 
 </html>

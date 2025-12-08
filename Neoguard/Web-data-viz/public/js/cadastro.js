@@ -5,9 +5,8 @@ function VerificarEmail() {
     if (email == '' || email.includes(validacao)) {
         console.log(`validação ok!`)
     } else {
-        alert(`O E-mail necessita ter '@' ! `)
+        neoAlert(`O E-mail necessita ter '@' ! `)
     }
-
 }
 
 
@@ -33,10 +32,6 @@ function VerificarSenha() {
 
     var email = iptEmail.value;
 
-
-
-
-
     if (senha.length < 8) {
         senhaForte.innerHTML = '<p style="color:#fc0500; font-weight: bold;">Senha deve conter ao menos 8 caracteres</p>'
 
@@ -55,9 +50,6 @@ function VerificarSenha() {
             } else if (numeros.includes(caracter)) {
                 criterio4 = 1;
             }
-
-
-
             i++;
 
         }
@@ -73,8 +65,6 @@ function VerificarSenha() {
 
         } else {
             senhaForte.innerHTML = '<p style="color:#fc0500; font-weight: bold;">Senha fraca</p>'
-
-
         }
     }
 
@@ -93,11 +83,9 @@ function cadastrarHospital() {
     nomeHospitalVar = iptHospital.value;
 
     if (cnpjVar == '' || nomeHospitalVar == '') {
-
-        console.log('preencha todos os campos ')
+        neoAlert('preencha todos os campos ')
     } else {
         document.getElementById('formCadastroHospital').style.display = 'none';
-
 
         fetch('/hospitais/cadastrar', {
             method: 'POST',
@@ -113,9 +101,7 @@ function cadastrarHospital() {
             .then(hospital => {
                 idHospital = hospital.insertId;
                 console.log('Id do hospital', idHospital)
-
-                console.log('Hospital cadastrado com sucesso', hospital)
-
+                neoAlert('Hospital cadastrado com sucesso');
                 document.getElementById('cadastrarSalaNeonatal').innerHTML = `
                 
             <div class="contentCriarSala">
@@ -139,16 +125,13 @@ function cadastrarHospital() {
                         Cadastrar Gestor
                     </button>
                 </form>
-
                 <div id="msgCadSala"></div>
-
-             
             </div>
                 `;
             })
 
-
             .catch(err => {
+                neoAlert('Cadastro não realizado');
                 console.log('Cadastro não realizado', err)
             })
 
@@ -160,13 +143,10 @@ function cadastrarSala(idHospital) {
 
     var numSalaVar = iptNumSala.value;
 
-
     if (numSalaVar == '') {
-
-        console.log('preencha todos os campos ')
+        neoAlert('preencha todos os campos!')
     } else {
         document.getElementById('formCadastroHospital').style.display = 'none';
-
 
         fetch('/salasNeoNatais/cadastrar', {
             method: 'POST',
@@ -181,33 +161,20 @@ function cadastrarSala(idHospital) {
         }).then(resposta => resposta.json())
             .then(salas => {
                 console.log('AAAAAAA', salas)
-                document.getElementById('msgCadSala').innerHTML += `
-            <p>SALA CADASTRADA COM SUCESSO</p>
-            `;
-
-
-
-                console.log('Sala cadastrada com sucesso', sala)
+                neoAlert("Sala cadastrada com sucesso!");
+                console.log('Sala cadastrada com sucesso', salas)
             })
-
 
             .catch(err => {
+                neoAlert('Cadastro não realizado');
                 console.log('Cadastro não realizado', err)
             })
-
-
-
     }
-
-
-
 }
 
 function telaGestor() {
     document.getElementById('etapa2').style.background = '#A88CFF';
-
     document.getElementById('linha2').style.background = '#A88CFF';
-
     document.getElementById('cadastrarSalaNeonatal').innerHTML = ``;
     document.getElementById('formCadastroGestor').style.display = 'block';
 
@@ -241,8 +208,6 @@ function telaGestor() {
         <button type="button" onclick="cadastrarGestor(${idHospital})" class="btn-cadastro">
             Cadastrar Gestor
         </button>
-
-        <p class="cadastro">Já tem login? <a href="/app/views/Login.html">Entre aqui</a></p>
     `;
 }
 
@@ -250,25 +215,22 @@ function telaGestor() {
 
 function cadastrarGestor(idHospital) {
 
-console.log(idHospital)
+    console.log(idHospital)
     var nomeVar = iptNome.value;
     var sobrenomeVar = iptSobrenome.value;
     var emailVar = iptEmail.value;
     var senhaVar = iptSenha.value;
 
 
-console.log('Nome' , nomeVar  , 'Sobrenome ',sobrenomeVar )
+    console.log('Nome', nomeVar, 'Sobrenome ', sobrenomeVar)
 
     if (nomeVar == '' ||
         emailVar == '' ||
         sobrenomeVar == '' ||
         senhaVar == ''
     ) {
-        document.getElementById('msgErro').style.display = 'flex';
-
+        neoAlert("Preencha todos os campos do gestor!");
     } else {
-
-
 
         fetch('/usuarios/cadastrar', {
             method: 'POST',
@@ -286,18 +248,17 @@ console.log('Nome' , nomeVar  , 'Sobrenome ',sobrenomeVar )
             }),
         }).then(resposta => resposta.json())
             .then(gestor => {
-                console.log('aaaaa', gestor)
+                console.log('Gestor:', gestor)
 
-
-                console.log('gestor cadastrado com sucesso', gestor)
-            setTimeout(() => {
-              window.location = "login.html";
-            }, "2000");
+                neoAlert('gestor cadastrado com sucesso');
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "3000");
 
             })
 
-
             .catch(err => {
+                neoAlert('Cadastro não realizado')
                 console.log('Cadastro não realizado', err)
             })
 
