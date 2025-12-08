@@ -1,4 +1,5 @@
-:root { /*inicialização de variáveis*/
+:root {
+    /*inicialização de variáveis*/
     --roxoPrincipal: #A992F3;
     --roxoSecundario: #C5B3FF;
     --corBranca: #ffffff;
@@ -8,8 +9,9 @@
     --bordaClara: #eeeeee;
     --alturaBarraSuperior: 60px;
 }
+
 /* sessões */
-section{
+section {
     width: 100%;
     padding: 1.5%;
     box-sizing: border-box;
@@ -38,6 +40,7 @@ section{
     font-size: 1.8rem;
     font-weight: normal;
 }
+
 /* Seção de Ação (Botão) */
 .secaoAcao {
     margin-bottom: 20px;
@@ -60,11 +63,12 @@ section{
     line-height: 1.2;
     height: 90px;
 }
-.botaoCadastrar > img{
+
+.botaoCadastrar>img {
     width: 30px;
 }
 
-.botaoCadastrar:hover{
+.botaoCadastrar:hover {
     background-color: rgb(255, 188, 64);
 }
 
@@ -76,21 +80,27 @@ section{
 
 /* tabela de dados */
 .secaoTabela {
-    padding: 30px;
+    padding: 0 30px;
     border-radius: 5px;
+    height: 60%;
+    overflow-y: scroll;
 }
 
 .tabelaIncubadoras {
     width: 100%;
+    height: 100%;
     border-collapse: collapse;
 }
 
 /* cabeçalho da tabela */
 .tabelaIncubadoras thead {
-    background-color: var(--roxoPrincipal);
-    color: var(--corBranca);
+    background-color: #8560F9;
+    color: #FEFEFE;
 }
-
+thead{
+    position: sticky;
+    top: 0;
+}
 .cabecalhoTabela {
     padding: 15px;
     text-align: left;
@@ -118,11 +128,12 @@ section{
 .colunaNumIncubadora {
     width: 100px;
 }
-.colunaPeso{
+
+.colunaPeso {
     width: 120px;
 }
 
-.colunaIg{
+.colunaIg {
     width: 50px;
 }
 
@@ -263,6 +274,7 @@ section{
     width: 30px;
     font-weight: 100;
 }
-tbody{
+
+tbody {
     flex-direction: column;
 }
