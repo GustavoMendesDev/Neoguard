@@ -63,3 +63,44 @@ new Chart(ctx, {
     }
 }
 );
+let idHospital; 0
+
+let idSala = 0
+
+function entrarSala(idSala) {
+
+    sessionStorage.ID_SALA = idSala;
+    console.log(idSala)
+
+    window.location = "monitoramento.html";
+
+
+}
+
+function listarSalas(idHospital) {
+
+    fetch(`/salasNeoNatais/buscar/${idHospital}`)
+        .then(resposta => resposta.json())
+        .then(salas => {
+
+            console.log("Salas encontradas:", salas);
+
+            const navContainer = document.getElementById("select-radio");
+            navContainer.innerHTML = ""; // limpar o conteúdo antigo
+
+            salas.forEach(sala => {
+                navContainer.innerHTML += `
+                <div class="option">
+                    <input type="radio" name="escolha" id="sala_${sala.id}" onclick="entrarSala(${sala.id})">
+                    <label for="sala_${sala.id}">
+                        <img class="iconeUTI" src="assets/dashboard-img/icone-header/Sala.svg">
+                        Sala UTI - ${sala.id}
+                    </label>
+                </div>
+                `;
+            });
+        })
+        .catch(err => {
+            console.log("Erro ao carregar salas:", err);
+        });
+}
