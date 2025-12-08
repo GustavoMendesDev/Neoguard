@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BobIA</title>
+
+    <title>BobIA | NeoGuard</title>
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../css/estrutura.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!--Navbar-->
+
+    <nav>
+        <div class="nav-container">
+            <img class="logo" src="../../assets/NeoGuard.svg" alt="Nome-Neoguard">
+
+            <img class="perfil" src="../../assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
+
+            <!-- Sessão do monitoramento ---------------------------------------------------------------------------- -->
+            <div class="monitoramento">
+            </div>
+
+            <div class="select-radio">
+                <div class="nav-item">
+                    <img src="../../assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
+                    <a href="../../../html/analitycs.html">Monitoramento</a>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="escolha" id="op1" value="option1">
+                    <label for="op1">
+                        <img class="iconeUTI" src="../../assets/dashboard-img/icone-header/Sala.svg"
+                            alt="Icone de Sala">
+                        Sala UTI - 01
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="escolha" id="op2" value="option2">
+                    <label for="op2">
+                        <img class="iconeUTI" src="../../assets/dashboard-img/icone-header/Sala.svg"
+                            alt="Icone de Sala">
+                        Sala UTI - 02
+                    </label>
+                </div>
+            </div>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+            <a href="../..//admUsuarios.html" class="nav-item">
+                <img src="../../assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+                Gerenciamento Usuários
+            </a>
+
+            <a href="../..//admIncubadoras.html" class="nav-item">
+                <img src="../../assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+                Gerenciamento Incubadoras
+            </a>
+
+            <a href="../..//admIncubadoras.html" class="nav-item selecionado">
+                <img src="../../assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+                Bob IA
+            </a>
+        </div>
+
+        <a href="../../index.html" class="exit nav-item">
+            <img src="../../assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
+        </a>
+    </nav>
+    <!--Fim do nav-bar-->
 
     <div id="container">
         <h1>BobIA</h1>
@@ -18,7 +82,7 @@
     </div>
 
     <script>
-        
+
         async function gerarResposta() {
             const pergunta = document.getElementById('pergunta').value;
 
@@ -37,6 +101,7 @@
         }
 
     </script>
-    
+
 </body>
+
 </html>

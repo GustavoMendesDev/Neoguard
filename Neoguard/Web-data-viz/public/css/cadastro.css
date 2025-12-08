@@ -14,21 +14,21 @@
 }
 
 body {
-    background-color: #A88CFF;
     font-family: 'Nunito';
+    background-color: #A88CFF;
 }
 
 /* NavBar --------------------------------------------------------------------------------------*/
 
 nav {
     z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    height: 10vh;
     width: 100%;
+    height: 10vh;
+    display: flex;
     padding: 10px 2%;
+    box-sizing: border-box;
     background-color: #FEFEFE;
+    justify-content: space-between;
     box-shadow: 2px 0 4px #2E2E2E;
 }
 
@@ -38,40 +38,38 @@ nav {
 }
 
 nav>div {
+    gap: 1.4rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1.4rem;
     box-sizing: border-box;
+    justify-content: space-between;
 }
 
 nav>div a {
-    font-family: "Nunito";
-    color: #000000;
     font-size: 17px;
-    font-weight: 500;
     cursor: pointer;
+    font-weight: 500;
+    color: #000000;
+    font-family: "Nunito";
 }
-
-/* Elementos --------------------------------------------------------------------------------------*/
 
 .nav-btn {
     padding: 8px 10px;
-    border: 2px solid #F67E27;
     border-radius: 10px;
+    border: 2px solid #F67E27;
     background-color: transparent;
 }
 
 .nav-btn a {
     font-size: 14px;
-    font-weight: bold;
     color: #F67E27;
+    font-weight: bold;
 }
 
 .nav-btn a:hover {
     font-size: 14px;
-    font-weight: bold;
     color: #ffffff;
+    font-weight: bold;
 }
 
 .nav-btn:hover {
@@ -80,33 +78,33 @@ nav>div a {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 /* NavBar Fim  --------------------------------------------------------------------------------------*/
 
 .container {
-    display: flex;
     width: 80%;
     height: auto;
+    display: flex;
     min-height: 60vh;
-    margin: 4vh auto 0;
-    background-color: #FEFEFE;
-    border-radius: 20px;
     overflow: hidden;
+    margin: 6vh auto 0;
+    border-radius: 20px;
+    background-color: #FEFEFE;
 }
 
-/* LADO ESQUERDO */
+/* Lado esquerdo do container */
 
 .lado-esquerdo {
-    position: relative;
     flex: 1;
-    background-color: #ffffff;
     display: flex;
+    overflow: hidden;
+    position: relative;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    background-color: #ffffff;
 }
 
 .ilustracao img {
@@ -115,17 +113,16 @@ a {
     position: relative;
 }
 
-
 .lado-direito {
     flex: 1;
-    background-color: #FEFEFE;
+    gap: 6px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     padding: 10px 20px;
     text-align: center;
-    gap: 6px;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FEFEFE;
+    justify-content: flex-start;
 }
 
 h2 {
