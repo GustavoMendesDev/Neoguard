@@ -30,7 +30,7 @@ INSERT INTO tipo (TipoUsuario, Nivel) VALUES
 CREATE TABLE usuario (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(99) NOT NULL,
-     Sobrenome VARCHAR(99),
+    Sobrenome VARCHAR(99),
     Email VARCHAR(80) NOT NULL,
     Senha VARCHAR(50) NOT NULL,
     fkTipo INT,
