@@ -252,7 +252,7 @@ function cadastrarGestor(idHospital) {
 
                 neoAlert('gestor cadastrado com sucesso');
                 setTimeout(() => {
-                    window.location = "monitoramento.html";
+                    window.location = "login.html";
                 }, "1500");
 
             })

@@ -28,16 +28,16 @@ function removerLinha(botaoLimpar) {
         // 1º parentNode: sobe para o <td>
         // 2º parentNode: sobe para o <tr>
         var linha = botaoLimpar.parentNode.parentNode;
-        
+
         // Encontra todas as células <td> da linha
         var celulas = linha.getElementsByTagName('td');
-        
+
         // célula [1] peso
-        celulas[1].innerHTML = '0'; 
-        
+        celulas[1].innerHTML = '0';
+
         // célula [2] idade gestacional
-        celulas[2].innerHTML = '0'; 
-        
+        celulas[2].innerHTML = '0';
+
         alert('Dados da incubadora limpos com sucesso!');
     }
 }
@@ -72,12 +72,11 @@ function salvarIncubadora(numeroPeso, inputNumeroIg) {
 let idSala = 0
 
 idSala = sessionStorage.ID_SALA;
-let i = 0;
 
 function gerarIncubadorasIniciais() {
     console.log('Sala Selecionada:', idSala);
     i++;
-
+    console.log(i)
     // 1. Cadastrar incubadora no backend
     fetch('/incubadoras/cadastrar', {
         method: 'POST',
@@ -88,16 +87,33 @@ function gerarIncubadorasIniciais() {
             idSalaServer: idSala,
             idSensorServer: i
         })
-    })
-        .then(resposta => resposta.json())
-        .then(novaInc => {
+    }).then(resposta => {
+        console.log('CADASTRO FEITO COM SUCESSO', resposta)
 
-            console.log("Incubadora criada:", novaInc);
+        listarIncubadoras(idSala);
+    })
+
+        .catch(err => {
+            console.log("Erro ao cadastrar incubadora:", err);
+        });
+}
+
+let i = 0;
+
+function listarIncubadoras(idSala) {
+
+    fetch(`/incubadoras/buscar/${idSala}`)
+        .then(resposta => resposta.json())
+        .then(inc => {
+            console.log("Incubadora criada:", inc);
 
             // 2. Criar linha na tabela
-            var novaLinha = document.createElement('tr');
-            novaLinha.innerHTML = `
-                <td>${i}</td>
+
+          inc.forEach(incubadora => {
+            i++
+
+            novaLinha.innerHTML += `
+                <td>${incubadora.idIncubadora}</td>
                 <td>0</td>
                 <td>0</td>
                 <td>
@@ -115,15 +131,16 @@ function gerarIncubadorasIniciais() {
                     </button>
                 </td>
             `;
+            
+          });  
+
 
             corpoTabela.appendChild(novaLinha);
 
-            alert("Incubadora adicionada com sucesso!");
+
 
         })
-        .catch(err => {
-            console.log("Erro ao cadastrar incubadora:", err);
-        });
+
 }
 
 
@@ -141,8 +158,7 @@ function inicializarEventos() {
     linhaEmEdicao = document.getElementById('linhaEmEdicao');
 
 
-    corpoTabela.innerHTML = ''; 
-    gerarIncubadorasIniciais(10)
+    corpoTabela.innerHTML = '';
 
 
 
@@ -190,6 +206,6 @@ function editarLinha(botao) {
 // Inicia o site após o carregamento
 document.addEventListener('DOMContentLoaded', inicializarEventos);
 
-window.gerarIncubadorasIniciais = gerarIncubadorasIniciais;
+window.onload = listarIncubadoras(idSala) ;
 
 

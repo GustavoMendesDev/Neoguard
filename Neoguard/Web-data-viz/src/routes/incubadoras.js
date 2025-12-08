@@ -9,4 +9,10 @@ router.post("/cadastrar", function (req, res) {
 });
 
 
+router.get("/buscar/:idSala", function (req, res) {
+    incubadoraController.buscar(req, res);
+});
+
+
+
 module.exports = router;

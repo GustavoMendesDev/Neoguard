@@ -263,3 +263,6 @@ section{
     width: 30px;
     font-weight: 100;
 }
+tbody{
+    flex-direction: column;
+}
