@@ -69,7 +69,7 @@ new Chart(ctx, {
 
 let idHospital; 0
 let idSala = 0
-
+let i = 0
 idHospital = sessionStorage.ID_HOSPITAL;
 
 console.log(idHospital)
@@ -102,14 +102,17 @@ function listarSalas(idHospital) {
             navContainer.innerHTML = htmlPadrao;
 
             salas.forEach(sala => {
+                i++
+                
                 console.log(sala)
                 navContainer.innerHTML += `
+
         <div class="option">
-            <input type="radio" name="escolha" id="sala_${sala.id}"
+            <input type="radio" name="escolha" id="sala_${i}"
                    onclick="entrarSala(${sala.id})">
-            <label for="sala_${sala.id}">
+            <label for="sala_${i}">
                 <img class="iconeUTI" src="assets/dashboard-img/icone-header/Sala.svg">
-                Sala UTI - ${sala.id}
+                Sala UTI - ${i}
             </label>
         </div>
     `;

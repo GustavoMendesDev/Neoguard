@@ -72,59 +72,61 @@ function salvarIncubadora(numeroPeso, inputNumeroIg) {
 let idSala = 0
 
 idSala = sessionStorage.ID_SALA;
+let i = 0;
 
 function gerarIncubadorasIniciais() {
-    console.log('Sala - ', idSala)
-    var total = 10;
-    var pesoPadrao = 1000;
-    var igPadrao = 38;
-    
-    for (let i = 1; i <= total; i++) {
+    console.log('Sala Selecionada:', idSala);
+    i++;
 
-        if (i % 2 == 0) { // só para ficar diversificado (os dados) na nossa tabela de incubadoras
-            pesoPadrao = 1500;
-            igPadrao = 35;
-        } else if (i % 3 == 0){
-            pesoPadrao = 1700;
-            igPadrao = 38;
-        } else {
-            pesoPadrao = 2000;
-            igPadrao = 40;
-        }
-
-        fetch('/incubadoras/cadastrar', {
-            method: 'POST',
-            headers:{
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-
-            })
+    // 1. Cadastrar incubadora no backend
+    fetch('/incubadoras/cadastrar', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idSalaServer: idSala,
+            idSensorServer: i
         })
+    })
+        .then(resposta => resposta.json())
+        .then(novaInc => {
 
-        var novaLinha = document.createElement('tr');
-        novaLinha.innerHTML = `
-        <td>${i}</td>
-        <td>${pesoPadrao }</td>
-        <td>${igPadrao}</td>
-        <td>
-            <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
-                <span class="iconeAcao">
-                    <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/editar.svg">
-                </span>
-            </button>
-        </td>
-        <td>
-            <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
-                <span class="iconeAcao">
-                    <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/remover.svg">
-                </span>
-            </button>
-        </td>
-        `;
-        corpoTabela.appendChild(novaLinha);
-    }
+            console.log("Incubadora criada:", novaInc);
+
+            // 2. Criar linha na tabela
+            var novaLinha = document.createElement('tr');
+            novaLinha.innerHTML = `
+                <td>${i}</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                    <button class="botaoAcao editarLinha" onclick="editarLinha(this)">
+                        <span class="iconeAcao">
+                            <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/editar.svg">
+                        </span>
+                    </button>
+                </td>
+                <td>
+                    <button class="botaoAcao botaoExcluir" onclick="removerLinha(this)">
+                        <span class="iconeAcao">
+                            <img class="iconesEditarExcluir" src="./assets/dashboard-img/admIncubadoras/remover.svg">
+                        </span>
+                    </button>
+                </td>
+            `;
+
+            corpoTabela.appendChild(novaLinha);
+
+            alert("Incubadora adicionada com sucesso!");
+
+        })
+        .catch(err => {
+            console.log("Erro ao cadastrar incubadora:", err);
+        });
 }
+
+
 
 function inicializarEventos() {
     botaoCadastrar = document.getElementById('botaoCadastrar');
@@ -187,3 +189,7 @@ function editarLinha(botao) {
 
 // Inicia o site após o carregamento
 document.addEventListener('DOMContentLoaded', inicializarEventos);
+
+window.gerarIncubadorasIniciais = gerarIncubadorasIniciais;
+
+
