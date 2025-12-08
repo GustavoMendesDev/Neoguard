@@ -7,9 +7,10 @@
 
 
 #container {
+    overflow-x: hidden;
     width: 700px;
-    height: 400px;
-    margin: 50px auto;
+    height: 550px;
+    margin: 20px auto;
     padding: 40px;
     background: #A992F3;
     border-radius: 25px;
