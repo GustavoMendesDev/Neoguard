@@ -15,7 +15,7 @@
 
 body {
     background-color: #A88CFF;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito';
 }
 
 /* NavBar --------------------------------------------------------------------------------------*/
@@ -88,12 +88,13 @@ a {
 
 .container {
     display: flex;
-    width: 90%;   
-    height: 60%;   
-    margin: 4vh auto 0;  
-    background-color: #FEFEFE; 
+    width: 80%;
+    height: auto; 
+    min-height: 60vh; 
+    margin: 6vh auto 0;
+    background-color: #FEFEFE;
     border-radius: 20px;
-    overflow: hidden;      
+    overflow: hidden;
 }
 
 /* LADO ESQUERDO */ 
@@ -109,7 +110,7 @@ a {
 }
 
 .ilustracao img {
-    width: 85%;
+    width: 75%;
     left: 50px;
     position: relative;
 }
@@ -130,9 +131,6 @@ a {
 }
 
 
-
-
-
 /* LADO DIREITO (LOGIN) */
 
 .lado-direito {
@@ -141,7 +139,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 60px;
+    padding: 40px;
 }
 
 .logo-login h1 {
@@ -153,6 +151,7 @@ a {
 }
 
 .logo-login span {
+    font-family: "Montserrat";
     color: #A88CFF;
 }
 
@@ -164,7 +163,7 @@ h2 {
 }
 
 .mensagem-login p {
-    font-size: 13px;
+    font-size: 15px;
     color: #555;
     margin-bottom: 30px;
     margin-left: 30px;
@@ -175,7 +174,7 @@ h2 {
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-left: 50px;
 }
 
@@ -196,7 +195,7 @@ h2 {
 }
 
 .input-group input:focus {
-    border-color: #1C3AB4;
+    border-color: #1c3ab434;
     box-shadow: 0 0 0 2px rgba(165, 216, 255, 0.4);
 }
 
