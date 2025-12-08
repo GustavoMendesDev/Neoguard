@@ -1,7 +1,9 @@
 CREATE DATABASE NeoGuard;
 USE NeoGuard;
 
--- HOSPITAL
+SELECT * FROM hospital;
+
+
 CREATE TABLE hospital (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     NomeFantasia VARCHAR(99) NOT NULL,
@@ -11,7 +13,7 @@ CREATE TABLE hospital (
 INSERT INTO hospital (NomeFantasia, Cnpj) VALUES
 ('Santa Marcelina','00000000000000');
 
--- TIPO
+
 CREATE TABLE tipo (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     TipoUsuario VARCHAR(40) NOT NULL,
@@ -24,15 +26,16 @@ INSERT INTO tipo (TipoUsuario, Nivel) VALUES
 ('Enfermeiro', '2'),
 ('tec. Enfermagem', '3');
 
--- USUÁRIO
+
 CREATE TABLE usuario (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(99) NOT NULL,
-    Sobrenome VARCHAR(99),
+     Sobrenome VARCHAR(99),
     Email VARCHAR(80) NOT NULL,
     Senha VARCHAR(50) NOT NULL,
     fkTipo INT,
     fkHospital INT,
+    
     CONSTRAINT tipoUsuario 
        FOREIGN KEY (fkTipo) REFERENCES tipo(Id),
     CONSTRAINT hospitalUsuario 
@@ -42,32 +45,47 @@ CREATE TABLE usuario (
 INSERT INTO usuario (Nome, Sobrenome, Email, Senha, fkTipo, fkHospital) VALUES
 ('Antonio', 'Panasonic', 'gestor.santamarcelina@neoguard.com', '123456', 1 , 1);
 
--- SALA NEONATAL
-CREATE TABLE salaneonatal (
+
+CREATE TABLE salaNeoNatal (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     NumeroSala CHAR(1) NOT NULL,
-    fkHospital INT, 
+    fkHospital INT,
     CONSTRAINT salaHospital 
       FOREIGN KEY (fkHospital) REFERENCES hospital(Id)
 );
 
--- SENSOR
+INSERT INTO salaNeoNatal (NumeroSala, fkHospital) VALUES
+('1' , 1);
+
+
 CREATE TABLE sensor (
     Id INT PRIMARY KEY AUTO_INCREMENT
 );
 
--- INCUBADORA
+INSERT INTO sensor (id) VALUES
+(1),
+(2),
+(3),
+(4),
+(5);
+
+
 CREATE TABLE incubadora (
     Id INT PRIMARY KEY AUTO_INCREMENT,
-    FkSalaNeoNatal INT,
-    fkSensor INT,   
+    fkSalaNeoNatal INT,
+    fkSensor INT,
     CONSTRAINT incubadoraSala 
-       FOREIGN KEY (FkSalaNeoNatal) REFERENCES salaneonatal(Id),
+       FOREIGN KEY (FkSalaNeoNatal) REFERENCES salaNeoNatal(Id),
     CONSTRAINT sensorIncubadora 
        FOREIGN KEY (fkSensor) REFERENCES sensor(Id)
 );
 
--- BEBE
+INSERT INTO incubadora (fkSalaNeoNatal, fksensor) VALUES
+(1, 1),
+(1, 2),
+(1 ,3);
+
+
 CREATE TABLE bebe (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     PeriodoGestacao CHAR(2) NOT NULL,
@@ -76,7 +94,10 @@ CREATE TABLE bebe (
        FOREIGN KEY (FkIncubadora) REFERENCES incubadora(Id)
 );
 
--- HISTÓRICO
+INSERT INTO bebe (PeriodoGestacao, FkIncubadora) VALUES
+('28', 2);
+
+
 CREATE TABLE historico (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     Temperatura DECIMAL(3,1) NOT NULL,

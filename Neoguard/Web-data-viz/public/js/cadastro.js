@@ -290,6 +290,10 @@ console.log('Nome' , nomeVar  , 'Sobrenome ',sobrenomeVar )
 
 
                 console.log('gestor cadastrado com sucesso', gestor)
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+
             })
 
 
