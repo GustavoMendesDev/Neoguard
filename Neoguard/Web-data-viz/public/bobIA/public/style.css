@@ -1,9 +1,10 @@
 
 #container {
     width: 700px;
-    margin: 80px auto;
+    height: 400px;
+    margin: 30px auto;
     padding: 40px;
-    background: #fff;
+    background: #A992F3;
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     text-align: center;
@@ -11,25 +12,24 @@
 
 #container h1 {
     font-size: 2.5rem;
-    color: #0d253f;
+    color: #000000;
     margin-bottom: 25px;
 }
 
 #container textarea {
-    width: 100%;
-    min-height: 120px;
-    padding: 18px;
+    width: 90%;
+    height: 120px;
+    padding: 30px;
     font-size: 1.1rem;
     border-radius: 15px;
     border: 1px solid #ccc;
-    resize: vertical;
     transition: 0.3s;
 }
 
 #container textarea:focus {
     outline: none;
-    border-color: #ff6b6b;
-    box-shadow: 0 0 10px rgba(255,107,107,0.3);
+    border-color: #420246;
+    box-shadow: 0 0 10px rgba(48, 3, 72, 0.3);
 }
 
 /* Botão */

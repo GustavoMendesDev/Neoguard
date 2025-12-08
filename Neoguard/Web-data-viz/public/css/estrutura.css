@@ -34,14 +34,16 @@ body {
 /*Estilização do logo-------------*/
 .logo {
     width: 80%;
-    margin-bottom: 15%;
+    margin-left: 8%;
+    margin-bottom: 10%;
     align-self: center;
 }
 
 /* -------------------------------*/
 
 .perfil {
-    width: 70%;
+    width: 50%;
+    margin-left: 20%;
     text-align: center;
 }
 
