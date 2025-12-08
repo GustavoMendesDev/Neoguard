@@ -69,7 +69,12 @@ function salvarIncubadora(numeroPeso, inputNumeroIg) {
     }
 }
 
+let idSala = 0
+
+idSala = sessionStorage.ID_SALA;
+
 function gerarIncubadorasIniciais() {
+    console.log('Sala - ', idSala)
     var total = 10;
     var pesoPadrao = 1000;
     var igPadrao = 38;
@@ -87,6 +92,15 @@ function gerarIncubadorasIniciais() {
             igPadrao = 40;
         }
 
+        fetch('/incubadoras/cadastrar', {
+            method: 'POST',
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+
+            })
+        })
 
         var novaLinha = document.createElement('tr');
         novaLinha.innerHTML = `

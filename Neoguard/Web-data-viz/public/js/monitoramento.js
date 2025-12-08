@@ -1,3 +1,5 @@
+
+
 const ctx = document.getElementById('myChart');
 
 new Chart(ctx, {
@@ -65,6 +67,59 @@ new Chart(ctx, {
 
 );
 
+let idHospital; 0
+let idSala = 0
+
+idHospital = sessionStorage.ID_HOSPITAL;
+
+console.log(idHospital)
+function entrarSala(idSala) {
+    sessionStorage.ID_SALA = idSala;
+    console.log("Sala selecionada:", idSala);
+
+        window.location = "monitoramento.html";
+    }
+
+
+function listarSalas(idHospital) {
+
+    fetch(`/salasNeoNatais/buscar/${idHospital}`)
+        .then(resposta => resposta.json())
+        .then(salas => {
+
+            console.log("Salas encontradas:", salas);
+            const navContainer = document.getElementById("select-radio");
+
+            // Salvar o HTML original (que inclui o botão Monitoramento)
+            const htmlPadrao = `
+<div class="nav-item selecionado">
+  <img src="assets/dashboard-img/icone-header/IconeDashboard.svg">
+  <a href="analitycs.html">Monitoramento</a>
+</div>
+`;
+
+            // Reescreve com o padrão + as salas
+            navContainer.innerHTML = htmlPadrao;
+
+            salas.forEach(sala => {
+                console.log(sala)
+                navContainer.innerHTML += `
+        <div class="option">
+            <input type="radio" name="escolha" id="sala_${sala.id}"
+                   onclick="entrarSala(${sala.id})">
+            <label for="sala_${sala.id}">
+                <img class="iconeUTI" src="assets/dashboard-img/icone-header/Sala.svg">
+                Sala UTI - ${sala.id}
+            </label>
+        </div>
+    `;
+            });
+        }).catch(err => {
+            console.log("Erro ao carregar salas:", err);
+        });
+
+}
+
 function aleatoryIncubadoras() {
 
     var aleatorio2 = Number((Math.random() * 2 + 36).toFixed(1));
@@ -92,48 +147,8 @@ function aleatoryIncubadoras() {
 
 
 window.onload = aleatoryIncubadoras();
+window.onload = listarSalas(idHospital);
 
 
 
 
-let idHospital; 0
-
-let idSala = 0
-
-function entrarSala(idSala) {
-
-    sessionStorage.ID_SALA = idSala;
-    console.log(idSala)
-
-    window.location = "monitoramento.html";
-
-
-}
-
-function listarSalas(idHospital) {
-
-    fetch(`/salasNeoNatais/buscar/${idHospital}`)
-        .then(resposta => resposta.json())
-        .then(salas => {
-
-            console.log("Salas encontradas:", salas);
-
-            const navContainer = document.getElementById("select-radio");
-            navContainer.innerHTML = ""; // limpar o conteúdo antigo
-
-            salas.forEach(sala => {
-                navContainer.innerHTML += `
-                <div class="option">
-                    <input type="radio" name="escolha" id="sala_${sala.id}" onclick="entrarSala(${sala.id})">
-                    <label for="sala_${sala.id}">
-                        <img class="iconeUTI" src="assets/dashboard-img/icone-header/Sala.svg">
-                        Sala UTI - ${sala.id}
-                    </label>
-                </div>
-                `;
-            });
-        })
-        .catch(err => {
-            console.log("Erro ao carregar salas:", err);
-        });
-}
