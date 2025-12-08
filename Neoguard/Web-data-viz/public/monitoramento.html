@@ -9,20 +9,30 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<<<<<<< Updated upstream
     <title>Dashboard | NeoGuard</title>
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
   </head>
 
 <body >
   <!--Navbar-->
+=======
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>Dashboard | NeoGuard</title>
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+>>>>>>> Stashed changes
   <nav>
     <div class="nav-container">
       <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
       <img class="perfil" src="./assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
 
-      <!-- Sessão do monitoramento ---------------------------------------------------------------------------- -->
-      <div class="monitoramento">
-      </div>
+      <div class="monitoramento"></div>
 
       <div class="select-radio">
         <div class="nav-item selecionado">
@@ -46,7 +56,7 @@
           </label>
         </div>
       </div>
-      <!-- -------------------------------------------------------------------------------------------------- -->
+
       <a href="./admUsuarios.html" class="nav-item">
         <img src="./assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
         Gerenciamento Usuários
@@ -64,14 +74,19 @@
     </div>
 
     <a href="./index.html" class="exit nav-item">
+<<<<<<< Updated upstream
       <img src="./assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
       Sair
+=======
+      <img src="assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
+>>>>>>> Stashed changes
     </a>
   </nav>
-  <!--Fim do nav-bar-->
+  <!-- Fim Navbar -->
 
-  <!--Conteúdo principal da Dashboard-->
+  <!-- Conteúdo principal -->
   <main>
+
     <section class="containerHeadar">
       <div class="titulo">
         <div class="tituloItem">
@@ -96,10 +111,10 @@
           <img src="./assets/dashboard-img/icone-alerta/Ok.svg">
           <p><b>IDEAL:</b> Temperatura entre 36,5 °C</p>
         </div>
-
       </div>
     </section>
 
+<<<<<<< Updated upstream
     <section class="containerAlerta">
       <div class="alertaItem">
         <span class="numeroIncubadora">Incubadora #<b>1</b></span>
@@ -193,6 +208,13 @@
         <span>Critico</span>
         <span>Há <b>60</b> minuto</span>
       </div>
+=======
+    <!-- ⬇️ AQUI FOI A CORREÇÃO PRINCIPAL — ADICIONEI O ID -->
+    <section id="containerAlerta" class="containerAlerta">
+
+      <!-- Esses itens serão substituídos dinamicamente pelo JS -->
+      
+>>>>>>> Stashed changes
     </section>
 
     <section class="containerInfo">
@@ -212,31 +234,9 @@
                 <th>Data/Hora</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Critico</td>
-                <td>37°C</td>
-                <td>#2</td>
-                <td>04-05-25 08:30</td>
-              </tr>
-              <tr>
-                <td>Critico</td>
-                <td>38°C</td>
-                <td>#2</td>
-                <td>04-05-25 08:30</td>
-              </tr>
-              <tr>
-                <td>Critico</td>
-                <td>38°C</td>
-                <td>#2</td>
-                <td>04-05-25 08:30</td>
-              </tr>
-              <tr>
-                <td>Critico</td>
-                <td>38°C</td>
-                <td>#2</td>
-                <td>04-05-25 08:30</td>
-              </tr>
+            <tbody id="historicoTabela">
+
+
             </tbody>
           </table>
         </div>

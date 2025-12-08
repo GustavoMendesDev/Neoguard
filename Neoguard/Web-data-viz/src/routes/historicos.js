@@ -9,8 +9,8 @@ router.post("/cadastrar", function (req, res) {
 });
 
 
-router.get("/buscar", function (req, res) {
-    historicoController.monitoramentoInc(req, res);
+router.get("/contagem/:idHospital/:idSala/:idIncubadora", function (req, res) {
+    historicoController.contagem(req, res);
 });
 
 
