@@ -11,45 +11,54 @@
 
 <body>
     <!--Navebar-->
-  
-<nav>
-    <div class="nav-container">
-      <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
 
-      <img class="perfil" src="assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
+    <nav>
+        <div class="nav-container">
+            <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
 
-      <!-- Sessão do monitoramento ---------------------------------------------------------------------------- -->
-        <a href="./monitoramento.html" class="nav-item">
-          <img src="assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
-          Monitoramento</a>
+            <img class="perfil" src="assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
+
+            <!-- Sessão do monitoramento ---------------------------------------------------------------------------- -->
+            <a href="./monitoramento.html" class="nav-item">
+                <img src="assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
+                Monitoramento</a>
+            </a>
+            <!-- -------------------------------------------------------------------------------------------------- -->
+
+            <a href="./admUsuarios.html" class="nav-item">
+                <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+                Gerenciamento Usuários
+            </a>
+
+            <a href="./admIncubadoras.html" class="nav-item selecionado">
+                <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+                Gerenciamento Incubadoras
+            </a>
+        </div>
+
+        <a href=". index.html" class="exit nav-item">
+            <img src="assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
         </a>
-      <!-- -------------------------------------------------------------------------------------------------- -->
-
-      <a  href="./admUsuarios.html" class="nav-item">
-        <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
-        Gerenciamento Usuários
-      </a>
-
-      <a href="./admIncubadoras.html" class="nav-item selecionado">
-        <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
-        Gerenciamento Incubadoras
-      </a>
-    </div>
-
-    <a href=". index.html" class="exit nav-item">
-      <img src="assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
-    </a>
-  </nav>
-  <!--Fim do nav-bar-->
+    </nav>
+    <!--Fim do nav-bar-->
 
     <main>
         <section class="cabecalhoPagina">
             <h1>Gerenciamento de incubadoras</h1>
+
+
             <div class="dropdownSelecao">
                 <select class="seletorDropdown">
                     <option value="todosLeitos">Todos os leitos</option>
                 </select>
             </div>
+        </section>
+
+
+        <section class="secaoAcao">
+            <button class="botaoCadastrar" id="botaoCadastrar">
+                <img src="./assets/plus-circle.svg"> Adicionar
+            </button>
         </section>
 
         <section class="secaoTabela">
@@ -84,7 +93,7 @@
                 <label for="numeroIncubadora" class="labelCampo">Idade gestacional</label>
                 <input type="text" id="numeroIg" class="inputCampo" placeholder="Ex: 36">
             </div>
-            
+
             <div class="acoesModal">
                 <button class="botaoCadastrarModal" id="botaoCadastrarModal">Cadastrar</button>
             </div>

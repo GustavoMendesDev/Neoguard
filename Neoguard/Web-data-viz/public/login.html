@@ -70,7 +70,7 @@
                         <a href="/app/views/EsqueceuSenha.html">Esqueceu a senha?</a>
                     </div>
                     -->
-                <button type="button" onclick="login()" class="btn-login">Login</button>
+                <button type="button" onclick="login(), entrar()" class="btn-login">Login</button>
                 <div id="ERRO"></div>
                 <div id="neoAlert" class="neo-alert">
                     <div class="neo-alert-box">
@@ -82,6 +82,8 @@
         </div>
     </div>
 </body>
+<script src="./js/login.js"></script>
+
 <script>
     function login() {
         var email = iptEmail.value;
