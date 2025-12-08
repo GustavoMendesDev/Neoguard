@@ -1,0 +1,68 @@
+
+#container {
+    width: 700px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#container h1 {
+    font-size: 2.5rem;
+    color: #0d253f;
+    margin-bottom: 25px;
+}
+
+#container textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 18px;
+    font-size: 1.1rem;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    transition: 0.3s;
+}
+
+#container textarea:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 10px rgba(255,107,107,0.3);
+}
+
+/* Botão */
+#container button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #0d253f, #ff6b6b);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+}
+
+/* Resposta da IA */
+#resposta {
+    margin-top: 25px;
+    padding: 25px;
+    background: linear-gradient(120deg, #e8f0fe, #d1e3ff);
+    border-left: 6px solid #0d253f;
+    border-radius: 18px;
+    display: none;
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    text-align: left;
+}
+
