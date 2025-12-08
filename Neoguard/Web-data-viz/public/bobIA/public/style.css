@@ -1,3 +1,10 @@
+/* Tudo completo por aqui */
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 
 #container {
     width: 700px;
@@ -12,7 +19,9 @@
 
 #container h1 {
     font-size: 2.5rem;
-    color: #000000;
+    letter-spacing: 2px;
+    color: #ffffff;
+    font-family: "Montserrat";
     margin-bottom: 25px;
 }
 
@@ -32,7 +41,6 @@
     box-shadow: 0 0 10px rgba(48, 3, 72, 0.3);
 }
 
-/* Botão */
 #container button {
     display: block;
     margin: 30px auto 0;
@@ -40,7 +48,7 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(90deg, #0d253f, #ff6b6b);
+    background: linear-gradient(20deg, #1C3AB4, #A992F3);
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -48,11 +56,10 @@
 }
 
 #container button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(9, 3, 94, 0.5);
 }
 
-/* Resposta da IA */
 #resposta {
     margin-top: 25px;
     padding: 25px;
@@ -60,6 +67,7 @@
     border-left: 6px solid #0d253f;
     border-radius: 18px;
     display: none;
+    font-family: "Nunito";
     font-size: 1rem;
     line-height: 1.6;
     white-space: pre-wrap;
