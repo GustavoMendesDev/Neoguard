@@ -128,9 +128,7 @@ function inicializarEventos() {
     corpoTabela.innerHTML = ''; 
     gerarIncubadorasIniciais(10)
 
-    if (botaoCadastrar) {
-        botaoCadastrar.style.display = 'none';
-    }
+
 
 
 

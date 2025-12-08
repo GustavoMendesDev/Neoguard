@@ -59,7 +59,7 @@ nav {
     box-sizing: border-box;
 }
 
-.nav-container {
+#nav-container {
     display: flex;
     flex-direction: column;
     align-items: center;

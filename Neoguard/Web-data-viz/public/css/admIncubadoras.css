@@ -41,7 +41,6 @@ section{
 /* Seção de Ação (Botão) */
 .secaoAcao {
     margin-bottom: 20px;
-    display: flex;
 }
 
 .botaoCadastrar {

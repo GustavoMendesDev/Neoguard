@@ -15,11 +15,11 @@
   <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body onload="listarSalas(sessionStorage.ID_HOSPITAL)">
   <!--Navbar-->
 
   <nav>
-    <div class="nav-container">
+    <div id="nav-container">
       <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
 
       <img class="perfil" src="assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
@@ -28,7 +28,7 @@
       <div class="monitoramento">
       </div>
 
-      <div class="select-radio">
+      <div id="select-radio">
         <div class="nav-item selecionado">
           <img src="assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
           <a href="../html/analitycs.html">Monitoramento</a>
