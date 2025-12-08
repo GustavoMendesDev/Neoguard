@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estrutura.css">
+    <link rel="stylesheet" href="./css/monitoramento.css">
 
-  <link rel="stylesheet" href="./css/estrutura.css">
-  <link rel="stylesheet" href="./css/monitoramento.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <title>Dashboard | NeoGuard</title>
-  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-</head>
+    <title>Dashboard | NeoGuard</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  </head>
 
 <body >
   <!--Navbar-->
-
   <nav>
-    <div id="nav-container">
+    <div class="nav-container">
       <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
-
-      <img class="perfil" src="assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
+      <img class="perfil" src="./assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
 
       <!-- Sessão do monitoramento ---------------------------------------------------------------------------- -->
       <div class="monitoramento">
       </div>
 
-      <div id="select-radio">
+      <div class="select-radio">
         <div class="nav-item selecionado">
-          <img src="assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
-          <a href="../html/analitycs.html">Monitoramento</a>
+          <img src="./assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
+          <a href="./html/analitycs.html">Monitoramento</a>
         </div>
 
         <div class="option">
-          <input type="radio" name="escolha" id="op1" value="option1" checked>
+          <input type="radio" name="escolha" id="op1" value="option1">
           <label for="op1">
-            <img class="iconeUTI" src="assets/dashboard-img/icone-header/Sala.svg" alt="Icone de Sala">
+            <img class="iconeUTI" src="./assets/dashboard-img/icone-header/Sala.svg" alt="Icone de Sala">
             Sala UTI - 01
           </label>
         </div>
@@ -45,25 +41,31 @@
         <div class="option">
           <input type="radio" name="escolha" id="op2" value="option2">
           <label for="op2">
-            <img class="iconeUTI" src="assets/dashboard-img/icone-header/Sala.svg" alt="Icone de Sala">
+            <img class="iconeUTI" src="./assets/dashboard-img/icone-header/Sala.svg" alt="Icone de Sala">
             Sala UTI - 02
           </label>
         </div>
       </div>
       <!-- -------------------------------------------------------------------------------------------------- -->
       <a href="./admUsuarios.html" class="nav-item">
-        <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+        <img src="./assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
         Gerenciamento Usuários
       </a>
 
       <a href="./admIncubadoras.html" class="nav-item">
-        <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+        <img src="./assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
         Gerenciamento Incubadoras
+      </a>
+
+      <a href="./bobIA/public/index.html" class="nav-item">
+        <img src="./assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+        Suporte
       </a>
     </div>
 
-    <a href=". index.html" class="exit nav-item">
-      <img src="assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
+    <a href="./index.html" class="exit nav-item">
+      <img src="./assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
+      Sair
     </a>
   </nav>
   <!--Fim do nav-bar-->
@@ -98,7 +100,7 @@
       </div>
     </section>
 
-     <section class="containerAlerta">
+    <section class="containerAlerta">
       <div class="alertaItem">
         <span class="numeroIncubadora">Incubadora #<b>1</b></span>
         <span class="containerTemperatura">
@@ -132,7 +134,7 @@
           <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
           <div id="inc4"> °C</div>
         </span>
-        
+
         <span>Critico</span>
         <span>Há <b>60</b> minuto</span>
       </div>
@@ -140,7 +142,8 @@
         <span class="numeroIncubadora">Incubadora #<b>5</b></span>
         <span class="containerTemperatura">
           <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
-        <div id="inc5"> °C</div>        </span>
+          <div id="inc5"> °C</div>
+        </span>
         <span>Critico</span>
         <span>Há <b>60</b> minuto</span>
       </div>
@@ -148,7 +151,8 @@
         <span class="numeroIncubadora">Incubadora #<b>6</b></span>
         <span class="containerTemperatura">
           <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
-        <div id="inc6"> °C</div>        </span>
+          <div id="inc6"> °C</div>
+        </span>
         </span>
         <span>Critico</span>
         <span>Há <b>60</b> minuto</span>
@@ -157,7 +161,7 @@
         <span class="numeroIncubadora">Incubadora #<b>7</b></span>
         <span class="containerTemperatura">
           <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
-           <div id="inc7"> °C</div>
+          <div id="inc7"> °C</div>
         </span>
         <span>Critico</span>
         <span>Há <b>60</b> minuto</span>
@@ -166,7 +170,7 @@
         <span class="numeroIncubadora">Incubadora #<b>8</b></span>
         <span class="containerTemperatura">
           <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
-           <div id="inc8"> °C</div>
+          <div id="inc8"> °C</div>
         </span>
         <span>Critico</span>
         <span>Há <b>60</b> minuto</span>

@@ -9,7 +9,7 @@
 #container {
     width: 700px;
     height: 400px;
-    margin: 30px auto;
+    margin: 50px auto;
     padding: 40px;
     background: #A992F3;
     border-radius: 25px;
@@ -64,7 +64,7 @@
     margin-top: 25px;
     padding: 25px;
     background: linear-gradient(120deg, #e8f0fe, #d1e3ff);
-    border-left: 6px solid #0d253f;
+    border-left: 6px solid #350239;
     border-radius: 18px;
     display: none;
     font-family: "Nunito";
@@ -72,5 +72,11 @@
     line-height: 1.6;
     white-space: pre-wrap;
     text-align: left;
+}
+
+.container-h3 {
+    color: #fefefe;
+    font-size: 20px;
+    font-family: "Montserrat";
 }
 

@@ -2,29 +2,32 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoGuard - Gerenciamento de Usuários</title>
-    <link rel="stylesheet" href="./css/admUsuarios.css">
-    <link rel="stylesheet" href="./css/estrutura.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NeoGuard - Gerenciamento de Usuários</title>
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="./css/admUsuarios.css">
+  <link rel="stylesheet" href="./css/estrutura.css">
 </head>
 
 <body>
-       <!--Navebar-->
-<nav>
+  <!--Navebar-->
+  <nav>
     <div class="nav-container">
       <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
 
       <img class="perfil" src="assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
 
       <!-- Sessão do monitoramento ---------------------------------------------------------------------------- -->
-        <a href="./monitoramento.html" class="nav-item">
-          <img src="assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
-          Monitoramento</a>
-        </a>
+      <a href="./monitoramento.html" class="nav-item">
+        <img src="assets/dashboard-img/icone-header/IconeDashboard.svg" alt="Icone de analitycs">
+        Monitoramento</a>
+      </a>
       <!-- -------------------------------------------------------------------------------------------------- -->
 
-      <a onclick="atualizar(0)"  href="./admUsuarios.html" class="nav-item selecionado">
+      <a onclick="atualizar(0)" href="./admUsuarios.html" class="nav-item selecionado">
         <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
         Gerenciamento Usuários
       </a>
@@ -33,19 +36,25 @@
         <img src="assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
         Gerenciamento Incubadoras
       </a>
+
+      <a href="./bobIA/public/index.html" class="nav-item">
+        <img src="./assets/dashboard-img/icone-header/Gerenciamento.svg" alt="Icone de Gerenciamento">
+        Suporte
+      </a>
     </div>
 
     <a href=". index.html" class="exit nav-item">
       <img src="assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
+      Sair
     </a>
   </nav>
   <!--Fim do nav-bar-->
 
 
-    <main>
-        <section>
-            <h1>Gerenciamento de usuários</h1>
-        </section>
+  <main>
+    <section>
+      <h1>Gerenciamento de usuários</h1>
+    </section>
 
         <section class="secaoAcao">
             <button class="botaoCadastrar" id="botaoCadastrar">
@@ -53,53 +62,53 @@
             </button>
         </section>
 
-        <section class="secaoTabela">
-            <table class="tabelaUsuarios" id="tabelaUsuarios">
-                <thead>
-                    <tr>
-                        <th class="cabecalhoTabela colunaId">ID</th>
-                        <th class="cabecalhoTabela colunaNome">Nome</th>
-                        <th class="cabecalhoTabela colunaEmail">Email</th>
-                        <th class="cabecalhoTabela colunaNivel">Nivel</th>
-                        <th class="cabecalhoTabela colunaSenha">Senha</th>
-                        <th class="cabecalhoTabela colunaEditar">Editar</th>
-                        <th class="cabecalhoTabela colunaExcluir">Excluir</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </section>
-    </main>
+    <section class="secaoTabela">
+      <table class="tabelaUsuarios" id="tabelaUsuarios">
+        <thead>
+          <tr>
+            <th class="cabecalhoTabela colunaId">ID</th>
+            <th class="cabecalhoTabela colunaNome">Nome</th>
+            <th class="cabecalhoTabela colunaEmail">Email</th>
+            <th class="cabecalhoTabela colunaNivel">Nivel</th>
+            <th class="cabecalhoTabela colunaSenha">Senha</th>
+            <th class="cabecalhoTabela colunaEditar">Editar</th>
+            <th class="cabecalhoTabela colunaExcluir">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-    <div class="modalOverlay" id="modalOverlay">
-        <div class="modalConteudo">
-            <h2 class="tituloModal" id="tituloModal">Cadastrar Usuário</h2>
+  <div class="modalOverlay" id="modalOverlay">
+    <div class="modalConteudo">
+      <h2 class="tituloModal" id="tituloModal">Cadastrar Usuário</h2>
 
-            <input type="hidden" id="linhaEmEdicao">
+      <input type="hidden" id="linhaEmEdicao">
 
-            <div class="campoFormulario">
-                <label for="Nome" class="labelCampo">Nome</label>
-                <input type="text" id="Nome" class="inputCampo" placeholder="Nome">
-                <label for="Email" class="labelCampo">Email</label>
-                <input type="text" id="Email" class="inputCampo" placeholder="Email">
-                <label for="Nivel" class="labelCampo">Nivel</label>
-                <input type="number" id="Nivel" class="inputCampo" placeholder="Nivel">
-                <label for="Senha" class="labelCampo">Senha</label>
-                <input type="text" id="Senha" class="inputCampo" placeholder="Senha">
+      <div class="campoFormulario">
+        <label for="Nome" class="labelCampo">Nome</label>
+        <input type="text" id="Nome" class="inputCampo" placeholder="Nome">
+        <label for="Email" class="labelCampo">Email</label>
+        <input type="text" id="Email" class="inputCampo" placeholder="Email">
+        <label for="Nivel" class="labelCampo">Nivel</label>
+        <input type="number" id="Nivel" class="inputCampo" placeholder="Nivel">
+        <label for="Senha" class="labelCampo">Senha</label>
+        <input type="text" id="Senha" class="inputCampo" placeholder="Senha">
 
 
-            </div>
+      </div>
 
-            <div class="acoesModal">
-                <button class="botaoCadastrarModal" id="botaoCadastrarModal">Cadastrar</button>
-            </div>
+      <div class="acoesModal">
+        <button class="botaoCadastrarModal" id="botaoCadastrarModal">Cadastrar</button>
+      </div>
 
-            <button class="botaoFecharModal" id="botaoFecharModal">X</button>
-        </div>
+      <button class="botaoFecharModal" id="botaoFecharModal">X</button>
     </div>
+  </div>
 
-    <script src="./js/admUsuarios.js"></script>
+  <script src="./js/admUsuarios.js"></script>
 </body>
 
 </html>
