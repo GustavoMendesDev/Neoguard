@@ -1,40 +1,28 @@
 var monitoramentoModel = require('../models/monitoramentoModel');
 
 function MonitoramentoInc(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var idSala = req.body.idSalaServer
-    var idHospital = req.body.idHospitalServer
-    var idIncubadora = req.body.idIncubadoraServer // sessiostorage aqui
+    var idSala = req.params.idSala;
+    var idHospital = req.params.idHospital;
+    var idIncubadora = req.params.idIncubadora;
 
-
-    // Faça as validações dos valores
     if (idHospital == undefined) {
         res.status(400).send("Seu idHospital está undefined!");
-    } else if (idSalas == undefined) {
-        res.status(400).send('Seu idSalas esta undefined')
-    }else if (idIncubadora == undefined) {
-        res.status(400).send('Seu idIncubadora esta undefined')
-    }  else {
-
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        MonitoramentoController.MonitoramentoInc(idSala, idHospital, idIncubadora)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+    } else if (idSala == undefined) {
+        res.status(400).send('Seu idSala está undefined');
+    } else if (idIncubadora == undefined) {
+        res.status(400).send('Seu idIncubadora está undefined');
+    } else {
+        monitoramentoModel.MonitoramentoInc(idHospital, idSala, idIncubadora)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar a busca! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
     }
 }
 
 module.exports = {
-MonitoramentoInc
+    MonitoramentoInc
 };

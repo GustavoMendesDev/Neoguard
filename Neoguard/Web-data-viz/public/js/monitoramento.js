@@ -1,7 +1,6 @@
 const containerAlerta = document.getElementById("containerAlerta");
 const ctx = document.getElementById('myChart');
 
-// 👇 Agora você tem uma variável chamada grafico
 const grafico = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -40,13 +39,11 @@ const grafico = new Chart(ctx, {
     }
 });
 
-// --------------------- VARIÁVEIS -------------------------
 let idHospital = sessionStorage.ID_HOSPITAL;
 let idSala = sessionStorage.ID_SALA;
 let idIncubadora = 1; // NECESSÁRIO!
 let contadorSalas = 0;
 
-// --------------------- FUNÇÕES ----------------------------
 
 function entrarSala(idSala) {
     sessionStorage.ID_SALA = idSala;
@@ -152,7 +149,6 @@ function atualizarGrafico() {
         });
 }
 
-// ------------------------ ONLOAD ---------------------------------
 
 window.onload = () => {
     listarSalas(idHospital);
