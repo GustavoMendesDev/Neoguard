@@ -102,6 +102,9 @@ function atualizarGrafico(idSala) {
 
 }
 
+
+
+
 function logHistorico() {
     fetch(`/historicos/log/${idSala}`).then(res => res.json()).then(logs => {
 
@@ -241,7 +244,7 @@ function aleatoryIncubadoras() {
             logHistorico()
 
             atualizarGrafico(idSala);
-            setInterval(() => atualizarGrafico(idSala), 60 * 1000)
+            setInterval(() => atualizarGrafico(idSala), 60 * 100)
         });
 }
 function ultimaTemperatura() {
@@ -287,7 +290,7 @@ function registrarHistorico(temp, idSensor) {
 window.onload = () => {
     listarSalas(idHospital);
     aleatoryIncubadoras();
-    setInterval(aleatoryIncubadoras, 60000);
+    setInterval(aleatoryIncubadoras, 2000);
 }
 
 
