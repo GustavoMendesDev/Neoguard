@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/estrutura.css">
-    <link rel="stylesheet" href="./css/monitoramento.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./css/estrutura.css">
+  <link rel="stylesheet" href="./css/monitoramento.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -67,6 +68,7 @@
 
     <a href="./index.html" class="exit nav-item">
       <img src="assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
+      Sair
     </a>
   </nav>
   <!-- Fim Navbar -->
@@ -78,34 +80,40 @@
       <div class="titulo">
         <div class="tituloItem">
           <img src="./assets/dashboard-img/nav-bar/sala.svg">
-          <h1>SALA DE UTI NEONATAL - <span>02</span></h1>
+          <h1>SALA DE UTI NEONATAL - <span></span></h1>
         </div>
         <div class="tituloItem">
           <h2>MONITORAMENTO DAS INCUBADORAS</h2>
         </div>
       </div>
+      <!--Div da legenda dos alertas-->
+      <div class="legendaBox">
 
-      <div class="legenda">
+        <div class="legendaTitulo">LEGENDA</div>
+
         <div class="legendaItem">
           <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
           <p><b>CRÍTICO:</b> Temperatura acima de 37,5°C ou abaixo de 36,5°C</p>
         </div>
+
         <div class="legendaItem">
           <img src="./assets/dashboard-img/icone-alerta/Atencao.svg">
           <p><b>ATENÇÃO:</b> Temperatura acima de 36,9°C ou abaixo de 36,4°C</p>
         </div>
+
         <div class="legendaItem">
           <img src="./assets/dashboard-img/icone-alerta/Ok.svg">
           <p><b>IDEAL:</b> Temperatura entre 36,5 °C</p>
         </div>
       </div>
+
     </section>
 
     <!-- ⬇️ AQUI FOI A CORREÇÃO PRINCIPAL — ADICIONEI O ID -->
     <section id="containerAlerta" class="containerAlerta">
 
       <!-- Esses itens serão substituídos dinamicamente pelo JS -->
-      
+
     </section>
 
     <section class="containerInfo">
@@ -126,8 +134,6 @@
               </tr>
             </thead>
             <tbody id="historicoTabela">
-
-
             </tbody>
           </table>
         </div>
