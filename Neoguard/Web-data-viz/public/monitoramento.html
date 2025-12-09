@@ -16,7 +16,7 @@
   <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body onload="logHistorico()">
 
   <!-- Navbar -->
   <nav>
@@ -71,9 +71,7 @@
       Sair
     </a>
   </nav>
-  <!-- Fim Navbar -->
 
-  <!-- Conteúdo principal -->
   <main>
 
     <section class="containerHeadar">
@@ -102,7 +100,6 @@
 
     </section>
 
-    <!-- ⬇️ AQUI FOI A CORREÇÃO PRINCIPAL — ADICIONEI O ID -->
     <section id="containerAlerta" class="containerAlerta">
 
       <!-- Esses itens serão substituídos dinamicamente pelo JS -->
