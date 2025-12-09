@@ -30,50 +30,38 @@ body {
     color: #2E2E2E;
 }
 
-
-
-/*Estilização do logo-------------*/
 .logo {
-    width: 80%;
-    margin-left: 8%;
-    margin-bottom: 10%;
+    width: 65%;
+    margin-top: 2%;
     align-self: center;
 }
 
-/* -------------------------------*/
-
-.perfil {
-    width: 50%;
-    margin-left: 20%;
-    text-align: center;
-}
-
 .nome-usuario {
-  color: #ffffff;
-  font-weight: 700;
-  font-family: "Nunito";
-  font-size: 20px;
-  margin-left: 12px;
-
-  display: flex;
-  align-items: center;
+    display: flex;
+    font-size: 20px;
+    margin-top: 10%;
+    color: #ffffff;
+    font-weight: 700;
+    align-items: center;
+    font-family: "Nunito";
 }
 
-/*Conteiner principal do nav-bar*/
+/* Container principal do navbar */
+
 nav {
-    width: 15%;
+    width: 16%;
     height: 100%;
-    padding: 2% 0;
-    border-radius: 0 20px 20px 0;
-    background-color: #A992F3;
+    padding: 4% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border-radius: 0 70px 70px 0;
+    background-color: #C5B3FF;
     box-sizing: border-box;
 }
 
-#nav-container {
+.nav-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,12 +69,14 @@ nav {
 }
 
 .nav-item {
-    width: 100%;
-    padding: 5%;
+    width: 82%;
+    padding: 4%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: 5%;
+    gap: 4%;
+    border-radius: 4%;
+    margin-left: 6%;
     color: #FAFAFA;
     font-weight: bold;
     font-family: "Nunito";
@@ -94,15 +84,15 @@ nav {
 
 .nav-item>img {
     width: 10%;
-    padding: 5%;
+    padding: 2%;
     display: flex;
     align-items: center;
-    gap: 5%;
+    gap: 2%;
     color: #FAFAFA;
 }
 
 .nav-item:hover {
-    background-color: #8560F9;
+    background-color: #6343C7;
     cursor: pointer;
 }
 
@@ -149,25 +139,27 @@ nav {
 
 .iconeUTI {
     width: 10%;
-    padding: 5%;
+    padding: 2%;
     display: flex;
     align-items: center;
-    gap: 5%;
+    gap: 2%;
     color: #FAFAFA;
 }
 
 
 
-
+/* Botão de sair */
 .exit {
+    font-size: 18px;
     display: flex;
     justify-content: center;
 }
 
 .exit>img {
+    margin-left: -20%;
     width: 20%;
 }
-
+/* Fim do botão de sair */
 
 
 /**/

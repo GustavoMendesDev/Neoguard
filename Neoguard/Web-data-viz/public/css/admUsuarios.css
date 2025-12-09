@@ -1,11 +1,33 @@
-/* 2. Conteúdo Principal */
-section{
+/* Tudo completo por aqui */
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+section {
     width: 100%;
-    padding: 1.5%;
+    padding: 2%;
     box-sizing: border-box;
 }
 
-/* Cabeçalho da Página */
+.titulo {
+    width: 45%;
+    padding: 25px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8560F9, #C5B3FF);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.titulo-principal {
+    color: #FEFEFE;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
 .cabecalhoPagina {
     display: flex;
     justify-content: space-between;
@@ -14,24 +36,27 @@ section{
 }
 
 .cabecalhoPagina h1 {
-    font-size: 1.8rem;
-    font-weight: normal;
+    font-size: 2rem;
+    color: #2A2A2A;
 }
 
-/* Dropdown */
 .seletorDropdown {
-    background-color: var(--fundoConteudo);
-    border: 1px solid var(--bordaClara);
-    color: var(--textoEscuro);
-    padding: 8px 15px;
-    border-radius: 4px;
+    background-color: #FEFEFE;
+    border: 1px solid #E0E0E0;
+    color: #2A2A2A;
+    padding: 10px 15px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Seção de Ação (Botão) */
+.seletorDropdown:hover {
+    border-color: #8560F9;
+}
+
 .secaoAcao {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .botaoCadastrar {
@@ -39,75 +64,77 @@ section{
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background-color: orange;
+    background: linear-gradient(135deg, #FF9800, #FFBC40);
     color: #FEFEFE;
     border: none;
-    padding: 20px 30px;
+    padding: 20px 35px;
     text-align: center;
-    border-radius: 12px;
+    border-radius: 15px;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
     line-height: 1.2;
     height: 90px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
-.botaoCadastrar > img{
+
+.botaoCadastrar > img {
     width: 30px;
 }
 
-.botaoCadastrar:hover{
-    background-color: rgb(255, 188, 64);
+.botaoCadastrar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* 3. Tabela de Dados */
 .secaoTabela {
-    padding: 0 30px;
-    border-radius: 5px;
+    padding: 0 20px;
+    border-radius: 12px;
     height: 60%;
-    overflow-y: scroll;
+    overflow-y: auto;
+    background-color: #FEFEFE;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .tabelaUsuarios {
     width: 100%;
-    height: 100%;
     border-collapse: collapse;
 }
 
-/* Cabeçalho da Tabela */
 .tabelaUsuarios thead {
-    background-color: #8560F9;
+    background: #C5B3FF;
     color: #FEFEFE;
 }
-thead{
+
+thead {
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 .cabecalhoTabela {
     padding: 15px;
     text-align: left;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 1.1rem;
 }
 
-/* Cantos arredondados no cabeçalho */
 .tabelaUsuarios thead th:first-child {
-    border-top-left-radius: 8px;
+    border-top-left-radius: 12px;
 }
 
 .tabelaUsuarios thead th:last-child {
-    border-top-right-radius: 8px;
+    border-top-right-radius: 12px;
 }
 
-/* Estilo das Células */
 .tabelaUsuarios tbody td {
     padding: 15px;
-    border-bottom: 1px solid var(--bordaClara);
+    border-bottom: 1px solid #E0E0E0;
     vertical-align: middle;
     font-size: 1rem;
 }
 
-/* Alinhamento das Colunas */
 .colunaId {
     width: 80px;
 }
@@ -123,39 +150,41 @@ thead{
     text-align: center;
 }
 
-/* Botões de Ação (Ícones) */
 .botaoAcao {
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px;
-    color: var(--roxoPrincipal);
+    color: #8560F9;
     opacity: 0.8;
+    transition: all 0.2s ease;
 }
 
 .botaoAcao:hover {
     opacity: 1;
+    transform: scale(1.1);
 }
 
-/* Estilo para os ícones de Ação substituídos (Unicode) */
-.iconeAcao {
-    font-size: 1.2rem;
-    color: var(--roxoPrincipal);
-}
-
-/* NOVO: ESTILOS PARA O MODAL DE CADASTRO */
-
+/* ===================== */
+/*       MODAL           */
+/* ===================== */
 .modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .modalConteudo {
@@ -163,47 +192,58 @@ thead{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:#fefefe;
-    padding: 40px;
-    border-radius: 10px;
+    background-color: #FEFEFE;
+    padding: 40px 30px;
+    border-radius: 20px;
     width: 90%;
     max-width: 550px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     position: relative;
-    border: 3px solid #8560F9;
+    border: 2px solid #8560F9;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .tituloModal {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--textoEscuro);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2A2A2A;
     margin-bottom: 30px;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--bordaClara);
+    border-bottom: 1px solid #E0E0E0;
 }
 
 .campoFormulario {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .labelCampo {
-    width: 100%;
     display: block;
     margin-bottom: 8px;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 1.1rem;
+    color: #2A2A2A;
 }
 
 .inputCampo {
     width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: 1px solid var(--roxoPrincipal);
-    border-radius: 8px;
+    padding: 14px 15px;
+    border: 1px solid #8560F9;
+    border-radius: 12px;
     font-size: 1rem;
     outline: none;
-    box-shadow: 0 0 5px rgba(169, 146, 243, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(133, 96, 249, 0.2);
+}
+
+.inputCampo:focus {
+    border-color: #C5B3FF;
+    box-shadow: 0 4px 12px rgba(133, 96, 249, 0.3);
 }
 
 .acoesModal {
@@ -212,19 +252,21 @@ thead{
 }
 
 .botaoCadastrarModal {
-    background-color: #8560F9;
+    background: #8560F9;
     color: #FEFEFE;
     border: none;
     padding: 15px 40px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.4s;
+    transition: all 0.3s ease;
 }
 
 .botaoCadastrarModal:hover {
-    background-color: #C5B3FF;
+    background: #C5B3FF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .botaoFecharModal {
@@ -234,10 +276,16 @@ thead{
     background: none;
     border: none;
     font-size: 2rem;
-    color: var(--textoEscuro);
+    color: #2A2A2A;
     cursor: pointer;
     line-height: 1;
+    transition: transform 0.2s ease;
 }
+
+.botaoFecharModal:hover {
+    transform: rotate(90deg);
+}
+
 
 .iconesEditarExcluir {
     height: 25px;
@@ -245,12 +293,11 @@ thead{
 }
 
 .imagemLogo {
-    height: 47px;
-    width: 175px;
+    height: 50px;
+    width: 180px;
 }
 
 .iconesLaterais {
     height: 30px;
     width: 30px;
-    font-weight: 100;
 }

@@ -290,4 +290,3 @@ window.onload = () => {
     setInterval(aleatoryIncubadoras, 60000);
 }
 
-
