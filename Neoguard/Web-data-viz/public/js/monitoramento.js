@@ -33,7 +33,7 @@ const grafico = new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: "TOTAL INCUBADORAS POR CADA ESTADO",
+                text: "TOTAL DE ALERTAS POR CADA ESTADO",
                 font: { size: 16 }
             }
         },
@@ -88,6 +88,8 @@ function atualizarGrafico(idSala) {
 
             });
 
+            
+
             console.log(ideal)
             console.log(critico)
             console.log(atencao)
@@ -95,6 +97,8 @@ function atualizarGrafico(idSala) {
             grafico.data.datasets[0].data = [ideal]
             grafico.data.datasets[1].data = [critico]
             grafico.data.datasets[2].data = [atencao]
+
+
 
             grafico.update()
         })
@@ -207,8 +211,6 @@ function aleatoryIncubadoras() {
 
             lista.forEach(inc => {
                 listarTempFinal(idSensor)
-
-
                 contadorInc++;
 
                 const temp = Number((Math.random() * 2 + 36).toFixed(1));
@@ -240,7 +242,7 @@ function aleatoryIncubadoras() {
 
 
                 });
-            }, 6000)
+            }, 10000)
             logHistorico()
 
             atualizarGrafico(idSala);
