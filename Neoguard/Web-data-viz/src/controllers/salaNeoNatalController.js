@@ -1,15 +1,10 @@
 var salaNeoNatalModel = require('../models/salaNeoNatalModel');
 
 
-
-
-
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var numSala = req.body.numSalaServer 
     var idHospital = req.body.idHospitalServer
-
-
 
     // Faça as validações dos valores
     if (numSala == undefined) {

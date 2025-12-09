@@ -96,11 +96,7 @@ function gerarIncubadorasIniciais() {
            console.log('CADASTRO FEITO COM SUCESSO (incubadora)', cadInc)
 
 
-        })
-
-    
-
-        .catch(err => {
+        }).catch(err => {
             console.log("Erro ao cadastrar incubadora:", err);
         });
 

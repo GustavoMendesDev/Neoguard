@@ -1,14 +1,9 @@
 var incubadoraModel = require('../models/incubadoraModel');
 
-
-
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var idSala = req.body.idSalaServer
     var idSensor = req.body.idSensorServer
-
-
-
 
     // Faça as validações dos valores
     if (idSensor == undefined) {

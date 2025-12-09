@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/estrutura.css">
-    <link rel="stylesheet" href="./css/monitoramento.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./css/estrutura.css">
+  <link rel="stylesheet" href="./css/monitoramento.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -15,13 +16,14 @@
   <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body onload="logHistorico()">
 
   <!-- Navbar -->
   <nav>
     <div class="nav-container">
       <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
       <img class="perfil" src="./assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
+      <span id="nomeUsuarioNavbar" class="nome-usuario"> Olá</span>
 
       <div class="monitoramento"></div>
 
@@ -66,45 +68,42 @@
 
     <a href="./index.html" class="exit nav-item">
       <img src="assets/dashboard-img/icone-header/sair.svg" alt="Icone de Sair">
+      Sair
     </a>
   </nav>
-  <!-- Fim Navbar -->
 
-  <!-- Conteúdo principal -->
   <main>
 
     <section class="containerHeadar">
       <div class="titulo">
         <div class="tituloItem">
-          <img src="./assets/dashboard-img/nav-bar/sala.svg">
-          <h1>SALA DE UTI NEONATAL - <span>02</span></h1>
-        </div>
-        <div class="tituloItem">
-          <h2>MONITORAMENTO DAS INCUBADORAS</h2>
+          <h2>MONITORAMENTO DAS INCUBADORAS - VISÃO MACRO</h2>
         </div>
       </div>
 
-      <div class="legenda">
+      <!--Div da legenda dos alertas-->
+      <div class="legendaBox">
+        <div class="legendaTitulo" >LEGENDA</div>
         <div class="legendaItem">
           <img src="./assets/dashboard-img/icone-alerta/Critico.svg">
-          <p><b>CRÍTICO:</b> Temperatura acima de 37,5°C ou abaixo de 36,5°C</p>
+          <p><b>CRÍTICO: Temperatura acima de 37,5°C ou abaixo de 36,5°C</b></p>
         </div>
         <div class="legendaItem">
           <img src="./assets/dashboard-img/icone-alerta/Atencao.svg">
-          <p><b>ATENÇÃO:</b> Temperatura acima de 36,9°C ou abaixo de 36,4°C</p>
+          <p><b>ATENÇÃO: Temperatura acima de 36,9°C ou abaixo de 36,4°C</b> </p>
         </div>
         <div class="legendaItem">
           <img src="./assets/dashboard-img/icone-alerta/Ok.svg">
-          <p><b>IDEAL:</b> Temperatura entre 36,5 °C</p>
+          <p><b>IDEAL: Temperatura entre 36,5 °C</b></p>
         </div>
       </div>
+
     </section>
 
-    <!-- ⬇️ AQUI FOI A CORREÇÃO PRINCIPAL — ADICIONEI O ID -->
     <section id="containerAlerta" class="containerAlerta">
 
       <!-- Esses itens serão substituídos dinamicamente pelo JS -->
-      
+
     </section>
 
     <section class="containerInfo">
@@ -125,8 +124,6 @@
               </tr>
             </thead>
             <tbody id="historicoTabela">
-
-
             </tbody>
           </table>
         </div>
@@ -137,5 +134,15 @@
 
   <script src="js/monitoramento.js"></script>
 </body>
+<script>
+  // Recupera o nome salvo pelo login
+  const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+  const spanNome = document.getElementById("nomeUsuarioNavbar");
+
+  if (spanNome && nomeUsuario) {
+    spanNome.innerText = `Olá, ${nomeUsuario}!`;
+  }
+</script>
 
 </html>

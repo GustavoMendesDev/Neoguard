@@ -9,9 +9,19 @@ router.post("/cadastrar", function (req, res) {
 });
 
 
-router.get("/contagem/:idHospital/:idSala/:idIncubadora", function (req, res) {
+router.get("/contagem/:idSala", function (req, res) {
     historicoController.contagem(req, res);
-});
+}); 
+
+router.get("/ultimaTemperatura/:idSensor", function (req, res) {
+    historicoController.ultimaTemperatura(req, res);
+}); 
+
+router.get("/log/:idSala", function (req, res) {
+    historicoController.logHistorico(req, res);
+}); 
+
+
 
 
 
