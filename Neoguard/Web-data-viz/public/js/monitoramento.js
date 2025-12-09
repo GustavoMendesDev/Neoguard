@@ -215,13 +215,26 @@ function aleatoryIncubadoras() {
 
                 sensoresIds.push(inc.idSensor)
 
+                function definirIcone(temp) {
+                    if (temp >= 36.7 && temp <= 37.3) {
+                        return "ideal"; 
+                    } else if (
+                        (temp >= 36.3 && temp < 36.7) ||
+                        (temp > 37.3 && temp <= 37.7)
+                    ) {
+                        return "alerta"; 
+                    } else {
+                        return "critico"; 
+                    }
+                }
 
+                var icone = definirIcone(temp);
 
                 containerAlerta.innerHTML += `
                     <div class="alertaItem">
                         <span class="numeroIncubadora">Incubadora #${contadorInc}</span>
                         <span class="containerTemperatura">
-                            <img src="./assets/dashboard-img/icone-alerta/${alerta}.svg">
+                            <img src="./assets/dashboard-img/icone-alerta/${icone}.svg">
                             <div id="sensor-${inc.idSensor}">${temp} </div>
                         </span>
                         <span id="desc-${inc.idSensor}">${alerta}/</span>
