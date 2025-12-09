@@ -22,6 +22,7 @@
     <div class="nav-container">
       <img class="logo" src="./assets/NeoGuard.svg" alt="Nome-Neoguard">
       <img class="perfil" src="./assets/dashboard-img/nav-bar/Perfil.png" alt="Foto-Perfil">
+      <span id="nomeUsuarioNavbar" class="nome-usuario"> Olá</span>
 
       <div class="monitoramento"></div>
 
@@ -137,5 +138,15 @@
 
   <script src="js/monitoramento.js"></script>
 </body>
+<script>
+  // Recupera o nome salvo pelo login
+  const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+  const spanNome = document.getElementById("nomeUsuarioNavbar");
+
+  if (spanNome && nomeUsuario) {
+    spanNome.innerText = `Olá, ${nomeUsuario}!`;
+  }
+</script>
 
 </html>

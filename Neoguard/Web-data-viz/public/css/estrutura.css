@@ -47,6 +47,17 @@ body {
     text-align: center;
 }
 
+.nome-usuario {
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Nunito";
+  font-size: 20px;
+  margin-left: 12px;
+
+  display: flex;
+  align-items: center;
+}
+
 /*Conteiner principal do nav-bar*/
 nav {
     width: 15%;
